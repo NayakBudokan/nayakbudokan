@@ -244,7 +244,7 @@ body::before {
 
 .legacy {
     position: relative;
-    background-image: url("./images/hanumanth-rao.jpg");
+    background-image: url("./images/hanumanth-rao.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;

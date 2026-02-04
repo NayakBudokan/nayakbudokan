@@ -57,40 +57,34 @@ nav a:hover {
 }
 
 
-/* =========================
-   HERO TITLE
-   ========================= */
+/* ==============================
+   3D GOLD HEADINGS
+   ============================== */
+
 h1 {
     text-align: center;
-    margin: 35px 0 20px;
+    margin: 25px 0;
     font-size: 42px;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    color: var(--gold);
+    text-shadow:
+        1px 1px 0 #b8962e,
+        2px 2px 0 #9f7f1f,
+        3px 3px 6px rgba(0,0,0,0.6);
 }
 
-/* =========================
-   SECTION WRAPPER (KEY FIX)
-   ========================= */
-.section {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 25px;
-}
-
-/* =========================
-   HEADINGS
-   ========================= */
 h2 {
-    color: #c60000;
-    font-size: 28px;
-    margin: 40px 0 15px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    margin: 35px 0 12px 0;
+    font-size: 26px;
+    color: var(--red);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 h3 {
+    margin: 20px 0 8px 0;
+    font-size: 20px;
     color: #111;
-    font-size: 22px;
-    margin: 25px 0 10px;
 }
+
 
 /* =========================
    PARAGRAPHS

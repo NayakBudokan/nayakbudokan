@@ -26,6 +26,39 @@ nav a:hover {
     color: #e60000;
 }
 
+/* ===== Headings Alignment ===== */
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+h2 {
+    text-align: center;
+    color: #e60000;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    text-align: center;
+    color: #000000;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* ===== Paragraph Alignment ===== */
+
+p {
+    max-width: 900px;
+    margin: 10px auto 25px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+
 /* ===== Page Content ===== */
 h1 {
     text-align: center;

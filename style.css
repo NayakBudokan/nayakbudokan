@@ -190,4 +190,51 @@ body::before {
         padding: 25px 15px;
     }
 }
+/* ==============================
+   HERO SECTION – HOMEPAGE
+   ============================== */
+
+.hero {
+    background: linear-gradient(
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.85)
+    );
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 44px;
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-shadow:
+        1px 1px 0 #b8962e,
+        2px 2px 0 #9f7f1f,
+        3px 3px 8px rgba(0,0,0,0.8);
+}
+
+.hero-tagline {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #dddddd;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background-color: var(--red);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: var(--gold);
+    color: #000000;
+    transform: translateY(-3px);
+}
 

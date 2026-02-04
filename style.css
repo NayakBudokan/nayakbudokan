@@ -40,4 +40,65 @@ nav a:hover {
 }
 
 /* =====================================================
-   HEADING SYSTEM (FINAL & CON
+   HEADING SYSTEM (FINAL & CONSISTENT)
+   ===================================================== */
+h1 {
+    text-align: center;
+    margin: 25px 0 20px 0;
+    color: #000000;        /* Page title */
+}
+
+h2 {
+    margin: 25px 0 10px 0;
+    color: #e60000;        /* Section heading */
+}
+
+h3 {
+    margin: 15px 0 8px 0;
+    color: #333333;        /* Sub-section heading */
+}
+
+/* =====================================================
+   PARAGRAPHS
+   ===================================================== */
+p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* =====================================================
+   SENSEI PROFILE (FINAL FIX)
+   ===================================================== */
+.sensei-profile {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.sensei-title {
+    color: #e60000;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0 15px 0;   /* GAP FIX */
+}
+
+.sensei-photo {
+    display: block;
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    margin: 10px auto 25px auto;  /* GAP FIX */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* =====================================================
+   FOOTER (OPTIONAL – FUTURE USE)
+   ===================================================== */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 60px;
+}

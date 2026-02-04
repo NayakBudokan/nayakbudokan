@@ -244,17 +244,17 @@ body::before {
 
 .legacy {
     position: relative;
-    background-image: url("images/grandmaster-hanumanth-rao.jpg");
+    background-image: url("./images/hanumanth-rao.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top center;   /* 👈 THIS IS THE FIX */
-    margin: 60px 0;
+    background-position: top center;
+    min-height: 500px;
 }
 
 
 .legacy-overlay {
-    background: rgba(0, 0, 0, 0.78); /* slightly lighter */
-    padding: 100px 20px;             /* taller section */
+    background: rgba(0, 0, 0, 0.75);
+    padding: 100px 20px;
     text-align: center;
     color: #ffffff;
 }

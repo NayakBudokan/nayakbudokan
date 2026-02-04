@@ -363,3 +363,17 @@ body::before {
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+/* ==============================
+   HANDWRITING TYPING FIX
+   ============================== */
+
+.legacy-overlay {
+    text-align: left;          /* locks left edge */
+}
+
+.typing {
+    display: block;
+    white-space: normal;       /* natural writing */
+    text-align: left;          /* prevents center expansion */
+}

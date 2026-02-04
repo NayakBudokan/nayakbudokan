@@ -99,3 +99,14 @@ p {
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("images/nbka-logo.png") center no-repeat;
+    background-size: 400px;
+    opacity: 0.05;
+    z-index: -1;
+}
+

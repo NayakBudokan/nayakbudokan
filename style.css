@@ -119,3 +119,16 @@ footer {
     font-weight: bold;
 }
 
+/* =====================================================
+   Sensei Image Styling
+   ===================================================== */
+
+.sensei-photo {
+    display: block;
+    max-width: 300px;     /* controls size */
+    width: 100%;
+    height: auto;
+    margin: 15px auto 25px auto;  /* centers & reduces gap */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

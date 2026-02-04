@@ -1,34 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const elements = document.querySelectorAll(".typing");
+    const cursor = document.querySelector(".cursor");
+
     let currentIndex = 0;
 
-    function typeNextElement() {
-
+    function typeElement() {
         if (currentIndex >= elements.length) {
-            return; // all done
+            cursor.remove(); // stop cursor after finish
+            return;
         }
 
         const el = elements[currentIndex];
         const text = el.getAttribute("data-text");
         const words = text.split(" ");
-        let wordIndex = 0;
+        let i = 0;
 
-        el.textContent = ""; // clear existing text
+        el.textContent = "";
+        el.appendChild(cursor);
 
         const interval = setInterval(() => {
-            if (wordIndex < words.length) {
-                el.textContent += words[wordIndex] + " ";
-                wordIndex++;
+            if (i < words.length) {
+                el.insertBefore(
+                    document.createTextNode(words[i] + " "),
+                    cursor
+                );
+                i++;
             } else {
                 clearInterval(interval);
-
-                // move to next line after small pause
                 currentIndex++;
-                setTimeout(typeNextElement, 600);
+                setTimeout(typeElement, 600);
             }
-        }, 220); // typing speed
+        }, 220);
     }
 
-    typeNextElement(); // start typing
+    typeElement();
 });

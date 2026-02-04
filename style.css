@@ -1,3 +1,17 @@
+/* ==============================
+   THEME VARIABLES (NBKA)
+   ============================== */
+:root {
+    --black: #0b0b0b;
+    --dark-black: #000000;
+    --red: #c40000;
+    --gold: #d4af37;
+    --light-gold: #f5d76e;
+    --text-dark: #222;
+    --text-light: #ffffff;
+}
+
+
 /* =========================
    GLOBAL RESET
    ========================= */
@@ -9,32 +23,39 @@
    BODY
    ========================= */
 body {
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #ffffff;
-    color: #111;
-    line-height: 1.7;
+    padding: 0;
+    background-color: #ffffff;
+    color: var(--text-dark);
+    line-height: 1.8;
 }
+
 
 /* =========================
    NAVBAR
    ========================= */
 nav {
-    background: #000;
-    padding: 15px;
+    background: linear-gradient(90deg, var(--black), var(--dark-black));
+    padding: 18px;
     text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
 nav a {
-    color: #fff;
+    color: var(--light-gold);
     text-decoration: none;
     margin: 0 14px;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 15px;
 }
 
 nav a:hover {
-    color: #c60000;
+    color: var(--gold);
+    text-shadow: 0 0 6px rgba(212,175,55,0.8);
 }
+
 
 /* =========================
    HERO TITLE

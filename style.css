@@ -245,3 +245,43 @@ body::before {
         background-position: 100% 50%;
     }
 }
+
+/* ==============================
+   TYPING HEADING STYLES
+   ============================== */
+
+.typing-heading {
+    font-size: 42px;                 /* BIGGER */
+    color: var(--gold);              /* GOLD */
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: left;
+    text-shadow:
+        1px 1px 0 #b8962e,
+        2px 2px 0 #9f7f1f,
+        3px 3px 8px rgba(0,0,0,0.8);
+}
+
+/* ==============================
+   TYPING SUBTITLE STYLES
+   ============================== */
+
+.typing-subtitle {
+    font-size: 18px;                 /* SMALLER */
+    color: var(--red);               /* RED */
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* ==============================
+   NORMAL TYPING TEXT
+   ============================== */
+
+.typing {
+    color: var(--light-gold);        /* GOLDEN TEXT */
+    font-size: 16px;
+    text-align: left;
+    max-width: 850px;
+}

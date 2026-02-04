@@ -101,4 +101,19 @@ footer {
     border-radius: 8px;    /* soft professional look */
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
+/* ==============================
+   Sensei Profile Alignment
+   ============================== */
+
+.sensei-profile {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.sensei-title {
+    color: #e60000;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: bold;
+}
 

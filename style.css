@@ -125,17 +125,19 @@ h2 {
     display: inline-block;
     width: 2px;
     height: 1em;
-    background-color: var(--gold);
     margin-left: 4px;
+
+    background: linear-gradient(
+        #b8962e,
+        #f5d76e,
+        #d4af37
+    );
+
     animation: blinkCursor 1s infinite;
     vertical-align: bottom;
+    box-shadow: 0 0 8px rgba(212,175,55,0.8);
 }
 
-@keyframes blinkCursor {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
 
 /* ==============================
    WATERMARK LOGO
@@ -185,4 +187,38 @@ body::before {
 
     h1 { font-size: 28px; }
     h2 { font-size: 22px; }
+}
+
+/* ==============================
+   GOLD SPARKLE HANDWRITING TEXT
+   ============================== */
+
+.typing {
+    color: #d4af37; /* base gold */
+    font-weight: 500;
+    letter-spacing: 0.4px;
+
+    /* Golden shimmer effect */
+    background: linear-gradient(
+        90deg,
+        #b8962e,
+        #f5d76e,
+        #d4af37,
+        #fff2b0,
+        #b8962e
+    );
+    background-size: 300% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: goldShimmer 3s linear infinite;
+}
+@keyframes goldShimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }

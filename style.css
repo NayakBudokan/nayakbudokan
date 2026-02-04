@@ -281,8 +281,11 @@ body::before {
    ============================== */
 
 .typing {
-    color: var(--light-gold);        /* GOLDEN TEXT */
     font-size: 16px;
     text-align: left;
     max-width: 850px;
 }
+.legacy p.typing {
+    color: var(--light-gold);
+}
+

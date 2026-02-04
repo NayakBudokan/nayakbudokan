@@ -267,13 +267,14 @@ body::before {
    ============================== */
 
 .typing-subtitle {
-    font-size: 18px;                 /* SMALLER */
-    color: var(--red);               /* RED */
-    font-weight: bold;
+    font-size: 18px;
+    color: var(--red) !important;   /* FORCE RED */
+    font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 30px;
     text-align: left;
 }
+
 
 /* ==============================
    NORMAL TYPING TEXT

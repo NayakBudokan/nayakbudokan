@@ -88,3 +88,17 @@ footer {
     border-radius: 6px;
 }
 
+/* ==============================
+   Sensei Page Image Styling
+   ============================== */
+
+.sensei-photo {
+    display: block;
+    max-width: 320px;      /* controls size */
+    width: 100%;
+    height: auto;
+    margin: 25px auto;     /* centers image */
+    border-radius: 8px;    /* soft professional look */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+

@@ -343,3 +343,23 @@ body::before {
         transform: translateY(0);
     }
 }
+
+/* ==============================
+   SINGLE HANDWRITING CURSOR
+   ============================== */
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: #d4af37;
+    margin-left: 3px;
+    animation: blinkCursor 1s infinite;
+    vertical-align: bottom;
+}
+
+@keyframes blinkCursor {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}

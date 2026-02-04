@@ -62,11 +62,13 @@ h3 {
    Paragraphs
    ===================================================== */
 p {
-    max-width: 900px;
-    margin: 0 auto 25px auto;
+    max-width: 850px;
+    margin: 0 auto 28px auto;
     padding: 0 20px;
-    text-align: center;
+    text-align: left;
+    font-size: 16px;
 }
+
 
 /* =====================================================
    Block Quotes

@@ -166,3 +166,28 @@ body::before {
 .gallery-grid img:hover {
     transform: scale(1.05);
 }
+
+/* ==============================
+   Mobile Responsive
+   ============================== */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 25px 15px;
+    }
+}
+

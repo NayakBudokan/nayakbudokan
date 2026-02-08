@@ -93,20 +93,35 @@ body {
         1px 1px 0 #8b0000,
         2px 2px 0 #6f0000;
 }
+.academy-static::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(
+        to right,
+        #d4af37,
+        #f5d76e,
+        #d4af37
+    );
+    margin: 14px auto 0;
+}
 
 
 
 .pre-hero {
+    background: #ffffff;
+    padding: 50px 20px 55px;
     text-align: center;
-    margin-bottom: 40px;
+    border-top: 4px solid #c40000;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .pre-hero-motto {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 18px;
+    color: #c9a227; /* deeper gold */
+    font-size: 23px;
 }
+
 
 .pre-hero-btn {
     display: inline-block;
@@ -291,4 +306,11 @@ body::before {
     position: relative;
     padding: 40px 20px 50px;
 }
+.pre-hero {
+    position: relative;
+    background: #ffffff;
+}
 
+.pre-hero::after {
+    content: none; /* remove watermark here */
+}

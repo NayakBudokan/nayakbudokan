@@ -344,3 +344,27 @@ body::before {
     font-size: 16px;
     line-height: 1.6;
 }
+
+/* ==============================
+   ABOUT PAGE STYLES
+   ============================== */
+
+.about-block {
+    background: #ffffff;
+    border-left: 6px solid var(--red);
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.about-block h2 {
+    color: var(--red);
+    margin-bottom: 15px;
+}
+
+.about-block p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+

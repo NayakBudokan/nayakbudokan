@@ -292,13 +292,3 @@ body::before {
     padding: 40px 20px 50px;
 }
 
-.pre-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("images/nbka1-logo.png") center no-repeat;
-    background-size: 420px;
-    opacity: 0.05;
-    pointer-events: none;
-}
-

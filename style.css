@@ -255,3 +255,44 @@ body::before {
         padding: 70px 20px;
     }
 }
+
+/* ==============================
+   SENSEI CARD LAYOUT (FOUNDATION)
+   ============================== */
+
+.sensei-card {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    background: #ffffff;
+}
+
+/* Image column */
+.sensei-image img {
+    width: 280px;          /* 🔑 keeps image SMALL */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Text column */
+.sensei-content {
+    flex: 1;
+}
+
+.sensei-content h2 {
+    margin-top: 0;
+    color: var(--red);
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+    .sensei-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sensei-image img {
+        width: 220px;
+    }
+}

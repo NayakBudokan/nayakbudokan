@@ -16,6 +16,8 @@
    ========================= */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* =========================
@@ -23,8 +25,6 @@
    ========================= */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #ffffff;
     color: var(--text-dark);
     line-height: 1.8;
@@ -55,16 +55,156 @@ nav a:hover {
 }
 
 /* =========================
-   GLOBAL CONTENT CONTAINER
+   GLOBAL CONTENT WIDTH
    ========================= */
 .section {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 60px 30px;
+    padding: 70px 30px;
 }
 
 /* =========================
-   HEADINGS
+   HERO SECTION (FIXED)
+   ========================= */
+.hero {
+    background: #ffffff;
+    padding: 80px 20px 60px;
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Academy Name */
+.academy-name {
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--red);
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    text-shadow:
+        2px 2px 0 #8b0000,
+        4px 4px 10px rgba(0,0,0,0.45);
+}
+
+/* Discipline line */
+.hero-motto {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 14px;
+    text-shadow:
+        1px 1px 0 #b8962e,
+        2px 2px 6px rgba(0,0,0,0.4);
+}
+
+/* Sub text */
+.hero-tagline {
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Join button */
+.hero-btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #a80000;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   LEGACY SECTION
+   ========================= */
+.legacy {
+    background-image: url("./images/grandmaster-hanumanth-rao.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.legacy-overlay {
+    background: rgba(0,0,0,0.7);
+    padding: 90px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+/* Legacy headings */
+.typing-heading {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.typing-subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Legacy text */
+.typing {
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+/* Gold shimmer */
+.legacy p.typing {
+    background: linear-gradient(
+        90deg,
+        #b8962e,
+        #f5d76e,
+        #d4af37,
+        #fff2b0,
+        #b8962e
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: goldShimmer 3s linear infinite;
+}
+
+@keyframes goldShimmer {
+    from { background-position: 0% 50%; }
+    to { background-position: 100% 50%; }
+}
+
+/* Cursor */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 4px;
+    background-color: var(--gold);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* =========================
+   HEADINGS (ALL PAGES)
    ========================= */
 h1 {
     text-align: center;
@@ -84,130 +224,45 @@ h2 {
 }
 
 /* =========================
-   SENSEI PAGE
-   ========================= */
-.sensei-section {
-    text-align: center;
-}
-
-.sensei-title {
-    font-size: 18px;
-    color: var(--red);
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
-
-.sensei-profile {
-    margin-bottom: 30px;
-}
-
-.sensei-photo {
-    width: 260px;              /* 🔴 FIXED SIZE */
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-/* =========================
-   PARAGRAPHS (ALL PAGES)
+   PARAGRAPHS
    ========================= */
 .section p {
     max-width: 800px;
-    margin: 0 auto 20px auto;
-    text-align: left;
-    line-height: 1.8;
+    margin-bottom: 20px;
     font-size: 16px;
 }
 
 /* =========================
-   LEGACY SECTION
+   SENSEI PAGE
    ========================= */
-.legacy {
-    background-image: url("./images/grandmaster-hanumanth-rao.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
+.sensei-card {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
 }
 
-.legacy-overlay {
-    background: rgba(0,0,0,0.68);
-    padding: 100px 40px;
-    max-width: 900px;
-    margin: 0 auto;
-    color: #ffffff;
-    text-align: left;
+.sensei-image img {
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-/* =========================
-   LEGACY HEADINGS
-   ========================= */
-.typing-heading {
-    font-size: 40px;
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 10px;
-}
-
-.typing-subtitle {
-    font-size: 18px;
-    font-weight: 700;
+.sensei-content h2 {
+    margin-top: 0;
     color: var(--red);
-    letter-spacing: 2px;
+}
+
+/* =========================
+   CARDS (Classes / Branches / About)
+   ========================= */
+.training-card,
+.branch-card,
+.about-block {
+    background: #ffffff;
+    border-left: 6px solid var(--red);
+    padding: 30px;
     margin-bottom: 30px;
-    text-transform: uppercase;
-}
-
-/* =========================
-   HANDWRITING TEXT
-   ========================= */
-.typing {
-    display: block;
-    white-space: normal;
-    text-align: left;
-    font-size: 16px;
-    margin-bottom: 18px;
-}
-
-/* GOLD SHIMMER ONLY FOR PARAGRAPHS */
-.legacy p.typing {
-    background: linear-gradient(
-        90deg,
-        #b8962e,
-        #f5d76e,
-        #d4af37,
-        #fff2b0,
-        #b8962e
-    );
-    background-size: 300% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: goldShimmer 3s linear infinite;
-}
-
-@keyframes goldShimmer {
-    from { background-position: 0% 50%; }
-    to { background-position: 100% 50%; }
-}
-
-/* =========================
-   CURSOR
-   ========================= */
-.cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    margin-left: 4px;
-    background-color: var(--gold);
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 /* =========================
@@ -243,188 +298,24 @@ body::before {
    MOBILE
    ========================= */
 @media (max-width: 768px) {
+    .academy-name {
+        font-size: 34px;
+    }
+
+    .hero-motto {
+        font-size: 20px;
+    }
+
     .section {
-        padding: 40px 20px;
+        padding: 50px 20px;
     }
 
-    h1 {
-        font-size: 28px;
-    }
-
-    .legacy-overlay {
-        padding: 70px 20px;
-    }
-}
-
-/* ==============================
-   SENSEI CARD LAYOUT (FOUNDATION)
-   ============================== */
-
-.sensei-card {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    background: #ffffff;
-}
-
-/* Image column */
-.sensei-image img {
-    width: 280px;          /* 🔑 keeps image SMALL */
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-/* Text column */
-.sensei-content {
-    flex: 1;
-}
-
-.sensei-content h2 {
-    margin-top: 0;
-    color: var(--red);
-}
-
-/* Mobile fix */
-@media (max-width: 768px) {
     .sensei-card {
         flex-direction: column;
-        align-items: center;
         text-align: center;
     }
 
     .sensei-image img {
         width: 220px;
     }
-}
-/* ==============================
-   BRANCHES PAGE STYLES
-   ============================== */
-
-.branch-card {
-    background: #ffffff;
-    border-left: 6px solid var(--red);
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-}
-
-.branch-card:hover {
-    transform: translateY(-5px);
-}
-
-.branch-card h2 {
-    color: var(--red);
-    margin-bottom: 10px;
-}
-
-.branch-card p {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-/* ==============================
-   TRAINING / CLASSES PAGE
-   ============================== */
-
-.training-card {
-    background: #ffffff;
-    border-left: 6px solid var(--red);
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-.training-card h2 {
-    color: var(--red);
-    margin-bottom: 12px;
-}
-
-.training-card p {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-/* ==============================
-   ABOUT PAGE STYLES
-   ============================== */
-
-.about-block {
-    background: #ffffff;
-    border-left: 6px solid var(--red);
-    padding: 30px;
-    margin-bottom: 40px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-.about-block h2 {
-    color: var(--red);
-    margin-bottom: 15px;
-}
-
-.about-block p {
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 15px;
-}
-
-/* =========================
-   HERO – FIX ALIGNMENT
-   ========================= */
-
-.hero {
-    min-height: 85vh; /* Tall hero */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;
-}
-
-.hero-content {
-    text-align: center;
-    max-width: 900px;
-    padding: 40px 20px;
-}
-
-/* Academy Name */
-.academy-name {
-    font-size: 42px;
-    margin-bottom: 20px;
-    color: var(--gold);
-    text-shadow:
-        1px 1px 0 #b8962e,
-        2px 2px 6px rgba(0,0,0,0.4);
-}
-
-/* Discipline line */
-.hero-tagline {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--red);
-    margin-bottom: 18px;
-}
-
-/* Sub text */
-.hero-subtext {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-/* Join Button */
-.hero-btn {
-    display: inline-block;
-    background: var(--red);
-    color: #fff;
-    padding: 14px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.hero-btn:hover {
-    background: #a80000;
-    transform: translateY(-2px);
 }

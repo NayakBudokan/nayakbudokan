@@ -174,33 +174,6 @@ body {
     to   { background-position: 100% 50%; }
 }
 
-/* =========================
-   HANDWRITING REVEAL (FIXED)
-========================= */
-.handwrite {
-    font-family: 'Cinzel', serif;
-    position: relative;
-    display: block;
-
-    /* hidden state */
-    max-width: 0;
-    overflow: hidden;
-    white-space: normal;
-
-    animation: handwritingReveal 1.4s ease forwards;
-    animation-delay: var(--delay);
-}
-
-/* Heading styling */
-.hero-lineage-content h2.handwrite {
-    white-space: nowrap;
-    margin-bottom: 24px;
-}
-
-/* Paragraph spacing */
-.hero-lineage-content p.handwrite {
-    margin-bottom: 16px;
-}
 
 /* Reveal animation */
 @keyframes handwritingReveal {
@@ -310,3 +283,45 @@ body::before {
     z-index: -1;                 /* always behind everything */
 }
 
+/* =========================
+   TRUE HANDWRITING REVEAL
+========================= */
+.handwrite {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+
+    /* mask starts hidden */
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        black 0%,
+        black 0%,
+        transparent 0%
+    );
+    -webkit-mask-size: 200% 100%;
+    -webkit-mask-position: 100% 0;
+
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        black 0%,
+        black 0%,
+        transparent 0%
+    );
+    mask-size: 200% 100%;
+    mask-position: 100% 0;
+
+    animation: handwritingMask 2s ease forwards;
+    animation-delay: var(--d);
+}
+
+@keyframes handwritingMask {
+    from {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+    to {
+        -webkit-mask-position: 0% 0;
+        mask-position: 0% 0;
+    }
+}

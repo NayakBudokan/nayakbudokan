@@ -175,6 +175,37 @@ body {
 }
 
 /* =========================
+   HANDWRITING REVEAL EFFECT
+========================= */
+.handwrite {
+    font-family: 'Cinzel', serif;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+
+    /* start hidden */
+    clip-path: inset(0 100% 0 0);
+
+    animation: handwriting 2.5s ease forwards;
+}
+
+/* stagger effect */
+.handwrite:nth-of-type(1) { animation-delay: 0.3s; }
+.handwrite:nth-of-type(2) { animation-delay: 1.4s; }
+.handwrite:nth-of-type(3) { animation-delay: 2.5s; }
+.handwrite:nth-of-type(4) { animation-delay: 3.6s; }
+
+@keyframes handwriting {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
+/* =========================
    CONTENT SECTIONS
 ========================= */
 .section {

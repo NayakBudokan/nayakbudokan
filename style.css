@@ -33,29 +33,45 @@ body {
 /* =========================
    NAVBAR (FIXED, STABLE)
 ========================= */
+/* =========================
+   NAVBAR (FIXED, STABLE)
+========================= */
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;  /* Adjusting layout */
     background: linear-gradient(90deg, #000, #111);
     padding: 14px 40px;
-    position: relative;
+    position: fixed;  /* Fixed positioning */
+    top: 0;  /* Sticks to the top of the page */
+    left: 0;  /* Ensures it aligns with the left edge of the screen */
+    right: 0;  /* Ensures it aligns with the right edge of the screen */
+    z-index: 1000;  /* Makes sure it stays above other content */
     box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
+
 
 .nav-logo {
     position: absolute;
     left: 40px;
 }
 
+/* Logo inside navbar */
+.nav-logo {
+    position: absolute;
+    left: 40px;
+}
+
 .nav-logo img {
-    height: 50px;
+    height: 70px;  /* Increase the height of the logo */
     width: auto;
 }
 
+/* Navbar links */
 .nav-links {
     display: flex;
     gap: 26px;
+    margin-right: 40px;  /* Adjusted for spacing */
 }
 
 .nav-links a {
@@ -69,6 +85,11 @@ body {
 .nav-links a:hover {
     color: var(--gold);
     text-shadow: 0 0 6px rgba(212,175,55,0.8);
+}
+
+/* Add some margin to the top of the content below navbar so it doesn't overlap */
+body {
+    padding-top: 90px; /* Adjust this value as per the height of the navbar */
 }
 
 /* =========================

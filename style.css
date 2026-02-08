@@ -54,13 +54,22 @@ nav a:hover {
     text-shadow: 0 0 6px rgba(212,175,55,0.8);
 }
 
-/* ==============================
-   3D GOLD HEADINGS
-   ============================== */
+/* =========================
+   GLOBAL CONTENT CONTAINER
+   ========================= */
+.section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 30px;
+}
+
+/* =========================
+   HEADINGS
+   ========================= */
 h1 {
     text-align: center;
-    margin: 25px 0;
-    font-size: 42px;
+    margin-bottom: 30px;
+    font-size: 40px;
     color: var(--gold);
     text-shadow:
         1px 1px 0 #b8962e,
@@ -75,18 +84,46 @@ h2 {
 }
 
 /* =========================
-   HERO
+   SENSEI PAGE
    ========================= */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85));
+.sensei-section {
     text-align: center;
-    padding: 100px 20px;
-    color: white;
 }
 
-/* ==============================
-   LEGACY / LINEAGE (HANDWRITING READY)
-   ============================== */
+.sensei-title {
+    font-size: 18px;
+    color: var(--red);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.sensei-profile {
+    margin-bottom: 30px;
+}
+
+.sensei-photo {
+    width: 260px;              /* 🔴 FIXED SIZE */
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   PARAGRAPHS (ALL PAGES)
+   ========================= */
+.section p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* =========================
+   LEGACY SECTION
+   ========================= */
 .legacy {
     background-image: url("./images/grandmaster-hanumanth-rao.jpeg");
     background-repeat: no-repeat;
@@ -97,131 +134,44 @@ h2 {
 .legacy-overlay {
     background: rgba(0,0,0,0.68);
     padding: 100px 40px;
-
-    /* 🔑 KEY FIX */
     max-width: 900px;
-    margin-left: 60px;
-    margin-right: auto;
-
+    margin: 0 auto;
+    color: #ffffff;
     text-align: left;
-    color: white;
 }
-/* ==============================
-   LEGACY HEADING HIERARCHY FIX
-   ============================== */
 
-.legacy-heading {
-    font-size: 40px;              /* Bigger, dominant */
+/* =========================
+   LEGACY HEADINGS
+   ========================= */
+.typing-heading {
+    font-size: 40px;
     font-weight: 700;
-    margin-bottom: 12px;
     color: var(--gold);
-    text-shadow:
-        1px 1px 0 #b8962e,
-        2px 2px 6px rgba(0,0,0,0.7);
+    margin-bottom: 10px;
 }
 
-.legacy-subtitle {
-    font-size: 18px;              /* Smaller than heading */
-    font-weight: 700;             /* Bold */
-    color: var(--red);            /* RED as requested */
+.typing-subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--red);
     letter-spacing: 2px;
     margin-bottom: 30px;
     text-transform: uppercase;
 }
 
-
-/* ==============================
-   TYPING TEXT (LEFT-LOCKED)
-   ============================== */
+/* =========================
+   HANDWRITING TEXT
+   ========================= */
 .typing {
     display: block;
-    text-align: left;
     white-space: normal;
+    text-align: left;
     font-size: 16px;
     margin-bottom: 18px;
 }
 
-/* ==============================
-   SINGLE CURSOR (REAL PEN TIP)
-   ============================== */
-.cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    margin-left: 4px;
-
-    background: linear-gradient(
-        #b8962e,
-        #f5d76e,
-        #d4af37
-    );
-
-    animation: blinkCursor 1s infinite;
-    vertical-align: bottom;
-    box-shadow: 0 0 8px rgba(212,175,55,0.8);
-}
-
-
-/* ==============================
-   WATERMARK LOGO
-   ============================== */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("images/nbka-logo.png") center no-repeat;
-    background-size: 400px;
-    opacity: 0.05;
-    z-index: -1;
-}
-
-/* ==============================
-   WHATSAPP FLOAT
-   ============================== */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: #fff;
-    border-radius: 50px;
-    padding: 14px 20px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    z-index: 1000;
-    animation: pulse 2.5s infinite;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
-    70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
-    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-}
-
-/* ==============================
-   MOBILE FIX
-   ============================== */
-@media (max-width: 768px) {
-    .legacy-overlay {
-        margin-left: 0;
-        padding: 70px 20px;
-    }
-
-    h1 { font-size: 28px; }
-    h2 { font-size: 22px; }
-}
-
-/* ==============================
-   GOLD SPARKLE HANDWRITING TEXT
-   ============================== */
-
-.typing {
-    color: #d4af37; /* base gold */
-    font-weight: 500;
-    letter-spacing: 0.4px;
-
-    /* Golden shimmer effect */
+/* GOLD SHIMMER ONLY FOR PARAGRAPHS */
+.legacy p.typing {
     background: linear-gradient(
         90deg,
         #b8962e,
@@ -234,66 +184,74 @@ body::before {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-
     animation: goldShimmer 3s linear infinite;
 }
+
 @keyframes goldShimmer {
-    0% {
-        background-position: 0% 50%;
+    from { background-position: 0% 50%; }
+    to { background-position: 100% 50%; }
+}
+
+/* =========================
+   CURSOR
+   ========================= */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 4px;
+    background-color: var(--gold);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* =========================
+   WHATSAPP FLOAT
+   ========================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 14px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+/* =========================
+   WATERMARK LOGO
+   ========================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("images/nbka-logo.png") center no-repeat;
+    background-size: 400px;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 20px;
     }
-    100% {
-        background-position: 100% 50%;
+
+    h1 {
+        font-size: 28px;
     }
-}
 
-/* ==============================
-   TYPING HEADING STYLES
-   ============================== */
-
-.typing-heading {
-    font-size: 42px;                 /* BIGGER */
-    color: var(--gold);              /* GOLD */
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-align: left;
-    text-shadow:
-        1px 1px 0 #b8962e,
-        2px 2px 0 #9f7f1f,
-        3px 3px 8px rgba(0,0,0,0.8);
-}
-
-/* ==============================
-   TYPING SUBTITLE STYLES
-   ============================== */
-
-.typing-subtitle {
-    font-size: 18px;
-    color: var(--red) !important;   /* FORCE RED */
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-    text-align: left;
-}
-
-
-/* ==============================
-   NORMAL TYPING TEXT
-   ============================== */
-
-.typing {
-    font-size: 16px;
-    text-align: left;
-    max-width: 850px;
-}
-.legacy p.typing {
-    color: var(--light-gold);
-}
-
-/* ==============================
-   GLOBAL CONTENT CONTAINER
-   ============================== */
-.section {
-    max-width: 1100px;      /* controls page width */
-    margin: 0 auto;         /* centers content */
-    padding: 60px 20px;     /* left & right space */
+    .legacy-overlay {
+        padding: 70px 20px;
+    }
 }

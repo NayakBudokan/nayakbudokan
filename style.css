@@ -175,32 +175,42 @@ body {
 }
 
 /* =========================
-   HANDWRITING REVEAL EFFECT
+   HANDWRITING REVEAL (FIXED)
 ========================= */
 .handwrite {
     font-family: 'Cinzel', serif;
-    display: inline-block;
+    position: relative;
+    display: block;
+
+    /* hidden state */
+    max-width: 0;
     overflow: hidden;
-    white-space: nowrap;
+    white-space: normal;
 
-    /* start hidden */
-    clip-path: inset(0 100% 0 0);
-
-    animation: handwriting 2.5s ease forwards;
+    animation: handwritingReveal 1.4s ease forwards;
+    animation-delay: var(--delay);
 }
 
-/* stagger effect */
-.handwrite:nth-of-type(1) { animation-delay: 0.3s; }
-.handwrite:nth-of-type(2) { animation-delay: 1.4s; }
-.handwrite:nth-of-type(3) { animation-delay: 2.5s; }
-.handwrite:nth-of-type(4) { animation-delay: 3.6s; }
+/* Heading styling */
+.hero-lineage-content h2.handwrite {
+    white-space: nowrap;
+    margin-bottom: 24px;
+}
 
-@keyframes handwriting {
+/* Paragraph spacing */
+.hero-lineage-content p.handwrite {
+    margin-bottom: 16px;
+}
+
+/* Reveal animation */
+@keyframes handwritingReveal {
     from {
-        clip-path: inset(0 100% 0 0);
+        max-width: 0;
+        opacity: 0;
     }
     to {
-        clip-path: inset(0 0 0 0);
+        max-width: 100%;
+        opacity: 1;
     }
 }
 

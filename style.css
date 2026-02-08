@@ -139,19 +139,28 @@ body {
 /* =========================
    HERO LINEAGE TEXT
 ========================= */
-.hero-lineage-content {
-    position: relative;
+/* Ensure natural text case (no CAPS) */
+.typing {
+    text-transform: none !important;
+    letter-spacing: normal;
+}
+
+
+/* Force natural left-to-right typing */
+.hero-lineage-content .typing {
+    text-align: left;          /* typing direction */
+    margin-left: auto;
+    margin-right: auto;
     max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
 }
 
 /* GOLD GLOW TEXT (JS TYPES THIS) */
 .gold-text {
     font-family: 'Cinzel', serif;
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 18px;
+    font-size: 19px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+}
 
     background: linear-gradient(
         90deg,

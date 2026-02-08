@@ -254,3 +254,18 @@ body {
         text-align: center;
     }
 }
+
+/* =========================
+   WATERMARK LOGO (GLOBAL)
+========================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("images/nbka1-logo.png") center no-repeat;
+    background-size: 380px;
+    opacity: 0.04;               /* subtle */
+    pointer-events: none;        /* never block clicks */
+    z-index: -1;                 /* always behind everything */
+}
+

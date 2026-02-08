@@ -28,10 +28,11 @@ body {
     background: #ffffff;
     color: var(--text-dark);
     line-height: 1.8;
+    padding-top: 85px; /* navbar offset */
 }
 
 /* =========================
-   NAVBAR – FINAL STABLE VERSION
+   NAVBAR
 ========================= */
 .navbar {
     position: fixed;
@@ -45,22 +46,18 @@ body {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-
     padding: 14px 30px;
 }
 
-/* LEFT – LOGO */
 .nav-left {
     display: flex;
     align-items: center;
 }
 
 .nav-logo img {
-    height: 48px;   /* SAFE SIZE */
-    width: auto;
+    height: 48px;
 }
 
-/* CENTER – LINKS */
 .nav-links {
     display: flex;
     justify-content: center;
@@ -80,258 +77,8 @@ body {
     text-shadow: 0 0 6px rgba(212,175,55,0.8);
 }
 
-/* BODY OFFSET */
-body {
-    padding-top: 85px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .navbar {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 14px;
-    }
-
-    .nav-logo img {
-        height: 42px;
-    }
-}
-
-
-
-/* Hero Section Background Fix */
-.hero {
-    position: relative;
-    background-image: url("./images/grandmaster-hanumanth-rao.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 520px;
-
-    /* 🔥 THIS IS THE FIX */
-    background-position: center 15%;
-
-    padding: 120px 20px 140px;
-    color: #fff;
-}
-
-.hero:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: -1;
-}
-
-/* Typing animation for Hero content */
-.hero-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-    animation: typewriter 3s steps(40) 1s 1 normal both;
-}
-
-/* Typewriting effect */
-@keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-/* Styling for the Academy Name with animation */
-.academy-name {
-    font-size: 56px;
-    font-weight: 900;
-    color: var(--red);
-    margin-bottom: 18px;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 0 #8b0000, 4px 4px 10px rgba(0,0,0,0.45);
-    overflow: hidden; /* Ensures content is hidden while animating */
-    white-space: nowrap; /* Prevents text from wrapping */
-    border-right: 4px solid var(--red); /* Simulate cursor */
-}
-
-/* Hero motto with slight delay animation */
-.hero-motto {
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 14px;
-    text-shadow: 1px 1px 0 #b8962e, 2px 2px 6px rgba(0,0,0,0.4);
-    animation: fadeIn 1.5s ease-in-out 1s both;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-
-/* About Section (Lineage, Mission, etc.) */
-.about-block {
-    background-color: #f9f9f9;  /* Light background for contrast */
-    padding: 40px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    text-align: left;  /* Align text to the left */
-}
-
-/* Subheading for sections (Lineage, Mission, etc.) */
-.sub-heading {
-    font-size: 32px;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-/* Text inside the sections */
-.about-block p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: var(--text-dark);
-}
-
 /* =========================
-   WHATSAPP FLOAT
-========================= */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25d366;
-    color: #ffffff;
-    padding: 14px 22px;
-    border-radius: 40px;
-    font-weight: bold;
-    text-decoration: none;
-    z-index: 999;
-}
-
-.whatsapp-float:hover {
-    background: #128C7E;
-    transform: scale(1.1);
-}
-
-/* =========================
-   FADE-IN ANIMATION
-========================= */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s forwards ease-in-out;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Sensei Section */
-.sensei-card {
-    display: flex;
-    gap: 40px;
-    align-items: center;  /* Align text and image in the center */
-    flex-wrap: wrap;  /* Ensure content wraps properly on smaller screens */
-    justify-content: center;  /* Center the content */
-}
-
-.sensei-image img {
-    width: 280px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-.sensei-description {
-    max-width: 600px;  /* Limit the width of the text */
-    text-align: center;  /* Center-align the text */
-    font-size: 18px;
-    color: var(--text-dark);
-}
-
-.sensei-description h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--red);
-}
-
-
-/* =========================
-   CARDS (Classes / Branches / About)
-========================= */
-.training-card,
-.branch-card,
-.about-block {
-    background: #ffffff;
-    border-left: 6px solid var(--red);
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-/* =========================
-   WATERMARK LOGO
-========================= */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("images/nbka1-logo.png") center no-repeat;
-    background-size: 400px;
-    opacity: 0.04;
-    z-index: -1;
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-    .hero {
-        background-position: center 8%;
-        padding: 100px 16px 120px;
-    }
-}
-
-    .nav-logo {
-        left: 20px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 14px;
-    }
-
-    .academy-name {
-        font-size: 34px;
-    }
-
-    .hero-motto {
-        font-size: 20px;
-    }
-
-    .section {
-        padding: 50px 20px;
-    }
-
-    .sensei-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .sensei-image img {
-        width: 220px;
-    }
-}
-/* =========================
-   STATIC ACADEMY NAME
+   STATIC HEADER CONTENT
 ========================= */
 .academy-static {
     text-align: center;
@@ -341,9 +88,6 @@ body::before {
     margin: 30px 0 10px;
 }
 
-/* =========================
-   PRE-HERO (STATIC)
-========================= */
 .pre-hero {
     text-align: center;
     margin-bottom: 40px;
@@ -364,39 +108,31 @@ body::before {
     border-radius: 40px;
     text-decoration: none;
     font-weight: 800;
-    letter-spacing: 1px;
 }
 
 /* =========================
-   HERO IMAGE (LINEAGE ONLY)
+   HERO IMAGE – LINEAGE ONLY
 ========================= */
-.hero-lineage-section {
+.hero-lineage {
     position: relative;
     min-height: 520px;
 
     background-image: url("./images/grandmaster-hanumanth-rao.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-
-    /* 🔥 FACE FIX — DO NOT CHANGE */
-    background-position: center top;
+    background-position: center top; /* FACE FIX */
 
     padding: 100px 20px 120px;
-    color: #fff;
 }
 
-/* DARK OVERLAY */
 .hero-overlay {
     position: absolute;
     inset: 0;
     background: rgba(0,0,0,0.65);
-    z-index: 1;
 }
 
-/* CONTENT */
 .hero-lineage-content {
     position: relative;
-    z-index: 2;
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
@@ -406,13 +142,13 @@ body::before {
 .hero-lineage-content h2 {
     font-size: 40px;
     margin-bottom: 24px;
-    color: #d4af37;
+    color: var(--gold);
     text-shadow:
         0 0 8px rgba(212,175,55,0.9),
         0 0 16px rgba(212,175,55,0.6);
 }
 
-/* GOLD PARAGRAPHS */
+/* GOLD TEXT */
 .hero-lineage-content p {
     font-size: 18px;
     line-height: 1.8;
@@ -433,24 +169,88 @@ body::before {
     animation: goldShimmer 6s linear infinite;
 }
 
-/* GOLD SHIMMER */
 @keyframes goldShimmer {
     from { background-position: 0% 50%; }
     to   { background-position: 100% 50%; }
 }
 
 /* =========================
-   MOBILE FACE PROTECTION
+   CONTENT SECTIONS
+========================= */
+.section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.main-heading {
+    font-size: 34px;
+    color: var(--red);
+    margin: 30px 0 12px;
+}
+
+/* =========================
+   SENSEI SECTION
+========================= */
+.sensei-card {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sensei-image img {
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.sensei-content {
+    max-width: 600px;
+}
+
+/* =========================
+   WHATSAPP FLOAT
+========================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: #ffffff;
+    padding: 14px 22px;
+    border-radius: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 999;
+}
+
+/* =========================
+   MOBILE
 ========================= */
 @media (max-width: 768px) {
-    .hero-lineage-section {
-        background-position: center top;
-        min-height: 460px;
-        padding: 80px 16px 100px;
+
+    .navbar {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 14px;
     }
 
     .academy-static {
         font-size: 30px;
     }
-}
 
+    .hero-lineage {
+        min-height: 460px;
+    }
+
+    .sensei-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}

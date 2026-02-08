@@ -296,3 +296,29 @@ body::before {
         width: 220px;
     }
 }
+/* ==============================
+   BRANCHES PAGE STYLES
+   ============================== */
+
+.branch-card {
+    background: #ffffff;
+    border-left: 6px solid var(--red);
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.branch-card:hover {
+    transform: translateY(-5px);
+}
+
+.branch-card h2 {
+    color: var(--red);
+    margin-bottom: 10px;
+}
+
+.branch-card p {
+    font-size: 16px;
+    line-height: 1.6;
+}

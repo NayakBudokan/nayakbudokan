@@ -83,13 +83,17 @@ body {
 ========================= */
 .academy-static {
     text-align: center;
-    font-size: 42px;          /* SAME SIZE */
-    font-weight: 700;         /* Better for Cinzel */
-    font-family: 'Cinzel', serif;  /* SAME AS LINEAGE */
+    font-size: 42px;
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
     color: var(--red);
     margin: 30px 0 12px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    text-shadow:
+        1px 1px 0 #8b0000,
+        2px 2px 0 #6f0000;
 }
+
 
 
 .pre-hero {

@@ -141,5 +141,29 @@
 <!-- Typing Effect -->
 <script src="typing.js"></script>
 
+<script>
+    // When the page loads
+    window.addEventListener("load", function () {
+        const sections = document.querySelectorAll('.fade-in');
+
+        const checkVisibility = () => {
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top >= 0 && rect.top <= window.innerHeight) {
+                    section.classList.add('fade-in-visible');
+                }
+            });
+        };
+
+        // Listen for scroll events
+        window.addEventListener('scroll', checkVisibility);
+
+        // Initial check when the page loads
+        checkVisibility();
+    });
+</script>
+
+    
 </body>
 </html>
+

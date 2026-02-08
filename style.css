@@ -33,9 +33,6 @@ body {
 /* =========================
    NAVBAR (FIXED, STABLE)
 ========================= */
-/* =========================
-   NAVBAR (FIXED, STABLE)
-========================= */
 .navbar {
     display: flex;
     align-items: center;
@@ -50,12 +47,6 @@ body {
     box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
-
-.nav-logo {
-    position: absolute;
-    left: 40px;
-}
-
 /* Logo inside navbar */
 .nav-logo {
     position: absolute;
@@ -63,7 +54,7 @@ body {
 }
 
 .nav-logo img {
-    height: 70px;  /* Increase the height of the logo */
+    height: 50px;  /* Adjusted size for better fit */
     width: auto;
 }
 
@@ -93,34 +84,11 @@ body {
 }
 
 /* =========================
-   GLOBAL CONTENT WIDTH
-========================= */
-.section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 70px 30px;
-    text-align: left; /* Center content */
-}
-
-/* =========================
-   MAIN HEADING (Centered & Red)
-========================= */
-.main-heading {
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-    color: var(--red);
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
-
-/* =========================
    HERO SECTION (NO EXTRA WHITE SPACE)
 ========================= */
 .hero {
-    background: #ffffff;
-    padding: 40px 20px 20px;
+    background: url('./images/grandmaster-hanumanth-rao.jpeg') no-repeat center center/cover;
+    padding: 60px 20px; /* Adjusted padding for better visibility */
 }
 
 .hero-content {

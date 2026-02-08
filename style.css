@@ -286,3 +286,13 @@ body::before {
         text-align: center;
     }
 }
+
+.pre-hero {
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #f8f6f2 100%
+    );
+    padding: 40px 20px 50px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}

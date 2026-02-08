@@ -28,7 +28,7 @@ body {
     background: #ffffff;
     color: var(--text-dark);
     line-height: 1.8;
-    padding-top: 85px; /* navbar offset */
+    padding-top: 85px;
 }
 
 /* =========================
@@ -116,7 +116,6 @@ body {
 ========================= */
 .hero-lineage {
     position: relative;
-
     height: 80vh;
     min-height: 520px;
     max-height: 700px;
@@ -130,61 +129,54 @@ body {
     overflow: hidden;
 }
 
-.hero-overlay {
+.hero-lineage::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.65);
+    background: rgba(0,0,0,0.45);
+}
+
+.hero-lineage-content {
+    position: relative;
+    z-index: 2;
 }
 
 /* =========================
-   HERO LINEAGE TEXT
+   TYPING TEXT FIXES
 ========================= */
-/* Ensure natural text case (no CAPS) */
 .typing {
+    opacity: 0;
     text-transform: none !important;
     letter-spacing: normal;
 }
 
-
-/* Force natural left-to-right typing */
+/* Left-to-right natural typing */
 .hero-lineage-content .typing {
-    text-align: left;          /* typing direction */
+    text-align: left;
     margin-left: auto;
     margin-right: auto;
     max-width: 900px;
 }
 
-/* GOLD GLOW TEXT (JS TYPES THIS) */
+/* =========================
+   GOLD GLOW TEXT (TYPED)
+========================= */
 .gold-text {
     font-family: 'Cinzel', serif;
     font-size: 19px;
     line-height: 1.9;
     margin-bottom: 22px;
+
+    color: #f5d76e;
+    text-shadow:
+        0 0 4px rgba(245, 215, 110, 0.6),
+        0 0 10px rgba(212, 175, 55, 0.6),
+        0 0 18px rgba(212, 175, 55, 0.4);
 }
 
-    background: linear-gradient(
-        90deg,
-        #f5d76e,
-        #d4af37,
-        #fff2b0,
-        #d4af37
-    );
-    background-size: 300% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-
-    animation: goldShimmer 4s linear infinite;
-}
-
-.hero-lineage-content h2 {
+.hero-lineage-content h2.gold-text {
     font-size: 40px;
     margin-bottom: 28px;
-}
-
-@keyframes goldShimmer {
-    from { background-position: 0% 50%; }
-    to   { background-position: 100% 50%; }
 }
 
 /* =========================
@@ -278,7 +270,7 @@ body::before {
         padding: 60px 16px;
     }
 
-    .hero-lineage-content h2 {
+    .hero-lineage-content h2.gold-text {
         font-size: 30px;
     }
 
@@ -286,8 +278,4 @@ body::before {
         flex-direction: column;
         text-align: center;
     }
-}
-/* JS typing visibility fix */
-.typing {
-    opacity: 0;
 }

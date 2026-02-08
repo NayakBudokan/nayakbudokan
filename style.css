@@ -1,14 +1,4 @@
 /* ==============================
-   UNIVERSAL CONTENT CONTAINER
-   ============================== */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;          /* centers content */
-    padding: 0 40px;        /* left & right gap */
-}
-
-
-/* ==============================
    THEME VARIABLES (NBKA)
    ============================== */
 :root {
@@ -299,3 +289,11 @@ body::before {
     color: var(--light-gold);
 }
 
+/* ==============================
+   GLOBAL CONTENT CONTAINER
+   ============================== */
+.section {
+    max-width: 1100px;      /* controls page width */
+    margin: 0 auto;         /* centers content */
+    padding: 60px 20px;     /* left & right space */
+}

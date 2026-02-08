@@ -270,7 +270,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: url("images/nbka-logo.png") center no-repeat;
+    background: url("images/nbka1-logo.png") center no-repeat;
     background-size: 400px;
     opacity: 0.04;
     z-index: -1;

@@ -278,3 +278,7 @@ body::before {
         text-align: center;
     }
 }
+/* JS typing visibility fix */
+.typing {
+    opacity: 0;
+}

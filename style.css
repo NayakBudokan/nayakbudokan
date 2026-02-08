@@ -1,95 +1,104 @@
 /* ==============================
-   THEME VARIABLES (NBKA)
-   ============================== */
+   THEME VARIABLES
+============================== */
 :root {
-    --black: #0b0b0b;
-    --dark-black: #000000;
+    --black: #000000;
     --red: #c40000;
     --gold: #d4af37;
     --light-gold: #f5d76e;
     --text-dark: #222;
-    --text-light: #ffffff;
 }
 
-/* =========================
-   GLOBAL RESET
-   ========================= */
+/* ==============================
+   RESET
+============================== */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* =========================
+/* ==============================
    BODY
-   ========================= */
+============================== */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #ffffff;
+    background: #ffffff;
     color: var(--text-dark);
     line-height: 1.8;
 }
 
-/* =========================
-   NAVBAR
-   ========================= */
-nav {
-    background: linear-gradient(90deg, var(--black), var(--dark-black));
-    padding: 18px;
-    text-align: center;
+/* ==============================
+   NAVBAR (FIXED, STABLE)
+============================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #000, #111);
+    padding: 14px 40px;
+    position: relative;
     box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
-nav a {
+/* Logo */
+.nav-logo {
+    position: absolute;
+    left: 40px;
+}
+
+.nav-logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Menu */
+.nav-links {
+    display: flex;
+    gap: 26px;
+}
+
+.nav-links a {
     color: var(--light-gold);
     text-decoration: none;
-    margin: 0 14px;
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 15px;
 }
 
-nav a:hover {
+.nav-links a:hover {
     color: var(--gold);
     text-shadow: 0 0 6px rgba(212,175,55,0.8);
 }
 
-/* =========================
-   GLOBAL CONTENT WIDTH
-   ========================= */
-.section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 70px 30px;
-}
-
-/* =========================
-   HERO SECTION (FIXED)
-   ========================= */
+/* ==============================
+   HERO (NO EXTRA WHITE SPACE)
+============================== */
 .hero {
+    min-height: calc(100vh - 78px); /* navbar height compensation */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #ffffff;
-    padding: 50px 20px 30px;
 }
 
 .hero-content {
-    max-width: 1100px;
-    margin: 0 auto;
     text-align: center;
+    padding: 40px 20px;
 }
 
-/* Academy Name */
+/* Academy Name (BIG RED 3D) */
 .academy-name {
     font-size: 56px;
     font-weight: 900;
     color: var(--red);
     margin-bottom: 18px;
-    letter-spacing: 1px;
     text-shadow:
         2px 2px 0 #8b0000,
         4px 4px 10px rgba(0,0,0,0.45);
 }
 
-/* Discipline line */
+/* Motto */
 .hero-motto {
     font-size: 26px;
     font-weight: 700;
@@ -103,11 +112,10 @@ nav a:hover {
 /* Sub text */
 .hero-tagline {
     font-size: 17px;
-    color: #333;
     margin-bottom: 30px;
 }
 
-/* Join button */
+/* CTA */
 .hero-btn {
     display: inline-block;
     background: var(--red);
@@ -125,87 +133,16 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* =========================
-   LEGACY SECTION
-   ========================= */
-.legacy {
-    background-image: url("./images/grandmaster-hanumanth-rao.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-}
-
-.legacy-overlay {
-    background: rgba(0,0,0,0.7);
-    padding: 90px 40px;
-    max-width: 900px;
+/* ==============================
+   SECTIONS (CONSISTENT WIDTH)
+============================== */
+.section {
+    max-width: 1100px;
     margin: 0 auto;
-    color: #ffffff;
+    padding: 60px 30px;
 }
 
-/* Legacy headings */
-.typing-heading {
-    font-size: 38px;
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 10px;
-}
-
-.typing-subtitle {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--red);
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-}
-
-/* Legacy text */
-.typing {
-    font-size: 16px;
-    margin-bottom: 18px;
-}
-
-/* Gold shimmer */
-.legacy p.typing {
-    background: linear-gradient(
-        90deg,
-        #b8962e,
-        #f5d76e,
-        #d4af37,
-        #fff2b0,
-        #b8962e
-    );
-    background-size: 300% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: goldShimmer 3s linear infinite;
-}
-
-@keyframes goldShimmer {
-    from { background-position: 0% 50%; }
-    to { background-position: 100% 50%; }
-}
-
-/* Cursor */
-.cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    margin-left: 4px;
-    background-color: var(--gold);
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%,100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-/* =========================
-   HEADINGS (ALL PAGES)
-   ========================= */
+/* Headings */
 h1 {
     text-align: center;
     margin-bottom: 30px;
@@ -223,18 +160,68 @@ h2 {
     margin-bottom: 16px;
 }
 
-/* =========================
-   PARAGRAPHS
-   ========================= */
+/* Paragraphs */
 .section p {
     max-width: 800px;
     margin-bottom: 20px;
     font-size: 16px;
 }
 
-/* =========================
-   SENSEI PAGE
-   ========================= */
+/* ==============================
+   LEGACY SECTION
+============================== */
+.legacy {
+    background: url("./images/grandmaster-hanumanth-rao.jpeg") no-repeat top center / cover;
+}
+
+.legacy-overlay {
+    background: rgba(0,0,0,0.7);
+    padding: 90px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.typing-heading {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.typing-subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+/* Gold shimmer text */
+.legacy p {
+    background: linear-gradient(
+        90deg,
+        #b8962e,
+        #f5d76e,
+        #d4af37,
+        #fff2b0,
+        #b8962e
+    );
+    background-size: 300% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: goldShimmer 3s linear infinite;
+}
+
+@keyframes goldShimmer {
+    from { background-position: 0% 50%; }
+    to { background-position: 100% 50%; }
+}
+
+/* ==============================
+   SENSEI LAYOUT
+============================== */
 .sensei-card {
     display: flex;
     gap: 40px;
@@ -247,14 +234,9 @@ h2 {
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-.sensei-content h2 {
-    margin-top: 0;
-    color: var(--red);
-}
-
-/* =========================
+/* ==============================
    CARDS (Classes / Branches / About)
-   ========================= */
+============================== */
 .training-card,
 .branch-card,
 .about-block {
@@ -265,39 +247,54 @@ h2 {
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* =========================
+/* ==============================
    WHATSAPP FLOAT
-   ========================= */
+============================== */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25d366;
+    background: #25d366;
     color: #ffffff;
-    border-radius: 50px;
-    padding: 14px 20px;
+    padding: 14px 22px;
+    border-radius: 40px;
     font-weight: bold;
     text-decoration: none;
-    z-index: 1000;
+    z-index: 999;
 }
 
-/* =========================
+/* ==============================
    WATERMARK LOGO
-   ========================= */
+============================== */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     background: url("images/nbka-logo.png") center no-repeat;
     background-size: 400px;
-    opacity: 0.05;
+    opacity: 0.04;
     z-index: -1;
 }
 
-/* =========================
+/* ==============================
    MOBILE
-   ========================= */
+============================== */
 @media (max-width: 768px) {
+
+    .navbar {
+        padding: 16px;
+    }
+
+    .nav-logo {
+        left: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+
     .academy-name {
         font-size: 34px;
     }
@@ -317,58 +314,5 @@ body::before {
 
     .sensei-image img {
         width: 220px;
-    }
-}
-
-/* =========================
-   NAVBAR WITH LOGO
-   ========================= */
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 40px;
-    background: linear-gradient(90deg, #000000, #0b0b0b);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
-}
-
-/* Logo */
-.nav-logo img {
-    height: 50px;              /* 🔑 controls logo size */
-    width: auto;
-    display: block;
-}
-
-/* Menu */
-.nav-links {
-    display: flex;
-    gap: 24px;
-}
-
-.nav-links a {
-    color: #f5d76e;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 15px;
-}
-
-.nav-links a:hover {
-    color: #d4af37;
-    text-shadow: 0 0 6px rgba(212,175,55,0.8);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 12px;
-        padding: 16px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
     }
 }

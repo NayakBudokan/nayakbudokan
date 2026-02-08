@@ -9,25 +9,19 @@
 
 <body>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/91XXXXXXXXXX"
-   class="whatsapp-float"
-   target="_blank">
-   💬 Chat on WhatsApp
+<!-- WhatsApp -->
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">
+    💬 Chat on WhatsApp
 </a>
 
-<!-- ======================
-     NAVBAR
-========================= -->
+<!-- NAVBAR -->
 <nav class="navbar">
-
     <div class="nav-left">
         <a href="index.html" class="nav-logo">
             <img src="images/nbka1-logo.png" alt="NBKA Logo">
         </a>
     </div>
-
-    <div class="nav-center nav-links">
+    <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="sensei.html">Sensei</a>
@@ -36,57 +30,23 @@
         <a href="branches.html">Branches</a>
         <a href="contact.html">Contact</a>
     </div>
-
 </nav>
 
-
-<!-- ======================
-     HERO SECTION (FINAL)
-========================= -->
-<section class="hero fade-in">
-    <div class="hero-content">
-
-        <div class="academy-name">
-            Nayak Budokan Karate Academy
-        </div>
-
-        <div class="hero-motto">
-            Discipline • Strength • Character
-        </div>
-
-        <div class="hero-tagline">
-            Traditional Budokan Karate Training for All Ages
-        </div>
-
-        <a href="contact.html" class="hero-btn">
-            Join NBKA
-        </a>
-
-    </div>
-</section>
-
-<!-- ======================
-     LEGACY SECTION
-========================= -->
-<section class="legacy fade-in">
-    <!-- STATIC ACADEMY NAME -->
+<!-- STATIC HEADER -->
 <div class="academy-static">
     Nayak Budokan Karate Academy
 </div>
 
-<!-- STATIC PRE-HERO CONTENT -->
 <div class="pre-hero">
     <p class="pre-hero-motto">Discipline • Strength • Character</p>
     <a href="contact.html" class="pre-hero-btn">Join NBKA</a>
 </div>
 
-<!-- HERO SECTION : LINEAGE ONLY -->
-<section class="hero-lineage-section">
-
+<!-- HERO IMAGE : LINEAGE ONLY -->
+<section class="hero-lineage">
     <div class="hero-overlay"></div>
 
     <div class="hero-lineage-content">
-
         <h2>Our Lineage & Legacy</h2>
 
         <p>
@@ -98,101 +58,25 @@
         <p>
             A pioneer of Budokan Karate in India, Grand Master Hanumanth Rao
             dedicated his life to spreading traditional karate, discipline,
-            and moral values. His teachings emphasize character before combat
-            and humility before strength.
+            and moral values.
         </p>
 
         <p>
             Sensei P. Ganesh Nayak is a direct disciple of
-            Grand Master C. Hanumanth Rao, carrying forward this sacred
-            Guru–Shishya tradition with respect and responsibility.
+            Grand Master C. Hanumanth Rao, carrying forward the sacred
+            Guru–Shishya tradition.
         </p>
-
     </div>
-
 </section>
 
-</section>
-
-<!-- ======================
-     CONTENT SECTION
-========================= -->
-<div class="section fade-in">
-
-    <!-- Main Heading: Our Mission -->
+<!-- CONTENT -->
+<div class="section">
     <h2 class="main-heading">Our Mission</h2>
-    <p>
-        Our mission is to guide children, youth, and adults towards discipline,
-        confidence, self-respect, and physical strength through authentic karate training.
-        Martial arts is a way of life that builds character before combat.
-    </p>
+    <p>To build discipline, confidence, and character through authentic karate.</p>
 
-    <!-- Main Heading: Our Philosophy -->
     <h2 class="main-heading">Our Philosophy</h2>
-    <p>
-        Karate begins with respect and ends with character.
-        We follow traditional karate values that emphasize discipline,
-        humility, self-control, and continuous self-improvement.
-    </p>
-
-    <!-- Main Heading: Our Training Pillars -->
-    <h2 class="main-heading">Our Training Pillars</h2>
-
-    <!-- Sub-heading: Discipline -->
-    <h3 class="sub-heading">Discipline</h3>
-    <p>
-        Discipline forms the foundation of karate.
-        Students learn respect, punctuality, and responsibility.
-    </p>
-
-    <!-- Sub-heading: Strength -->
-    <h3 class="sub-heading">Strength</h3>
-    <p>
-        Strength is built physically and mentally through consistent training.
-    </p>
-
-    <!-- Sub-heading: Self-Defense -->
-    <h3 class="sub-heading">Self-Defense</h3>
-    <p>
-        Practical self-defense techniques are taught with control and responsibility.
-    </p>
-
-    <!-- Main Heading: Join the NBKA Family -->
-    <h2 class="main-heading">Join the NBKA Family</h2>
-    <p>
-        <a href="contact.html"><strong>👉 Contact Us to Begin Your Karate Journey</strong></a>
-    </p>
-
+    <p>Karate begins with respect and ends with character.</p>
 </div>
-
-
-<!-- Typing Effect -->
-<script src="typing.js"></script>
-
-<script>
-    // When the page loads
-    window.addEventListener("load", function () {
-        const sections = document.querySelectorAll('.fade-in');
-
-        const checkVisibility = () => {
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top >= 0 && rect.top <= window.innerHeight) {
-                    section.classList.add('fade-in-visible');
-                }
-            });
-        };
-
-        // Listen for scroll events
-        window.addEventListener('scroll', checkVisibility);
-
-        // Initial check when the page loads
-        checkVisibility();
-    });
-</script>
 
 </body>
 </html>
-
-
-

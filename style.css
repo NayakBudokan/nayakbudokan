@@ -107,9 +107,17 @@ body {
 
 /* Hero Section Background Fix */
 .hero {
-    background: url('./images/grandmaster-hanumanth-rao.jpeg') no-repeat center center/cover;
-    padding: 60px 20px;
     position: relative;
+    background-image: url("./images/grandmaster-hanumanth-rao.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 520px;
+
+    /* 🔥 THIS IS THE FIX */
+    background-position: center 15%;
+
+    padding: 120px 20px 140px;
+    color: #fff;
 }
 
 .hero:after {
@@ -285,9 +293,11 @@ body::before {
    MOBILE
 ========================= */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 16px;
+    .hero {
+        background-position: center 8%;
+        padding: 100px 16px 120px;
     }
+}
 
     .nav-logo {
         left: 20px;

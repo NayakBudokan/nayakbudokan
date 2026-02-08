@@ -330,3 +330,127 @@ body::before {
         width: 220px;
     }
 }
+/* =========================
+   STATIC ACADEMY NAME
+========================= */
+.academy-static {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--red);
+    margin: 30px 0 10px;
+}
+
+/* =========================
+   PRE-HERO (STATIC)
+========================= */
+.pre-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pre-hero-motto {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+.pre-hero-btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    padding: 14px 38px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   HERO IMAGE (LINEAGE ONLY)
+========================= */
+.hero-lineage-section {
+    position: relative;
+    min-height: 520px;
+
+    background-image: url("./images/grandmaster-hanumanth-rao.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* 🔥 FACE FIX — DO NOT CHANGE */
+    background-position: center top;
+
+    padding: 100px 20px 120px;
+    color: #fff;
+}
+
+/* DARK OVERLAY */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 1;
+}
+
+/* CONTENT */
+.hero-lineage-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* GOLD TITLE */
+.hero-lineage-content h2 {
+    font-size: 40px;
+    margin-bottom: 24px;
+    color: #d4af37;
+    text-shadow:
+        0 0 8px rgba(212,175,55,0.9),
+        0 0 16px rgba(212,175,55,0.6);
+}
+
+/* GOLD PARAGRAPHS */
+.hero-lineage-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+
+    background: linear-gradient(
+        90deg,
+        #f5d76e,
+        #d4af37,
+        #fff2b0,
+        #d4af37
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    animation: goldShimmer 6s linear infinite;
+}
+
+/* GOLD SHIMMER */
+@keyframes goldShimmer {
+    from { background-position: 0% 50%; }
+    to   { background-position: 100% 50%; }
+}
+
+/* =========================
+   MOBILE FACE PROTECTION
+========================= */
+@media (max-width: 768px) {
+    .hero-lineage-section {
+        background-position: center top;
+        min-height: 460px;
+        padding: 80px 16px 100px;
+    }
+
+    .academy-static {
+        font-size: 30px;
+    }
+}
+

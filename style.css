@@ -78,7 +78,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 70px 30px;
-    text-align: center; /* Center content */
+    text-align: left; /* Center content */
 }
 
 /* =========================

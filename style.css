@@ -399,3 +399,28 @@ body {
     letter-spacing: 1px;
 }
 
+/* =========================================
+   INNER PAGES – HEADING SYSTEM (FINAL)
+========================================= */
+
+/* Top page heading (CENTERED) */
+.page-title {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--red);
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 40px 0 30px;
+}
+
+/* All section headings (LEFT aligned) */
+.section h2,
+.section h3,
+.section h4 {
+    font-family: 'Cinzel', serif;
+    color: var(--red);
+    font-weight: 600;
+    text-align: left; /* keep current position */
+    letter-spacing: 0.8px;
+}

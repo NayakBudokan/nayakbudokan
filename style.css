@@ -288,3 +288,59 @@ body {
         text-align: center;
     }
 }
+/* =========================
+   LINEAGE HERO (IMAGE + TYPING)
+========================= */
+.hero-lineage {
+    position: relative;
+    min-height: 85vh;
+    padding: 100px 20px;
+
+    background-image: url("images/grandmaster-hanumanth-rao.jpeg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-lineage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55); /* dark overlay */
+}
+
+.hero-lineage-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+/* typing text visibility */
+.typing {
+    opacity: 0;
+}
+
+/* gold glow text */
+.gold-text {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+    color: #f5d76e;
+
+    text-shadow:
+        0 0 4px rgba(245,215,110,0.6),
+        0 0 10px rgba(212,175,55,0.6),
+        0 0 18px rgba(212,175,55,0.4);
+}
+
+.hero-lineage-content h2.gold-text {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}

@@ -337,10 +337,12 @@ body > * {
    MOBILE
 ========================= */
 @media (max-width: 768px) {
-
-    .academy-hero-title {
-        font-size: 34px;
+    .hero-lineage-content p {
+        font-size: 15px;
+        line-height: 1.65;
     }
+}
+
 
     .academy-hero-logo {
         width: 110px;

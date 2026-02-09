@@ -4,7 +4,9 @@
 :root {
     --red: #c40000;
     --gold: #d4af37;
-    --light-gold: #f5d76e;
+    --gold-bright: #ffd96a;
+    --gold-glow: rgba(255, 217, 106, 0.85);
+    --light-gold: #f8e08a;
     --black: #000000;
     --dark-black: #0a0a0a;
     --text-dark: #222;
@@ -28,6 +30,25 @@ body {
     background: #ffffff;
     color: var(--text-dark);
     line-height: 1.8;
+}
+
+/* =========================
+   GLOBAL WATERMARK LOGO
+========================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("images/nbka1-logo.png") center center no-repeat;
+    background-size: 420px;
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* =========================
@@ -121,24 +142,9 @@ body {
     overflow: hidden;
 }
 
-.academy-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-        circle,
-        transparent 40%,
-        rgba(0,0,0,0.65) 100%
-    );
-    pointer-events: none;
-}
-
 .academy-hero-content {
     max-width: 1200px;
-    width: 100%;
     padding: 40px 20px;
-    position: relative;
-    z-index: 2;
 }
 
 .academy-hero-logo {
@@ -161,7 +167,7 @@ body {
         0 3px 0 #520000,
         0 4px 0 #3e0000,
         0 6px 14px rgba(0,0,0,0.85),
-        0 0 18px rgba(196,0,0,0.35);
+        0 0 22px rgba(196,0,0,0.45);
 
     margin-bottom: 22px;
 }
@@ -170,7 +176,7 @@ body {
     font-family: 'Cinzel', serif;
     font-size: 18px;
     letter-spacing: 1.5px;
-    color: var(--gold);
+    color: var(--gold-bright);
     margin-bottom: 30px;
 }
 
@@ -181,14 +187,83 @@ body {
     border-radius: 40px;
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    color: var(--gold);
-    border: 2px solid var(--gold);
+    color: var(--gold-bright);
+    border: 2px solid var(--gold-bright);
     text-decoration: none;
 }
 
 .pre-hero-btn:hover {
-    background: var(--gold);
+    background: var(--gold-bright);
     color: #000;
+}
+
+/* =========================
+   LINEAGE HERO (GOLDEN GLOW)
+========================= */
+.hero-lineage {
+    position: relative;
+    height: 85vh;
+    min-height: 560px;
+
+    background:
+        radial-gradient(
+            circle at 60% 35%,
+            rgba(255, 217, 106, 0.55),
+            rgba(0,0,0,0.85) 55%
+        ),
+        url("./images/grandmaster-hanumanth-rao.jpeg") no-repeat;
+
+    background-size: cover;
+    background-position: center top;
+    padding: 90px 20px;
+}
+
+.hero-lineage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to right,
+            rgba(0,0,0,0.9) 0%,
+            rgba(0,0,0,0.4) 40%,
+            rgba(0,0,0,0.85) 100%
+        );
+}
+
+.hero-lineage-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* =========================
+   BRIGHT GOLD LINEAGE TEXT
+========================= */
+.hero-lineage-content h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 32px;
+
+    color: var(--gold-bright);
+    text-shadow:
+        0 0 6px rgba(255,217,106,0.9),
+        0 0 18px rgba(255,217,106,0.7),
+        0 0 36px rgba(212,175,55,0.6);
+}
+
+.hero-lineage-content p {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    line-height: 1.9;
+    margin-bottom: 26px;
+
+    color: var(--gold-bright);
+    text-shadow:
+        0 0 5px rgba(255,217,106,0.85),
+        0 0 14px rgba(212,175,55,0.75);
 }
 
 /* =========================
@@ -200,7 +275,6 @@ body {
     padding: 0 20px;
 }
 
-/* Page title (About, Sensei, etc.) */
 .page-title {
     font-family: 'Cinzel', serif;
     font-size: 36px;
@@ -210,9 +284,7 @@ body {
     margin-bottom: 40px;
 }
 
-/* Section headings */
-.section h2,
-.section h3 {
+.section h2 {
     font-family: 'Cinzel', serif;
     color: var(--red);
     font-weight: 700;
@@ -220,7 +292,7 @@ body {
 }
 
 /* =========================
-   SENSEI SECTION (FIXED)
+   SENSEI SECTION
 ========================= */
 .sensei-card {
     display: flex;
@@ -236,9 +308,6 @@ body {
 .sensei-image img {
     width: 100%;
     max-width: 360px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
     border-radius: 14px;
     box-shadow: 0 10px 28px rgba(0,0,0,0.25);
 }
@@ -270,7 +339,6 @@ body {
 
     .academy-hero-title {
         font-size: 34px;
-        letter-spacing: 1px;
     }
 
     .academy-hero-logo {
@@ -278,59 +346,21 @@ body {
     }
 
     .nav-links {
-        gap: 14px;
         flex-wrap: wrap;
+        gap: 14px;
         justify-content: center;
+    }
+
+    .hero-lineage-content h2 {
+        font-size: 30px;
+    }
+
+    .hero-lineage-content p {
+        font-size: 17px;
     }
 
     .sensei-card {
         flex-direction: column;
         text-align: center;
     }
-}
-/* =========================
-   LINEAGE HERO - old
-========================= */
-.hero-lineage {
-    position: relative;
-    height: 80vh;
-    min-height: 520px;
-    box-shadow: inset 0 0 180px rgba(212,175,55,0.25);
-    background: url("./images/grandmaster-hanumanth-rao.jpeg") no-repeat;
-    background-size: cover;
-    background-position: center top;
-
-    padding: 80px 20px;
-}
-
-.hero-lineage::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-}
-
-/* TYPING */
-.typing {
-    opacity: 0;
-}
-
-/* GOLD TEXT */
-.gold-text {
-    font-family: 'Cinzel', serif;
-    font-size: 19px;
-    line-height: 1.9;
-    margin-bottom: 22px;
-    color: var(--light-gold);
-
-    text-shadow:
-        0 0 4px rgba(245,215,110,0.6),
-        0 0 10px rgba(212,175,55,0.6),
-        0 0 18px rgba(212,175,55,0.4);
-}
-
-.hero-lineage-content h2.gold-text {
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 28px;
 }

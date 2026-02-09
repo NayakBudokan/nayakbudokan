@@ -100,14 +100,39 @@ body {
    HERO (ACADEMY IDENTITY)
 ========================= */
 .academy-hero {
+    position: relative;
     min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle at top, #111, #000 70%);
-}
 
+    background:
+        radial-gradient(circle at top,
+            rgba(255,255,255,0.06),
+            rgba(0,0,0,0.85) 40%),
+        linear-gradient(
+            135deg,
+            #050505 0%,
+            #0b0b0b 35%,
+            #000000 60%,
+            #050505 100%
+        );
+
+    overflow: hidden;
+}
+   
+.academy-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle,
+        transparent 40%,
+        rgba(0,0,0,0.6) 100%
+    );
+    pointer-events: none;
+}
 .academy-hero-content {
     max-width: 1200px;   /* ✅ IMPORTANT */
     width: 100%;
@@ -123,20 +148,32 @@ body {
     font-family: 'Cinzel', serif;
     font-size: 52px;
     font-weight: 900;
-    color: #c40000;
-    white-space: nowrap;          /* ✅ FIX */
     letter-spacing: 2px;
-    text-shadow: 3px 3px 0 #000;
-    margin-bottom: 20px;
+    text-transform: uppercase;
+
+    color: #c40000;
+
+    /* TRUE PREMIUM 3D STACK */
+    text-shadow:
+        0 1px 0 #7a0000,
+        0 2px 0 #660000,
+        0 3px 0 #520000,
+        0 4px 0 #3e0000,
+        0 6px 12px rgba(0,0,0,0.85),
+        0 0 18px rgba(196,0,0,0.35);
+
+    margin-bottom: 22px;
 }
+
 
 .academy-hero-subtitle {
     font-family: 'Cinzel', serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 28px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    color: #d4af37;
+    text-shadow: 0 0 6px rgba(212,175,55,0.4);
 }
+
 
 /* CTA */
 .pre-hero-btn {
@@ -226,11 +263,11 @@ body {
    MOBILE
 ========================= */
 @media (max-width: 768px) {
-
-    .nav-links {
-        flex-wrap: wrap;
-        gap: 14px;
+    .academy-hero-title {
+        font-size: 34px;
+        letter-spacing: 1px;
     }
+}
 
     .academy-hero-title {
         font-size: 34px;

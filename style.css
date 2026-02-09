@@ -289,27 +289,25 @@ body {
     }
 }
 /* =========================
-   LINEAGE HERO (IMAGE + TYPING)
+   LINEAGE HERO - old
 ========================= */
 .hero-lineage {
     position: relative;
-    min-height: 85vh;
-    padding: 100px 20px;
+    height: 80vh;
+    min-height: 520px;
 
-    background-image: url("images/grandmaster-hanumanth-rao.jpeg");
+    background: url("./images/grandmaster-hanumanth-rao.jpeg") no-repeat;
     background-size: cover;
     background-position: center top;
-    background-repeat: no-repeat;
 
-    display: flex;
-    align-items: center;
+    padding: 80px 20px;
 }
 
 .hero-lineage::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.55); /* dark overlay */
+    background: rgba(0,0,0,0.45);
 }
 
 .hero-lineage-content {
@@ -317,21 +315,21 @@ body {
     z-index: 2;
     max-width: 900px;
     margin: 0 auto;
-    color: #fff;
+    text-align: left;
 }
 
-/* typing text visibility */
+/* TYPING */
 .typing {
     opacity: 0;
 }
 
-/* gold glow text */
+/* GOLD TEXT */
 .gold-text {
     font-family: 'Cinzel', serif;
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1.9;
     margin-bottom: 22px;
-    color: #f5d76e;
+    color: var(--light-gold);
 
     text-shadow:
         0 0 4px rgba(245,215,110,0.6),
@@ -342,5 +340,5 @@ body {
 .hero-lineage-content h2.gold-text {
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }

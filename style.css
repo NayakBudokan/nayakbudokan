@@ -2,13 +2,13 @@
    THEME VARIABLES (NBKA)
 ============================== */
 :root {
-    --black: #000000;
+    --black: #000;
     --dark-black: #111;
     --red: #c40000;
     --gold: #d4af37;
     --light-gold: #f5d76e;
     --text-dark: #222;
-    --text-light: #ffffff;
+    --text-light: #fff;
 }
 
 /* =========================
@@ -25,10 +25,9 @@
 ========================= */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #ffffff;
+    background: #fff;
     color: var(--text-dark);
     line-height: 1.8;
-    padding-top: 85px; /* navbar offset */
 }
 
 /* =========================
@@ -49,14 +48,14 @@ body {
     background: linear-gradient(
         to bottom,
         #0a0a0a 0%,
-        #000000 50%,
+        #000 50%,
         #0a0a0a 100%
     );
 
     box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
-/* subtle texture */
+/* Navbar texture */
 .navbar::after {
     content: "";
     position: absolute;
@@ -69,17 +68,12 @@ body {
     pointer-events: none;
 }
 
-/* LOGO */
-.nav-left {
-    display: flex;
-    align-items: center;
-}
-
+/* Logo */
 .nav-logo img {
     height: 48px;
 }
 
-/* NAV LINKS */
+/* Links */
 .nav-links {
     display: flex;
     justify-content: center;
@@ -87,7 +81,6 @@ body {
 }
 
 .nav-links a {
-    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 15px;
     font-weight: 600;
     color: var(--light-gold);
@@ -107,7 +100,7 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0%;
+    width: 0;
     height: 2px;
     background: var(--gold);
     transition: width 0.3s ease;
@@ -119,69 +112,80 @@ body {
 }
 
 /* =========================
-   STATIC HOMEPAGE HEADER
+   OFFSET CONTENT AFTER NAV
 ========================= */
-.academy-static {
-    text-align: center;
-    font-family: 'Cinzel', serif;
-    font-size: 42px;
-    font-weight: 900;
-    color: var(--red);
-    margin: 30px 0 12px;
-    letter-spacing: 1.5px;
-    text-shadow:
-        1px 1px 0 #8b0000,
-        2px 2px 0 #6f0000;
-}
-
-.pre-hero {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.pre-hero-motto {
-    font-family: 'Cinzel', serif;
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 18px;
-}
-
-/* CTA */
-.pre-hero-btn {
-    display: inline-block;
-    padding: 12px 36px;
-    font-family: 'Cinzel', serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--gold);
-    border: 2px solid var(--gold);
-    background: transparent;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.pre-hero-btn:hover {
-    background: var(--gold);
-    color: #000;
+.navbar + * {
+    margin-top: 85px;
 }
 
 /* =========================
-   HERO IMAGE – LINEAGE ONLY
+   ACADEMY HERO (HOMEPAGE)
+========================= */
+.academy-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 460px;
+    background:
+        radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 60%),
+        linear-gradient(180deg, #000 0%, #111 40%, #000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.academy-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+        rgba(255,255,255,0.035) 1px,
+        transparent 1px
+    );
+    background-size: 4px 4px;
+}
+
+.academy-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 880px;
+    padding: 40px 20px;
+}
+
+.academy-hero-logo {
+    width: 140px;
+    margin-bottom: 20px;
+}
+
+.academy-hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: 44px;
+    font-weight: 800;
+    color: var(--red);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.academy-hero-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+/* =========================
+   HERO LINEAGE
 ========================= */
 .hero-lineage {
     position: relative;
     height: 80vh;
     min-height: 520px;
-    max-height: 700px;
-
     background: url("./images/grandmaster-hanumanth-rao.jpeg") no-repeat;
     background-size: cover;
     background-position: center top;
-
     padding: 80px 20px;
-    overflow: hidden;
 }
 
 .hero-lineage::before {
@@ -196,19 +200,14 @@ body {
     z-index: 2;
     max-width: 900px;
     margin: 0 auto;
-    text-align: left;
 }
 
-/* =========================
-   TYPING TEXT
-========================= */
+/* Typing */
 .typing {
     opacity: 0;
-    text-transform: none;
-    letter-spacing: normal;
 }
 
-/* GOLD TEXT */
+/* Gold text */
 .gold-text {
     font-family: 'Cinzel', serif;
     font-size: 19px;
@@ -217,14 +216,12 @@ body {
     color: #f5d76e;
     text-shadow:
         0 0 4px rgba(245,215,110,0.6),
-        0 0 10px rgba(212,175,55,0.6),
-        0 0 18px rgba(212,175,55,0.4);
+        0 0 10px rgba(212,175,55,0.6);
 }
 
-.hero-lineage-content h2.gold-text {
+.hero-lineage-content h2 {
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: 28px;
 }
 
 /* =========================
@@ -232,11 +229,11 @@ body {
 ========================= */
 .section {
     max-width: 1100px;
-    margin: 80px auto 0;
-    padding: 60px 20px;
+    margin: 80px auto;
+    padding: 0 20px;
 }
 
-/* TOP PAGE TITLE (CENTERED) */
+/* TOP PAGE HEADING */
 .page-title {
     font-family: 'Cinzel', serif;
     font-size: 36px;
@@ -247,7 +244,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* ALL OTHER HEADINGS – LEFT */
+/* ALL OTHER HEADINGS */
 .section h2,
 .section h3,
 .section h4 {
@@ -255,16 +252,7 @@ body {
     color: var(--red);
     font-weight: 600;
     text-align: left;
-    letter-spacing: 0.8px;
-    margin-top: 40px;
-    margin-bottom: 14px;
-}
-
-/* PARAGRAPHS */
-.section p,
-.sensei-content p {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-weight: 400;
+    margin: 40px 0 14px;
 }
 
 /* =========================
@@ -274,7 +262,6 @@ body {
     display: flex;
     gap: 40px;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -282,10 +269,6 @@ body {
     width: 280px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-.sensei-content {
-    max-width: 600px;
 }
 
 /* =========================
@@ -296,7 +279,7 @@ body {
     bottom: 20px;
     right: 20px;
     background: #25d366;
-    color: #ffffff;
+    color: #fff;
     padding: 14px 22px;
     border-radius: 40px;
     font-weight: bold;
@@ -305,7 +288,7 @@ body {
 }
 
 /* =========================
-   WATERMARK LOGO
+   WATERMARK
 ========================= */
 body::before {
     content: "";
@@ -323,28 +306,21 @@ body::before {
 ========================= */
 @media (max-width: 768px) {
 
-    .navbar {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
     .nav-links {
         flex-wrap: wrap;
         gap: 14px;
     }
 
-    .academy-static {
-        font-size: 30px;
+    .academy-hero-title {
+        font-size: 32px;
     }
 
-    .hero-lineage {
-        height: 70vh;
-        min-height: 420px;
-        padding: 60px 16px;
+    .academy-hero-logo {
+        width: 110px;
     }
 
-    .hero-lineage-content h2.gold-text {
-        font-size: 30px;
+    .hero-lineage-content h2 {
+        font-size: 28px;
     }
 
     .sensei-card {

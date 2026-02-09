@@ -310,30 +310,6 @@ body {
     background: rgba(0,0,0,0.45);
 }
 
-/* =========================
-   LINEAGE HERO – GOLDEN HALO
-========================= */
-.hero-lineage::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    /* GOLDEN SUNSET GLOW */
-    background:
-        radial-gradient(
-            circle at center 35%,
-            rgba(255, 200, 80, 0.45),
-            rgba(255, 170, 60, 0.25) 30%,
-            rgba(0, 0, 0, 0.55) 65%
-        ),
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.35),
-            rgba(0,0,0,0.7)
-        );
-
-    z-index: 1;
-}
 /* TYPING */
 .typing {
     opacity: 0;

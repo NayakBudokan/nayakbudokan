@@ -55,7 +55,7 @@ body {
     box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
-/* Navbar texture */
+/* Subtle texture */
 .navbar::after {
     content: "";
     position: absolute;
@@ -68,12 +68,17 @@ body {
     pointer-events: none;
 }
 
-/* Logo */
+/* Navbar spacing fix */
+.navbar + * {
+    margin-top: 85px;
+}
+
+/* LOGO */
 .nav-logo img {
     height: 48px;
 }
 
-/* Links */
+/* NAV LINKS */
 .nav-links {
     display: flex;
     justify-content: center;
@@ -112,119 +117,6 @@ body {
 }
 
 /* =========================
-   OFFSET CONTENT AFTER NAV
-========================= */
-.navbar + * {
-    margin-top: 85px;
-}
-
-/* =========================
-   ACADEMY HERO (HOMEPAGE)
-========================= */
-.academy-hero {
-    position: relative;
-    height: 70vh;
-    min-height: 460px;
-    background:
-        radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 60%),
-        linear-gradient(180deg, #000 0%, #111 40%, #000 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.academy-hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(
-        rgba(255,255,255,0.035) 1px,
-        transparent 1px
-    );
-    background-size: 4px 4px;
-}
-
-.academy-hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 880px;
-    padding: 40px 20px;
-}
-
-.academy-hero-logo {
-    width: 140px;
-    margin-bottom: 20px;
-}
-
-.academy-hero-title {
-    font-family: 'Cinzel', serif;
-    font-size: 44px;
-    font-weight: 800;
-    color: var(--red);
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 0 #000;
-}
-
-.academy-hero-subtitle {
-    font-family: 'Cinzel', serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 1px;
-}
-
-/* =========================
-   HERO LINEAGE
-========================= */
-.hero-lineage {
-    position: relative;
-    height: 80vh;
-    min-height: 520px;
-    background: url("./images/grandmaster-hanumanth-rao.jpeg") no-repeat;
-    background-size: cover;
-    background-position: center top;
-    padding: 80px 20px;
-}
-
-.hero-lineage::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-}
-
-.hero-lineage-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Typing */
-.typing {
-    opacity: 0;
-}
-
-/* Gold text */
-.gold-text {
-    font-family: 'Cinzel', serif;
-    font-size: 19px;
-    line-height: 1.9;
-    margin-bottom: 22px;
-    color: #f5d76e;
-    text-shadow:
-        0 0 4px rgba(245,215,110,0.6),
-        0 0 10px rgba(212,175,55,0.6);
-}
-
-.hero-lineage-content h2 {
-    font-size: 40px;
-    font-weight: 700;
-}
-
-/* =========================
    CONTENT SECTIONS
 ========================= */
 .section {
@@ -233,7 +125,7 @@ body {
     padding: 0 20px;
 }
 
-/* TOP PAGE HEADING */
+/* PAGE TITLE (INNER PAGES) */
 .page-title {
     font-family: 'Cinzel', serif;
     font-size: 36px;
@@ -244,7 +136,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* ALL OTHER HEADINGS */
+/* SECTION HEADINGS */
 .section h2,
 .section h3,
 .section h4 {
@@ -253,6 +145,14 @@ body {
     font-weight: 600;
     text-align: left;
     margin: 40px 0 14px;
+    letter-spacing: 0.8px;
+}
+
+/* PARAGRAPHS */
+.section p,
+.sensei-content p {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 400;
 }
 
 /* =========================
@@ -269,6 +169,10 @@ body {
     width: 280px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.sensei-content {
+    max-width: 600px;
 }
 
 /* =========================
@@ -288,7 +192,7 @@ body {
 }
 
 /* =========================
-   WATERMARK
+   WATERMARK LOGO
 ========================= */
 body::before {
     content: "";
@@ -311,16 +215,8 @@ body::before {
         gap: 14px;
     }
 
-    .academy-hero-title {
-        font-size: 32px;
-    }
-
-    .academy-hero-logo {
-        width: 110px;
-    }
-
-    .hero-lineage-content h2 {
-        font-size: 28px;
+    .page-title {
+        font-size: 30px;
     }
 
     .sensei-card {

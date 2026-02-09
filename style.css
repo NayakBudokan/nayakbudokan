@@ -48,53 +48,38 @@ body {
     left: 0;
     width: 100%;
     height: 85px;
+    z-index: 1000;
+
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
+
     background: linear-gradient(#0a0a0a, #000);
-    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
-/* texture */
-.navbar::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(
-        rgba(255,255,255,0.03) 1px,
-        transparent 1px
-    );
-    background-size: 3px 3px;
-    pointer-events: none;
+/* logo stays left but not glued */
+.nav-left {
+    margin-left: 40px;
 }
 
-/* LOGO */
-.nav-logo img {
-    height: 48px;
-}
-
-/* LINKS */
+/* TRUE CENTERED NAV LINKS */
 .nav-links {
+    margin: 0 auto;              /* ⭐ KEY FIX */
     display: flex;
     gap: 28px;
     white-space: nowrap;
 }
 
+/* links */
 .nav-links a {
-    font-size: 15px;
+    color: #f5d76e;
     font-weight: 600;
-    color: var(--light-gold);
     text-decoration: none;
-    letter-spacing: 0.8px;
     position: relative;
     padding-bottom: 6px;
 }
 
-.nav-links a:hover {
-    color: var(--gold);
-}
-
+/* underline */
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -102,18 +87,13 @@ body {
     bottom: 0;
     width: 0;
     height: 2px;
-    background: var(--gold);
+    background: #d4af37;
     transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
     width: 100%;
-}
-
-/* spacing below navbar */
-.navbar + * {
-    margin-top: 90px;
 }
 
 /* =========================

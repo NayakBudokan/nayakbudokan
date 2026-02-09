@@ -295,7 +295,7 @@ body {
     position: relative;
     height: 80vh;
     min-height: 520px;
-
+    box-shadow: inset 0 0 180px rgba(212,175,55,0.25);
     background: url("./images/grandmaster-hanumanth-rao.jpeg") no-repeat;
     background-size: cover;
     background-position: center top;

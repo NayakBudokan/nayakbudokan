@@ -291,4 +291,62 @@ body::before {
     position: relative;
     padding: 40px 20px 50px;
 }
+/* =========================
+   TYPOGRAPHY SYSTEM (NBKA)
+========================= */
+
+/* GLOBAL BODY TEXT */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 400;
+}
+
+/* NAVIGATION */
+.nav-links a {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+/* ACADEMY NAME (TOP IDENTITY) */
+.academy-static {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+/* SECTION HEADINGS */
+.main-heading {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* HERO LINEAGE TITLE */
+.hero-lineage-content h2.gold-text {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* HERO LINEAGE PARAGRAPHS */
+.gold-text {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+}
+
+/* NORMAL PARAGRAPHS */
+.section p,
+.sensei-content p {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 400;
+}
+
+/* BUTTONS */
+.pre-hero-btn,
+.hero-btn {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
 

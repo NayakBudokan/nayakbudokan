@@ -387,4 +387,15 @@ body {
     margin-top: 28px;
     margin-bottom: 10px;
 }
+/* =========================
+   HOMEPAGE HEADING OVERRIDES
+========================= */
+
+/* Homepage section headings stay RED */
+.home-content .main-heading {
+    color: var(--red);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
 

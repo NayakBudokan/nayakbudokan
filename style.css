@@ -424,3 +424,72 @@ body {
     text-align: left; /* keep current position */
     letter-spacing: 0.8px;
 }
+
+/* =========================================
+   ACADEMY HERO BANNER (SKIF STYLE)
+========================================= */
+
+.academy-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 480px;
+    background:
+        radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 60%),
+        linear-gradient(180deg, #000 0%, #111 40%, #000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.academy-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        url("images/texture.png"); /* optional: remove if not available */
+    opacity: 0.15;
+}
+
+.academy-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.academy-hero-logo {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+.academy-hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--red);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.academy-hero-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .academy-hero {
+        height: 60vh;
+    }
+
+    .academy-hero-title {
+        font-size: 34px;
+    }
+
+    .academy-hero-logo {
+        width: 120px;
+    }
+}
+

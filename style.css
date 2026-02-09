@@ -350,3 +350,41 @@ body {
     letter-spacing: 1px;
 }
 
+/* =========================
+   GLOBAL PAGE HEADINGS
+   (About, Sensei, Classes, Gallery, Branches, Contact)
+========================= */
+
+/* PAGE TITLE (H1) */
+.section h1,
+.section > h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--red);
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* SECTION HEADINGS (H2) */
+.section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #111;
+    margin-top: 40px;
+    margin-bottom: 14px;
+    letter-spacing: 0.8px;
+}
+
+/* SUB-HEADINGS (H3) */
+.section h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    margin-top: 28px;
+    margin-bottom: 10px;
+}
+

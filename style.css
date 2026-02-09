@@ -7,7 +7,270 @@
     --red: #c40000;
     --gold: #d4af37;
     --light-gold: #f5d76e;
+    --text-dark: #222;/* ==============================
+   NBKA THEME VARIABLES
+============================== */
+:root {
+    --red: #c40000;
+    --gold: #d4af37;
+    --light-gold: #f5d76e;
+    --black: #000;
+    --dark-black: #111;
     --text-dark: #222;
+    --white: #fff;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #ffffff;
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+/* =========================
+   NAVBAR (FIXED, STABLE)
+========================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+
+    padding: 12px 40px;
+    background: linear-gradient(
+        to bottom,
+        #0a0a0a 0%,
+        #000000 50%,
+        #0a0a0a 100%
+    );
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+/* texture */
+.navbar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px
+    );
+    background-size: 3px 3px;
+    pointer-events: none;
+}
+
+/* LOGO */
+.nav-logo img {
+    height: 48px;
+}
+
+/* LINKS */
+.nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--light-gold);
+    text-decoration: none;
+    letter-spacing: 0.8px;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* spacing below navbar */
+.navbar + * {
+    margin-top: 90px;
+}
+
+/* =========================
+   HERO (ACADEMY IDENTITY)
+========================= */
+.academy-hero {
+    min-height: 85vh;
+    background:
+        radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 60%),
+        linear-gradient(180deg, #000 0%, #111 50%, #000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.academy-hero-content {
+    max-width: 900px;
+    padding: 40px 20px;
+}
+
+.academy-hero-logo {
+    width: 140px;
+    margin-bottom: 24px;
+}
+
+.academy-hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--red);
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.academy-hero-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 28px;
+}
+
+/* CTA */
+.pre-hero-btn {
+    display: inline-block;
+    padding: 14px 38px;
+    border-radius: 40px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    text-decoration: none;
+}
+
+.pre-hero-btn:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+/* PAGE TITLES */
+.section h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--red);
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1.5px;
+}
+
+/* SUB HEADINGS */
+.section h2,
+.section h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--red);
+    font-weight: 700;
+    margin: 40px 0 14px;
+}
+
+/* =========================
+   SENSEI
+========================= */
+.sensei-card {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sensei-image {
+    flex: 0 0 260px;
+}
+
+.sensei-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.sensei-content {
+    max-width: 600px;
+}
+
+/* =========================
+   WHATSAPP FLOAT
+========================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 999;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .academy-hero-title {
+        font-size: 34px;
+    }
+
+    .sensei-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
     --text-light: #ffffff;
 }
 

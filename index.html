@@ -11,6 +11,8 @@
 <meta property="og:image" content="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png"/>
 <meta property="og:type" content="website"/>
 <meta name="theme-color" content="#050505"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://nayakbudokan.github.io/nayakbudokan/"/>
 <link rel="icon" href="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -34,7 +36,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 nav.scrolled{background:rgba(5,5,5,.97);border-bottom:1px solid rgba(201,145,58,.15)}
 .nav-logo{display:flex;align-items:center;gap:.8rem;text-decoration:none}
 .nav-logo-img{height:42px;filter:brightness(1.05);flex-shrink:0}
-.nav-logo img{height:42px;filter:brightness(1.1)}
 .nav-logo-text{font-family:var(--font-display);font-size:.95rem;letter-spacing:.15em;color:var(--gold-light);text-transform:uppercase;line-height:1.2}
 .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
 .nav-links a{font-family:var(--font-display);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.65);text-decoration:none;position:relative;transition:color .3s}
@@ -76,6 +77,8 @@ nav.scrolled{background:rgba(5,5,5,.97);border-bottom:1px solid rgba(201,145,58,
 
 .nav-cta{font-family:var(--font-display);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.6rem 1.6rem;border:1px solid var(--red);color:var(--white);background:transparent;cursor:none;text-decoration:none;transition:background .3s}
 .nav-cta:hover{background:var(--red)}
+.nav-cta-dot{width:6px;height:6px;background:#4ade80;border-radius:50%;display:inline-block;margin-right:.6rem;animation:liveDot 2s ease-in-out infinite}
+@keyframes liveDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.6)}}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;-webkit-tap-highlight-color:transparent;touch-action:manipulation;z-index:201;position:relative}
 .hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:.3s}
 .mobile-menu{display:none;position:fixed;inset:0;background:rgba(5,5,5,.98);z-index:500;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;padding:2rem;overflow-y:auto;-webkit-overflow-scrolling:touch}
@@ -134,12 +137,13 @@ section{position:relative;z-index:2}
 .reveal-right.visible{opacity:1;transform:translateX(0)}
 
 /* ── ABOUT ── */
-#about{padding:5rem 8rem;display:grid;grid-template-columns:200px 1fr;gap:5rem;align-items:center}
+#about{padding:5rem 8rem;position:relative;display:grid;grid-template-columns:200px 1fr;gap:5rem;align-items:center}
 .about-visual{position:relative;display:flex;align-items:center;justify-content:center}
 
 .about-logo-wrap{width:180px;height:180px;border-radius:50%;background:rgba(196,30,58,.06);border:1px solid rgba(196,30,58,.15);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
 .about-logo-img{width:145px;height:145px;object-fit:contain;filter:drop-shadow(0 0 20px rgba(196,30,58,.4))}
 .about-kanji-deco{position:absolute;bottom:-2rem;right:-1rem;font-family:var(--font-jp);font-size:8rem;color:rgba(201,145,58,.06);line-height:1;pointer-events:none}
+.about-kanji-bg{position:absolute;right:0;bottom:-2rem;font-family:var(--font-jp);font-size:14rem;color:rgba(201,145,58,.03);line-height:1;pointer-events:none;user-select:none;z-index:0}
 .about-text p{font-size:1.05rem;line-height:1.75;color:rgba(245,240,235,.75);margin-bottom:1rem}
 .about-text p strong{color:var(--gold-light);font-weight:500}
 .about-quote{margin-top:1.5rem;padding:1rem 1.5rem;border-left:2px solid var(--red);background:rgba(196,30,58,.05)}
@@ -148,7 +152,9 @@ section{position:relative;z-index:2}
 
 /* ── LINEAGE ── */
 #lineage{padding:4.5rem 8rem;background:linear-gradient(135deg,rgba(139,0,0,.06) 0%,transparent 60%);text-align:center;border-top:1px solid rgba(201,145,58,.08)}
-.lineage-timeline{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;margin:3rem auto 0;gap:0;max-width:900px}
+.lineage-timeline{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;margin:3rem auto 0;gap:0;max-width:900px;position:relative}
+.lineage-timeline::before{content:'';position:absolute;top:50%;left:5%;right:5%;height:1px;background:linear-gradient(to right,transparent,rgba(196,30,58,.2),rgba(196,30,58,.2),transparent);transform:translateY(-50%);pointer-events:none;z-index:0}
+.lineage-node{position:relative;z-index:1;background:var(--black)}
 .lineage-node{text-align:center;padding:1rem 1.5rem}
 .lineage-year{font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--red);line-height:1}
 .lineage-name{font-family:var(--font-display);font-size:.95rem;font-weight:600;letter-spacing:.08em;margin:.5rem 0 .3rem;text-transform:uppercase}
@@ -167,9 +173,12 @@ section{position:relative;z-index:2}
 .program-icon-block{display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem}
 .pi-line{display:block;width:24px;height:2px;background:var(--red)}
 .pi-label{font-family:var(--font-display);font-size:.55rem;letter-spacing:.3em;color:var(--red);font-weight:700}
+.pi-kanji{font-family:var(--font-jp);font-size:1.4rem;color:rgba(201,145,58,.35);margin-left:.5rem;line-height:1}
 .program-title{font-family:var(--font-display);font-size:1.35rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.8rem}
 .program-line{width:30px;height:2px;background:var(--red);margin-bottom:1.2rem}
 .program-desc{font-size:1.05rem;line-height:1.8;color:rgba(245,240,235,.65)}
+.program-enroll{display:inline-block;margin-top:.8rem;margin-left:1rem;font-family:var(--font-display);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);text-decoration:none;border-bottom:1px solid rgba(196,30,58,.3);padding-bottom:1px;transition:color .3s,border-color .3s}
+.program-enroll:hover{color:var(--gold);border-color:var(--gold)}
 .program-tag{display:inline-block;margin-top:1.5rem;font-family:var(--font-display);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,145,58,.25);padding:.3rem .8rem}
 
 /* ── SENSEI ── */
@@ -180,6 +189,11 @@ section{position:relative;z-index:2}
 .sensei-badge{position:absolute;bottom:-1.5rem;right:-.5rem;background:var(--red);padding:1rem 1.5rem;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em}
 .sensei-badge .rank{font-size:.65rem;color:rgba(255,255,255,.7);letter-spacing:.2em}
 .sensei-badge .name{font-size:1.1rem;font-weight:600;margin-top:.2rem}
+.sensei-ribbon{position:absolute;top:1.5rem;left:-2px;background:var(--gold);
+  color:#050505;font-family:var(--font-display);font-size:.55rem;font-weight:700;
+  letter-spacing:.25em;text-transform:uppercase;padding:.35rem 1rem .35rem .8rem;
+  clip-path:polygon(0 0,100% 0,calc(100% - 8px) 50%,100% 100%,0 100%);
+  z-index:3;box-shadow:2px 2px 8px rgba(0,0,0,.4)}
 .sensei-content p{font-size:1rem;line-height:1.7;color:rgba(245,240,235,.7);margin-bottom:1rem}
 .sensei-content p strong{color:var(--gold-light);font-weight:500}
 .credential-list{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:.6rem}
@@ -206,23 +220,27 @@ section{position:relative;z-index:2}
 .gallery-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:3px;
+  grid-auto-rows:220px;
+  gap:4px;
 }
 .gallery-item{
   position:relative;overflow:hidden;cursor:none;
-  aspect-ratio:4/3;background:#111;
+  background:#0d0d0d;
 }
-.gallery-item.tall{aspect-ratio:3/4}
+.gallery-item.span-2{grid-column:span 2}
+.gallery-item.span-row{grid-row:span 2}
+.gallery-item.hidden{display:none}
 .gallery-item img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%) contrast(1.05);transition:transform .6s ease,filter .4s ease;display:block}
 .gallery-item:hover img{transform:scale(1.07);filter:grayscale(0%) contrast(1.1)}
 .gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,5,.8) 0%,transparent 50%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
 .gallery-item:hover .gallery-overlay{opacity:1}
 .gallery-cat{font-family:var(--font-display);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
 .gallery-cap{font-family:var(--font-display);font-size:.9rem;color:var(--white);letter-spacing:.05em}
-.gallery-zoom{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border:1px solid rgba(245,240,235,.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;opacity:0;transition:opacity .3s;background:rgba(5,5,5,.5)}
+.gallery-zoom{position:absolute;top:1rem;right:1rem;width:34px;height:34px;border:1px solid rgba(245,240,235,.25);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;background:rgba(5,5,5,.6)}
 .gallery-item:hover .gallery-zoom{opacity:1}
 /* placeholder when no real image */
-.gallery-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.gallery-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:relative;overflow:hidden}
+.gallery-placeholder::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(196,30,58,.03) 20px,rgba(196,30,58,.03) 21px)}
 .gallery-placeholder .ph-icon{font-size:3rem;opacity:.3}
 .gallery-placeholder .ph-text{font-family:var(--font-display);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.2)}
 
@@ -284,6 +302,7 @@ section{position:relative;z-index:2}
 .bp-btn-wa:hover{background:rgba(37,211,102,.15);transform:translateY(-1px)}
 .bp-btn-map{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.8rem;background:rgba(196,30,58,.08);border:1px solid rgba(196,30,58,.25);color:var(--red);font-family:var(--font-display);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .3s}
 .bp-btn-map:hover{background:rgba(196,30,58,.12);transform:translateY(-1px)}
+.bp-map-wrap{border:1px solid rgba(201,145,58,.1);overflow:hidden;margin-top:1rem}
 .branch-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:400px;border:1px dashed rgba(201,145,58,.12);text-align:center;gap:1rem}
 .branch-empty p{font-family:var(--font-display);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.25)}
 
@@ -343,11 +362,7 @@ section{position:relative;z-index:2}
 .bb-belt-icon{font-size:1.2rem;margin-bottom:.5rem;display:block}
 
 /* ── SMART ROUTING FORM ── */
-.routing-badge{
-  font-family:var(--font-display);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;
-  padding:.5rem 1rem;border:1px solid rgba(201,145,58,.25);color:var(--gold);
-  background:rgba(201,145,58,.05);margin-bottom:1.2rem;display:inline-block;
-}
+
 .area-input-wrap{position:relative}
 .area-routing-preview{
   margin-top:.4rem;font-family:var(--font-display);font-size:.6rem;letter-spacing:.12em;
@@ -363,7 +378,6 @@ section{position:relative;z-index:2}
   font-family:var(--font-display);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;
   color:rgba(245,240,235,.4);margin-top:.8rem;text-align:center;line-height:1.6;
 }
-
 
 /* ── MID-PAGE CTA BANNER ── */
 .cta-banner{
@@ -453,7 +467,6 @@ section{position:relative;z-index:2}
 }
 .routing-dismiss:hover{border-color:var(--gold);color:var(--gold)}
 
-
 /* ── FLOATING BUTTONS ── */
 .float-wa{touch-action:manipulation;
   position:fixed;bottom:2rem;right:2rem;z-index:500;
@@ -497,7 +510,6 @@ section{position:relative;z-index:2}
 .loader-fill{height:100%;background:linear-gradient(to right,var(--red),var(--gold));
   animation:loadFill 1s ease forwards}
 @keyframes loadFill{from{width:0}to{width:100%}}
-
 
 /* ── ACHIEVEMENT TICKER ── */
 .ticker-wrap{overflow:hidden;background:rgba(196,30,58,.06);border-bottom:1px solid rgba(196,30,58,.15);padding:.65rem 0;position:relative}
@@ -734,14 +746,283 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
   /* Smooth scrolling for touch */
   html{scroll-behavior:smooth}
 }
+
+/* ── SKIP LINK ── */
+.skip-link{position:absolute;top:-100%;left:1rem;background:var(--red);color:var(--white);padding:.5rem 1rem;font-family:var(--font-display);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;z-index:99999;text-decoration:none}
+.skip-link:focus{top:1rem}
+
+/* ── CUSTOM SCROLLBAR ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:linear-gradient(to bottom,var(--red),rgba(196,30,58,.3));border-radius:2px}
+::-webkit-scrollbar-thumb:hover{background:var(--red)}
+html{scrollbar-width:thin;scrollbar-color:var(--red) var(--black)}
+
+/* ── SELECTION COLOR ── */
+::selection{background:rgba(196,30,58,.35);color:var(--white)}
+::-moz-selection{background:rgba(196,30,58,.35);color:var(--white)}
+
+/* ── FOCUS STYLES ── */
+:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
+button:focus-visible,a:focus-visible{outline:1px solid var(--gold)}
+
+/* ── SMOOTH IMAGE LOAD ── */
+img{transition:opacity .4s ease}
+
+/* ── SECTION BORDER ACCENT ── */
+section::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:linear-gradient(to bottom,var(--red),transparent);transition:height 1.2s ease;pointer-events:none}
+section.visible-section::before{height:100%}
+
+/* ── PROGRAM CARD HOVER GLOW ── */
+.program-card:hover{box-shadow:inset 0 0 40px rgba(196,30,58,.04)}
+
+/* ── STAT NUM GLOW ── */
+.stat-item.visible .stat-num{text-shadow:0 0 30px rgba(196,30,58,.4)}
+
+/* ── BRANCH PANEL SLIDE ── */
+@keyframes panelIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+
+/* ── INPUT FOCUS GLOW ── */
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{
+  box-shadow:0 0 0 1px rgba(196,30,58,.2),0 4px 16px rgba(196,30,58,.05)
+}
+
+/* ════════════════════════════════════════
+   SCROLL PROGRESS BAR
+════════════════════════════════════════ */
+.scroll-progress{
+  position:fixed;top:0;left:0;height:2px;width:0%;
+  background:linear-gradient(to right,var(--red),var(--gold),var(--red));
+  z-index:99999;transition:width .1s linear;
+  box-shadow:0 0 8px rgba(201,145,58,.6);
+}
+
+/* ════════════════════════════════════════
+   GLASSMORPHISM NAV
+════════════════════════════════════════ */
+nav.scrolled{
+  background:rgba(5,5,5,.85) !important;
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid rgba(201,145,58,.12) !important;
+}
+
+/* ════════════════════════════════════════
+   3D TILT ON PROGRAM CARDS
+════════════════════════════════════════ */
+.program-card{
+  transform-style:preserve-3d;
+  transform:perspective(1000px) rotateX(0) rotateY(0);
+  will-change:transform;
+}
+
+/* ════════════════════════════════════════
+   MAGNETIC BUTTON
+════════════════════════════════════════ */
+.btn-primary,.btn-ghost,.nav-cta{
+  will-change:transform;
+  display:inline-block;
+}
+.btn-primary{transition:background .3s,transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.btn-primary:hover{box-shadow:0 8px 30px rgba(196,30,58,.4),0 0 0 1px rgba(196,30,58,.2)}
+
+/* ════════════════════════════════════════
+   HERO TYPEWRITER
+════════════════════════════════════════ */
+.hero-typed{
+  display:inline;
+  border-right:2px solid transparent;
+  transition:border-color .2s;
+}
+.hero-typed.typing{
+  border-right:2px solid var(--red);
+  animation:blink .7s step-end infinite;
+}
+@keyframes blink{0%,100%{border-color:var(--red)}50%{border-color:transparent}}
+
+/* ════════════════════════════════════════
+   SENSEI CINEMATIC OVERLAY
+════════════════════════════════════════ */
+.sensei-img-wrap::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(196,30,58,.08) 70%,
+    rgba(139,0,0,.15) 100%
+  );
+  pointer-events:none;
+  z-index:1;
+}
+.sensei-badge{z-index:2;position:absolute}
+
+/* ════════════════════════════════════════
+   TOAST NOTIFICATION
+════════════════════════════════════════ */
+.toast{
+  position:fixed;bottom:7rem;left:50%;transform:translateX(-50%) translateY(20px);
+  background:rgba(10,10,10,.97);border:1px solid rgba(201,145,58,.3);
+  padding:.9rem 2rem;font-family:var(--font-display);font-size:.7rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+  z-index:800;opacity:0;transition:opacity .4s,transform .4s;
+  pointer-events:none;white-space:nowrap;
+  box-shadow:0 8px 30px rgba(0,0,0,.5);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast .toast-icon{margin-right:.6rem;color:#4ade80}
+
+/* ════════════════════════════════════════
+   FORM VALIDATION STATES
+════════════════════════════════════════ */
+.form-field input.valid,.form-field textarea.valid{
+  border-color:rgba(74,222,128,.4);
+}
+.form-field input.invalid,.form-field textarea.invalid{
+  border-color:rgba(196,30,58,.6);
+  animation:shake .3s ease;
+}
+@keyframes shake{
+  0%,100%{transform:translateX(0)}
+  25%{transform:translateX(-4px)}
+  75%{transform:translateX(4px)}
+}
+.form-field .field-msg{
+  font-family:var(--font-display);font-size:.55rem;letter-spacing:.15em;
+  text-transform:uppercase;margin-top:.3rem;height:.8rem;transition:color .3s;
+}
+.form-field .field-msg.ok{color:#4ade80}
+.form-field .field-msg.err{color:var(--red)}
+
+/* ════════════════════════════════════════
+   QUICK ENQUIRY BUTTONS
+════════════════════════════════════════ */
+.quick-enquiry{
+  display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;
+}
+.quick-enquiry-label{
+  font-family:var(--font-display);font-size:.55rem;letter-spacing:.3em;
+  text-transform:uppercase;color:rgba(245,240,235,.3);
+  width:100%;margin-bottom:.2rem;
+}
+.qe-btn{
+  font-family:var(--font-display);font-size:.6rem;letter-spacing:.15em;
+  text-transform:uppercase;padding:.45rem .9rem;
+  border:1px solid rgba(196,30,58,.3);color:rgba(245,240,235,.6);
+  background:none;cursor:pointer;transition:all .25s;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.qe-btn:hover{border-color:var(--red);color:var(--white);background:rgba(196,30,58,.08)}
+
+/* ════════════════════════════════════════
+   PRINT STYLESHEET
+════════════════════════════════════════ */
+@media print{
+  body{background:#fff !important;color:#000 !important;cursor:auto}
+  nav,footer,.float-wa,.float-top,.cursor,.cursor-ring,
+  .ticker-wrap,.page-loader,.scroll-progress,
+  .hero-scroll,.lightbox,.bb-modal-overlay,.routing-overlay{display:none !important}
+  #hero{height:auto;padding:2rem;break-after:page}
+  .hero-title{color:#000 !important;font-size:2rem}
+  .hero-title .line-red{color:#C41E3A !important}
+  section{padding:1.5rem 2rem !important;break-inside:avoid}
+  .section-title{color:#000 !important}
+  .section-title em{color:#C41E3A !important}
+  a[href]::after{content:" (" attr(href) ")";font-size:.7rem;color:#666}
+  .sensei-img{filter:none !important}
+  @page{margin:1.5cm;size:A4}
+}
+
+/* ════════════════════════════════════════
+   PREFERS REDUCED MOTION
+════════════════════════════════════════ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .ticker-track{animation:none}
+  .hero-kanji{animation:none}
+  .float-wa{animation:none}
+  .bb-btn{animation:none}
+  .scroll-line{animation:none}
+  .reveal,.reveal-left,.reveal-right{opacity:1;transform:none}
+}
+
+/* ════════════════════════════════════════
+   ASPECT RATIO ENFORCEMENT
+════════════════════════════════════════ */
+.sensei-img{aspect-ratio:3/4;object-fit:cover;object-position:top center}
+.bp-photo{aspect-ratio:4/5;object-fit:cover;object-position:top center}
+.gallery-item{aspect-ratio:4/3}
+
+/* ════════════════════════════════════════
+   GALLERY MASONRY-STYLE GRID
+════════════════════════════════════════ */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto;
+  gap:3px;
+}
+
+/* ════════════════════════════════════════
+   STAGGERED STATS ANIMATION
+════════════════════════════════════════ */
+.stat-item:nth-child(1){transition-delay:.05s}
+.stat-item:nth-child(2){transition-delay:.15s}
+.stat-item:nth-child(3){transition-delay:.25s}
+.stat-item:nth-child(4){transition-delay:.35s}
+
+/* ════════════════════════════════════════
+   VALUE CIRCLE HOVER — staggered
+════════════════════════════════════════ */
+.values-row .value-item:nth-child(1){transition-delay:.05s}
+.values-row .value-item:nth-child(2){transition-delay:.1s}
+.values-row .value-item:nth-child(3){transition-delay:.15s}
+.values-row .value-item:nth-child(4){transition-delay:.2s}
+.values-row .value-item:nth-child(5){transition-delay:.25s}
+
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Nayak Budokan Karate Academy",
+  "description": "Authentic Budokan Karate-Do training in Hyderabad — Kids, Adults, Women's Self-Defence and Tournament programs.",
+  "url": "https://nayakbudokan.github.io/nayakbudokan/",
+  "logo": "https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png",
+  "image": "https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png",
+  "telephone": "+919393095053",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Shivaganga Nagar, Chatrinaka",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500053",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "17.3850",
+    "longitude": "78.4867"
+  },
+  "openingHours": "Mo-Sa 05:30-08:00",
+  "priceRange": "₹",
+  "sameAs": ["https://github.com/NayakBudokan/nayakbudokan"]
+}
+</script>
 </head>
 <body>
+<a href="#hero" class="skip-link">Skip to main content</a>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="toast" id="toast"><span class="toast-icon">✓</span><span id="toastMsg">Enquiry sent!</span></div>
 
 <!-- PAGE LOADER -->
 <div class="page-loader" id="pageLoader">
   <div class="loader-logo-wrap">
-    <img src="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png" alt="NBKA" class="loader-img"
+    <img src="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png" alt="NBKA" class="loader-img" loading="eager"
       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
     <div class="loader-logo-fallback" style="display:none;width:88px;height:88px;border-radius:50%;background:#C41020;border:3px solid rgba(201,145,58,.7);align-items:center;justify-content:center;font-family:Oswald,sans-serif;font-size:1.1rem;font-weight:700;color:rgba(229,190,122,.9);letter-spacing:.15em">NBKA</div>
   </div>
@@ -755,7 +1036,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">✕</button>
   <img class="lightbox-img" id="lbImg" src="" alt=""/>
   <div class="lightbox-cap" id="lbCap"></div>
   <div class="lightbox-nav">
@@ -767,7 +1048,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
 <!-- BLACK BELTS MODAL -->
 <div class="bb-modal-overlay" id="bbModal">
   <div class="bb-modal">
-    <button class="bb-modal-close" onclick="closeBBModal()">✕</button>
+    <button class="bb-modal-close" onclick="closeBBModal()" aria-label="Close black belts modal">✕</button>
     <div class="bb-modal-title">Our Black Belts</div>
     <div class="bb-modal-sub">The Champions of Nayak Budokan Karate Academy</div>
     <div class="bb-grid">
@@ -830,7 +1111,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
         Branches <span class="chevron">▾</span>
       </button>
       <div class="nav-dropdown-menu" id="navBranchMenu">
-        <button class="branch-menu-item" onclick="goToBranch('main')">
+        <button class="branch-menu-item" onclick="goToBranch('main')" aria-label="View Chatrinaka Main Branch details">
           <span class="dot"></span> Chatrinaka — Main Branch
         </button>
         <button class="branch-menu-item coming-soon">
@@ -845,8 +1126,8 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
     </li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="https://wa.me/919393095053" class="nav-cta">Enroll Now</a>
-  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+  <a href="https://wa.me/919393095053" class="nav-cta" aria-label="Enroll in Karate class via WhatsApp"><span class="nav-cta-dot"></span>Enroll Now</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -861,6 +1142,8 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
     <polygon points="200,20 380,380 20,380" stroke="rgba(196,30,58,0.12)" stroke-width="1" fill="none"/>
     <polygon points="200,60 340,340 60,340" stroke="rgba(201,145,58,0.07)" stroke-width="1" fill="none"/>
     <polygon points="200,100 300,300 100,300" stroke="rgba(196,30,58,0.05)" stroke-width="1" fill="none"/>
+    <circle cx="200" cy="200" r="150" stroke="rgba(201,145,58,0.04)" stroke-width="1" fill="none" stroke-dasharray="8 4"/>
+    <circle cx="200" cy="200" r="100" stroke="rgba(196,30,58,0.06)" stroke-width="1" fill="none"/>
   </svg>
   <div class="hero-content">
     <div class="hero-eyebrow">Budokan Karate-Do — Hyderabad</div>
@@ -869,7 +1152,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
       <span class="line-red">Budokan</span><br/>
       <span class="line-thin">Karate Academy</span>
     </h1>
-    <p class="hero-tagline">Discipline &bull; Strength &bull; Character</p>
+    <p class="hero-tagline"><span id="heroTyped" class="hero-typed">Discipline · Strength · Character</span></p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Begin Your Journey</a>
       <a href="#about" class="btn-ghost">Discover NBKA</a>
@@ -921,7 +1204,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
       <div style="display:none;width:150px;height:150px;border-radius:50%;background:#C41020;border:3px solid rgba(201,145,58,.6);align-items:center;justify-content:center;font-family:Oswald,sans-serif;font-size:2rem;font-weight:700;color:rgba(229,190,122,.9);letter-spacing:.1em">NBKA</div>
     </div>
   </div>
-  </div>
+  <div class="about-kanji-bg" aria-hidden="true">道</div>
   <div class="about-text reveal-right">
     <div class="section-label">Our Story</div>
     <h2 class="section-title">More Than<br/><em>Martial Arts</em></h2>
@@ -963,7 +1246,6 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
   </div>
 </section>
 
-
 <!-- CLASSES -->
 <section id="classes">
   <div class="classes-header reveal">
@@ -978,6 +1260,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
       <div class="program-line"></div>
       <p class="program-desc">A structured program focusing on discipline, confidence, coordination, and respect — shaping character before technique.</p>
       <span class="program-tag">Ages 5–15</span>
+        <a href="https://wa.me/919393095053?text=Enquiry%20about%20Kids%20Karate" class="program-enroll" target="_blank">Enroll →</a>
     </div>
     <div class="program-card reveal" style="transition-delay:.2s">
       <div class="program-num">02</div>
@@ -986,6 +1269,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
       <div class="program-line"></div>
       <p class="program-desc">Physical fitness, stress relief, traditional techniques, and practical self-defence for all ages and fitness levels.</p>
       <span class="program-tag">16 &amp; Above</span>
+        <a href="https://wa.me/919393095053?text=Enquiry%20about%20Adults%20Karate" class="program-enroll" target="_blank">Enroll →</a>
     </div>
     <div class="program-card reveal" style="transition-delay:.3s">
       <div class="program-num">03</div>
@@ -994,6 +1278,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
       <div class="program-line"></div>
       <p class="program-desc">Specialized training empowering women with awareness, confidence, and effective techniques for real-life situations.</p>
       <span class="program-tag">All Ages</span>
+        <a href="https://wa.me/919393095053?text=Enquiry%20about%20Womens%20Self%20Defence" class="program-enroll" target="_blank">Enroll →</a>
     </div>
     <div class="program-card reveal" style="transition-delay:.4s">
       <div class="program-num">04</div>
@@ -1002,6 +1287,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
       <div class="program-line"></div>
       <p class="program-desc">Intensive training for dedicated students targeting state, national &amp; international competition glory.</p>
       <span class="program-tag">Competition Track</span>
+        <a href="https://wa.me/919393095053?text=Enquiry%20about%20Advanced%20Tournament" class="program-enroll" target="_blank">Enroll →</a>
     </div>
   </div>
 </section>
@@ -1010,9 +1296,10 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
 <section id="sensei">
   <div class="sensei-img-wrap reveal-left">
     <div class="sensei-img-frame"></div>
-    <img class="sensei-img" src="https://nayakbudokan.github.io/nayakbudokan/images/sensai.jpeg" alt="Sensei P. Ganesh Nayak" onerror="this.style.cssText='background:rgba(196,30,58,.08);min-height:260px;width:100%';this.removeAttribute('src')"
+    <img class="sensei-img" src="https://nayakbudokan.github.io/nayakbudokan/images/sensai.jpeg" alt="Sensei P. Ganesh Nayak" loading="lazy" onload="this.style.opacity='1'" style="opacity:0" onerror="this.style.opacity='1';this.style.background='rgba(196,30,58,.08)';this.style.minHeight='260px'"
   onerror="this.outerHTML='<div class=&quot;sensei-img&quot; style=&quot;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(196,30,58,.06);border:1px solid rgba(201,145,58,.1);min-height:300px&quot;><div style=&quot;font-family:Oswald,sans-serif;font-size:4rem;color:rgba(196,30,58,.3)&quot;>GN</div><div style=&quot;font-family:Oswald,sans-serif;font-size:.6rem;letter-spacing:.3em;color:rgba(245,240,235,.2);margin-top:.5rem&quot;>SENSEI PHOTO</div></div>'"/>
     <div class="sensei-badge"><div class="rank">Chief Instructor &amp; Founder</div><div class="name">P. Ganesh Nayak</div></div>
+  <div class="sensei-ribbon">Budokan Karate-Do</div>
   </div>
   <div class="sensei-content reveal-right">
     <div class="section-label">Meet the Sensei</div>
@@ -1061,7 +1348,6 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
   </div>
 </section>
 
-
 <!-- BLACK BELTS SECTION -->
 <section id="blackbelts">
   <div class="bb-kanji-bg">黒帯</div>
@@ -1081,121 +1367,140 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
   </div>
 </section>
 
-
 <!-- GALLERY -->
 <section id="gallery">
   <div class="gallery-header reveal">
     <div class="section-label">Moments &amp; Memories</div>
     <h2 class="section-title">Our <em>Gallery</em></h2>
+    <p style="font-size:1rem;color:rgba(245,240,235,.45);margin-top:.6rem;font-style:italic">Glimpses of training, grading ceremonies &amp; tournament victories</p>
   </div>
   <div class="gallery-filters reveal" style="transition-delay:.1s">
     <button class="gf-btn active" onclick="filterGallery('all',this)">All</button>
-    <button class="gf-btn" onclick="filterGallery('training',this)">Training Sessions</button>
+    <button class="gf-btn" onclick="filterGallery('training',this)">Training</button>
     <button class="gf-btn" onclick="filterGallery('grading',this)">Belt Grading</button>
     <button class="gf-btn" onclick="filterGallery('tournament',this)">Tournaments</button>
   </div>
   <div class="gallery-grid reveal" style="transition-delay:.2s" id="galleryGrid">
 
-    <!-- TRAINING -->
-    <div class="gallery-item" data-cat="training" data-cap="Morning Training Session" onclick="openLightbox(this)">
-      <img src="https://nayakbudokan.github.io/nayakbudokan/images/sensai.jpeg" alt="Training" onerror="this.style.display='none'" onerror="this.parentElement.style.background='#111'"/>
+    <div class="gallery-item span-2" data-cat="training" data-cap="Morning Training Session" onclick="openLightbox(this)">
+      <div class="gallery-placeholder" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#120204,#1e0408);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(196,30,58,.025) 18px,rgba(196,30,58,.025) 19px)"></div>
+        <svg viewBox="0 0 100 100" style="width:80px;height:80px;position:relative;z-index:1"><g stroke="rgba(196,30,58,.5)" fill="none" stroke-linecap="round"><circle cx="45" cy="22" r="7" fill="rgba(196,30,58,.3)" stroke="none"/><line x1="45" y1="29" x2="47" y2="46" stroke-width="4"/><line x1="46" y1="36" x2="62" y2="28" stroke-width="3"/><line x1="46" y1="36" x2="30" y2="40" stroke-width="2.5"/><line x1="47" y1="46" x2="42" y2="64" stroke-width="4"/><line x1="47" y1="46" x2="72" y2="52" stroke-width="4.5"/></g></svg>
+        <div style="margin-top:.9rem;font-family:Oswald,sans-serif;font-size:.55rem;letter-spacing:.3em;color:rgba(201,145,58,.45);text-transform:uppercase;position:relative;z-index:1">MORNING · SESSION</div>
+      </div>
       <div class="gallery-overlay">
         <div class="gallery-cat">Training</div>
         <div class="gallery-cap">Morning Training Session</div>
       </div>
-      <div class="gallery-zoom">🔍</div>
+      <div class="gallery-zoom"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="4.5" stroke="rgba(245,240,235,.7)" stroke-width="1.2"/><line x1="9.5" y1="9.5" x2="13" y2="13" stroke="rgba(245,240,235,.7)" stroke-width="1.2" stroke-linecap="round"/></svg></div>
     </div>
 
-    <div class="gallery-item" data-cat="training" data-cap="Kata Practice — Advanced Students">
-      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
-        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><circle cx="50" cy="50" r="30" stroke="rgba(196,30,58,.15)" stroke-width="1" fill="none"/><circle cx="50" cy="50" r="20" stroke="rgba(201,145,58,.1)" stroke-width="1" fill="none"/><line x1="50" y1="20" x2="50" y2="80" stroke="rgba(196,30,58,.1)" stroke-width="1"/><line x1="20" y1="50" x2="80" y2="50" stroke="rgba(196,30,58,.1)" stroke-width="1"/></svg>
-        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">KATA · PRACTICE</div>
+    <div class="gallery-item span-row" data-cat="training" data-cap="Kata Practice — Advanced Students">
+      <div class="gallery-placeholder" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0a0a,#111015);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(196,30,58,.025) 18px,rgba(196,30,58,.025) 19px)"></div>
+        <svg viewBox="0 0 100 100" style="width:80px;height:80px;position:relative;z-index:1"><g fill="none"><circle cx="50" cy="50" r="35" stroke="rgba(196,30,58,.2)" stroke-width="1"/><circle cx="50" cy="50" r="25" stroke="rgba(201,145,58,.15)" stroke-width="1" stroke-dasharray="4 3"/><circle cx="50" cy="50" r="8" fill="rgba(196,30,58,.25)"/><line x1="50" y1="15" x2="50" y2="42" stroke="rgba(196,30,58,.35)" stroke-width="1.5"/><line x1="50" y1="58" x2="50" y2="85" stroke="rgba(196,30,58,.35)" stroke-width="1.5"/><line x1="15" y1="50" x2="42" y2="50" stroke="rgba(196,30,58,.35)" stroke-width="1.5"/><line x1="58" y1="50" x2="85" y2="50" stroke="rgba(196,30,58,.35)" stroke-width="1.5"/></g></svg>
+        <div style="margin-top:.9rem;font-family:Oswald,sans-serif;font-size:.55rem;letter-spacing:.3em;color:rgba(201,145,58,.45);text-transform:uppercase;position:relative;z-index:1">KATA · PRACTICE</div>
       </div>
       <div class="gallery-overlay">
         <div class="gallery-cat">Training</div>
-        <div class="gallery-cap">Kata Practice — Advanced</div>
+        <div class="gallery-cap">Kata Practice — Advanced Students</div>
       </div>
+      
     </div>
 
-    <div class="gallery-item" data-cat="grading" data-cap="Belt Promotion Ceremony" onclick="openLightbox(this)">
-      <img src="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png" alt="Grading" onerror="this.style.display='none'" onerror="this.parentElement.style.background='#111'" style="object-fit:contain;padding:2rem;background:#0a0a0a"/>
-      <div class="gallery-overlay">
-        <div class="gallery-cat">Belt Grading</div>
-        <div class="gallery-cap">Belt Promotion Ceremony</div>
-      </div>
-      <div class="gallery-zoom">🔍</div>
-    </div>
-
-    <div class="gallery-item" data-cat="tournament" data-cap="State Championship — Gold Medal">
-      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
-        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><polygon points="50,15 61,40 88,40 67,57 75,83 50,67 25,83 33,57 12,40 39,40" stroke="rgba(201,145,58,.2)" stroke-width="1" fill="none"/></svg>
-        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">VICTORY</div>
-      </div>
-      <div class="gallery-overlay">
-        <div class="gallery-cat">Tournament</div>
-        <div class="gallery-cap">State Championship — Gold</div>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-cat="training" data-cap="Kids Batch — Fundamentals">
-      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
-        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><rect x="25" y="25" width="50" height="50" rx="4" stroke="rgba(196,30,58,.15)" stroke-width="1" fill="none"/><rect x="35" y="35" width="30" height="30" rx="2" stroke="rgba(201,145,58,.1)" stroke-width="1" fill="none"/></svg>
-        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">KIDS · BATCH</div>
+    <div class="gallery-item " data-cat="training" data-cap="Kids Batch — Fundamentals">
+      <div class="gallery-placeholder" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d0d0d,#080810);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(196,30,58,.025) 18px,rgba(196,30,58,.025) 19px)"></div>
+        <svg viewBox="0 0 100 100" style="width:80px;height:80px;position:relative;z-index:1"><g fill="none"><circle cx="35" cy="28" r="7" stroke="rgba(196,30,58,.35)" stroke-width="1.5"/><circle cx="65" cy="28" r="7" stroke="rgba(196,30,58,.35)" stroke-width="1.5"/><line x1="35" y1="35" x2="35" y2="58" stroke="rgba(196,30,58,.3)" stroke-width="3" stroke-linecap="round"/><line x1="65" y1="35" x2="65" y2="58" stroke="rgba(196,30,58,.3)" stroke-width="3" stroke-linecap="round"/><line x1="35" y1="44" x2="65" y2="44" stroke="rgba(201,145,58,.2)" stroke-width="2" stroke-linecap="round"/><line x1="35" y1="58" x2="28" y2="78" stroke="rgba(196,30,58,.25)" stroke-width="3" stroke-linecap="round"/><line x1="35" y1="58" x2="42" y2="78" stroke="rgba(196,30,58,.25)" stroke-width="3" stroke-linecap="round"/><line x1="65" y1="58" x2="58" y2="78" stroke="rgba(196,30,58,.25)" stroke-width="3" stroke-linecap="round"/><line x1="65" y1="58" x2="72" y2="78" stroke="rgba(196,30,58,.25)" stroke-width="3" stroke-linecap="round"/></g></svg>
+        <div style="margin-top:.9rem;font-family:Oswald,sans-serif;font-size:.55rem;letter-spacing:.3em;color:rgba(201,145,58,.45);text-transform:uppercase;position:relative;z-index:1">KIDS · BATCH</div>
       </div>
       <div class="gallery-overlay">
         <div class="gallery-cat">Training</div>
         <div class="gallery-cap">Kids Batch — Fundamentals</div>
       </div>
+      
     </div>
 
-    <div class="gallery-item" data-cat="grading" data-cap="Black Belt Examination">
-      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
-        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><circle cx="50" cy="50" r="35" stroke="rgba(245,240,235,.08)" stroke-width="1" fill="none"/><circle cx="50" cy="50" r="5" fill="rgba(196,30,58,.3)"/><line x1="50" y1="15" x2="50" y2="30" stroke="rgba(196,30,58,.2)" stroke-width="1.5"/><line x1="50" y1="70" x2="50" y2="85" stroke="rgba(196,30,58,.2)" stroke-width="1.5"/><line x1="15" y1="50" x2="30" y2="50" stroke="rgba(196,30,58,.2)" stroke-width="1.5"/><line x1="70" y1="50" x2="85" y2="50" stroke="rgba(196,30,58,.2)" stroke-width="1.5"/></svg>
-        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">BLACK · BELT</div>
-      </div>
-      <div class="gallery-overlay">
-        <div class="gallery-cat">Belt Grading</div>
-        <div class="gallery-cap">Black Belt Examination</div>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-cat="tournament" data-cap="National Level Competition">
-      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
-        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><polygon points="50,10 90,90 10,90" stroke="rgba(201,145,58,.2)" stroke-width="1" fill="none"/><polygon points="50,30 75,75 25,75" stroke="rgba(196,30,58,.12)" stroke-width="1" fill="none"/></svg>
-        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">NATIONALS</div>
+    <div class="gallery-item " data-cat="tournament" data-cap="State Championship — Gold Medal" onclick="openLightbox(this)">
+      <div class="gallery-placeholder" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0802,#130f03);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(196,30,58,.025) 18px,rgba(196,30,58,.025) 19px)"></div>
+        <svg viewBox="0 0 100 100" style="width:80px;height:80px;position:relative;z-index:1"><g fill="none"><path d="M35,20 L65,20 L60,50 Q50,60 40,50 Z" stroke="rgba(201,145,58,.4)" stroke-width="1.5"/><line x1="50" y1="60" x2="50" y2="72" stroke="rgba(201,145,58,.3)" stroke-width="1.5"/><line x1="35" y1="72" x2="65" y2="72" stroke="rgba(201,145,58,.35)" stroke-width="2"/><line x1="25" y1="20" x2="35" y2="20" stroke="rgba(201,145,58,.2)" stroke-width="1.5"/><line x1="25" y1="20" x2="28" y2="38" stroke="rgba(201,145,58,.2)" stroke-width="1.5"/><line x1="65" y1="20" x2="75" y2="20" stroke="rgba(201,145,58,.2)" stroke-width="1.5"/><line x1="75" y1="20" x2="72" y2="38" stroke="rgba(201,145,58,.2)" stroke-width="1.5"/><circle cx="50" cy="35" r="4" fill="rgba(201,145,58,.3)"/></g></svg>
+        <div style="margin-top:.9rem;font-family:Oswald,sans-serif;font-size:.55rem;letter-spacing:.3em;color:rgba(201,145,58,.45);text-transform:uppercase;position:relative;z-index:1">STATE · CHAMPIONSHIP</div>
       </div>
       <div class="gallery-overlay">
         <div class="gallery-cat">Tournament</div>
-        <div class="gallery-cap">National Level Competition</div>
+        <div class="gallery-cap">State Championship — Gold Medal</div>
       </div>
+      <div class="gallery-zoom"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="4.5" stroke="rgba(245,240,235,.7)" stroke-width="1.2"/><line x1="9.5" y1="9.5" x2="13" y2="13" stroke="rgba(245,240,235,.7)" stroke-width="1.2" stroke-linecap="round"/></svg></div>
     </div>
 
-    <div class="gallery-item" data-cat="training" data-cap="Women's Self-Defence Workshop">
-      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
-        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><circle cx="50" cy="50" r="35" stroke="rgba(196,30,58,.12)" stroke-width="1" fill="none"/><path d="M30,50 Q50,25 70,50 Q50,75 30,50Z" stroke="rgba(201,145,58,.15)" stroke-width="1" fill="none"/></svg>
-        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">WOMEN'S · DEFENCE</div>
+    <div class="gallery-item span-2" data-cat="grading" data-cap="Black Belt Examination">
+      <div class="gallery-placeholder" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#050505,#0d0d0d);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(196,30,58,.025) 18px,rgba(196,30,58,.025) 19px)"></div>
+        <svg viewBox="0 0 100 100" style="width:80px;height:80px;position:relative;z-index:1"><g fill="none"><rect x="15" y="40" width="70" height="20" rx="3" stroke="rgba(245,240,235,.15)" stroke-width="1"/><rect x="18" y="43" width="64" height="14" rx="2" fill="rgba(10,10,10,.8)" stroke="rgba(196,30,58,.3)" stroke-width="1"/><circle cx="50" cy="50" r="5" fill="rgba(196,30,58,.5)"/><line x1="30" y1="50" x2="44" y2="50" stroke="rgba(196,30,58,.3)" stroke-width="1.5"/><line x1="56" y1="50" x2="70" y2="50" stroke="rgba(196,30,58,.3)" stroke-width="1.5"/></g><text x="50" y="30" text-anchor="middle" font-family="Oswald,sans-serif" font-size="10" fill="rgba(245,240,235,.12)" letter-spacing="2">DAN</text></svg>
+        <div style="margin-top:.9rem;font-family:Oswald,sans-serif;font-size:.55rem;letter-spacing:.3em;color:rgba(201,145,58,.45);text-transform:uppercase;position:relative;z-index:1">BLACK · BELT · EXAM</div>
+      </div>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Grading</div>
+        <div class="gallery-cap">Black Belt Examination</div>
+      </div>
+      
+    </div>
+
+    <div class="gallery-item " data-cat="training" data-cap="Women's Self-Defence Workshop">
+      <div class="gallery-placeholder" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0508,#100410);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(196,30,58,.025) 18px,rgba(196,30,58,.025) 19px)"></div>
+        <svg viewBox="0 0 100 100" style="width:80px;height:80px;position:relative;z-index:1"><g fill="none"><circle cx="50" cy="22" r="8" stroke="rgba(201,145,58,.4)" stroke-width="1.5"/><path d="M42,30 Q35,45 38,65 Q50,70 62,65 Q65,45 58,30 Z" stroke="rgba(201,145,58,.3)" stroke-width="1.5"/><line x1="35" y1="42" x2="45" y2="48" stroke="rgba(201,145,58,.25)" stroke-width="1.5"/><line x1="65" y1="42" x2="55" y2="48" stroke="rgba(201,145,58,.25)" stroke-width="1.5"/><circle cx="50" cy="85" r="3" fill="rgba(196,30,58,.3)"/><line x1="50" y1="65" x2="50" y2="82" stroke="rgba(196,30,58,.2)" stroke-width="1.5"/></g></svg>
+        <div style="margin-top:.9rem;font-family:Oswald,sans-serif;font-size:.55rem;letter-spacing:.3em;color:rgba(201,145,58,.45);text-transform:uppercase;position:relative;z-index:1">WOMEN · DEFENCE</div>
       </div>
       <div class="gallery-overlay">
         <div class="gallery-cat">Training</div>
         <div class="gallery-cap">Women's Self-Defence Workshop</div>
       </div>
+      
     </div>
 
-    <div class="gallery-item" data-cat="grading" data-cap="Sensei Presenting Certificates">
-      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
-        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><rect x="20" y="30" width="60" height="40" rx="2" stroke="rgba(201,145,58,.18)" stroke-width="1" fill="none"/><line x1="30" y1="45" x2="70" y2="45" stroke="rgba(201,145,58,.1)" stroke-width="1"/><line x1="30" y1="52" x2="60" y2="52" stroke="rgba(201,145,58,.07)" stroke-width="1"/><circle cx="50" cy="75" r="6" stroke="rgba(196,30,58,.2)" stroke-width="1" fill="none"/></svg>
-        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">CERTIFICATE · DAY</div>
+    <div class="gallery-item " data-cat="tournament" data-cap="National Level Competition" onclick="openLightbox(this)">
+      <div class="gallery-placeholder" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0805,#150d04);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(196,30,58,.025) 18px,rgba(196,30,58,.025) 19px)"></div>
+        <svg viewBox="0 0 100 100" style="width:80px;height:80px;position:relative;z-index:1"><g fill="none"><polygon points="50,12 56,35 80,35 62,50 68,73 50,60 32,73 38,50 20,35 44,35" stroke="rgba(201,145,58,.4)" stroke-width="1.5"/><polygon points="50,22 54,33 67,33 57,41 61,52 50,46 39,52 43,41 33,33 46,33" stroke="rgba(196,30,58,.2)" stroke-width="1" fill="rgba(196,30,58,.04)"/></g></svg>
+        <div style="margin-top:.9rem;font-family:Oswald,sans-serif;font-size:.55rem;letter-spacing:.3em;color:rgba(201,145,58,.45);text-transform:uppercase;position:relative;z-index:1">NATIONAL · LEVEL</div>
       </div>
       <div class="gallery-overlay">
-        <div class="gallery-cat">Belt Grading</div>
-        <div class="gallery-cap">Sensei Presenting Certificates</div>
+        <div class="gallery-cat">Tournament</div>
+        <div class="gallery-cap">National Level Competition</div>
       </div>
+      <div class="gallery-zoom"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="4.5" stroke="rgba(245,240,235,.7)" stroke-width="1.2"/><line x1="9.5" y1="9.5" x2="13" y2="13" stroke="rgba(245,240,235,.7)" stroke-width="1.2" stroke-linecap="round"/></svg></div>
     </div>
 
-  </div>
-  <p style="font-family:var(--font-display);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.2);text-align:center;margin-top:2rem">Replace placeholder cards with your actual photos — all slots ready</p>
-</section>
+    <div class="gallery-item " data-cat="grading" data-cap="Sensei Presenting Certificates">
+      <div class="gallery-placeholder" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0800,#14100a);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(196,30,58,.025) 18px,rgba(196,30,58,.025) 19px)"></div>
+        <svg viewBox="0 0 100 100" style="width:80px;height:80px;position:relative;z-index:1"><g fill="none"><rect x="20" y="25" width="60" height="45" rx="3" stroke="rgba(201,145,58,.3)" stroke-width="1.5"/><line x1="30" y1="40" x2="70" y2="40" stroke="rgba(201,145,58,.2)" stroke-width="1"/><line x1="30" y1="48" x2="55" y2="48" stroke="rgba(245,240,235,.1)" stroke-width="1"/><line x1="30" y1="54" x2="45" y2="54" stroke="rgba(245,240,235,.08)" stroke-width="1"/><circle cx="65" cy="60" r="8" stroke="rgba(196,30,58,.3)" stroke-width="1.5"/><path d="M61,60 L64,63 L70,57" stroke="rgba(196,30,58,.45)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M35,28 L50,22 L65,28" stroke="rgba(201,145,58,.2)" stroke-width="1"/></g></svg>
+        <div style="margin-top:.9rem;font-family:Oswald,sans-serif;font-size:.55rem;letter-spacing:.3em;color:rgba(201,145,58,.45);text-transform:uppercase;position:relative;z-index:1">CERTIFICATE · DAY</div>
+      </div>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Grading</div>
+        <div class="gallery-cap">Sensei Presenting Certificates</div>
+      </div>
+      
+    </div>
 
+    <div class="gallery-item " data-cat="training" data-cap="Advanced Sparring Session">
+      <div class="gallery-placeholder" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d0103,#1a0208);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(196,30,58,.025) 18px,rgba(196,30,58,.025) 19px)"></div>
+        <svg viewBox="0 0 100 100" style="width:80px;height:80px;position:relative;z-index:1"><g stroke="rgba(196,30,58,.5)" fill="none" stroke-linecap="round"><circle cx="45" cy="22" r="7" fill="rgba(196,30,58,.3)" stroke="none"/><line x1="45" y1="29" x2="47" y2="46" stroke-width="4"/><line x1="46" y1="36" x2="62" y2="28" stroke-width="3"/><line x1="46" y1="36" x2="30" y2="40" stroke-width="2.5"/><line x1="47" y1="46" x2="42" y2="64" stroke-width="4"/><line x1="47" y1="46" x2="72" y2="52" stroke-width="4.5"/></g></svg>
+        <div style="margin-top:.9rem;font-family:Oswald,sans-serif;font-size:.55rem;letter-spacing:.3em;color:rgba(201,145,58,.45);text-transform:uppercase;position:relative;z-index:1">ADVANCED · SPARRING</div>
+      </div>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Training</div>
+        <div class="gallery-cap">Advanced Sparring Session</div>
+      </div>
+      
+    </div>
+
+  </div><!-- /gallery-grid -->
+</section>
 
 <!-- BRANCHES -->
 <section id="branches">
@@ -1242,7 +1547,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
           <div class="bp-photo-wrap">
             <img class="bp-photo"
               src="https://nayakbudokan.github.io/nayakbudokan/images/sensai.jpeg"
-              alt="Sensei P. Ganesh Nayak" onerror="this.style.background='rgba(196,30,58,.06)'"/>
+              alt="Sensei P. Ganesh Nayak" loading="lazy" onload="this.style.opacity='1'" style="opacity:0" onerror="this.style.background='rgba(196,30,58,.06)'"/>
             <div class="bp-photo-frame"></div>
           </div>
           <div class="bp-meta">
@@ -1277,6 +1582,14 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
               <a href="https://wa.me/919393095053" class="bp-btn-wa">WhatsApp</a>
               <a href="https://maps.app.goo.gl/jkdBpKmBquPstGVy7" target="_blank" class="bp-btn-map">Google Maps</a>
             </div>
+            <div class="bp-map-wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.9!2d78.5167!3d17.3717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDIyJzE4LjEiTiA3OMKwMzEnMDAuMSJF!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%" height="200" style="border:0;filter:invert(90%) hue-rotate(180deg);margin-top:1rem;display:block"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Nayak Budokan Karate Academy — Chatrinaka Branch Location">
+              </iframe>
+            </div>
           </div>
         </div>
       </div>
@@ -1307,6 +1620,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
   <div class="reveal-left">
     <div class="section-label">Get In Touch</div>
     <h2 class="section-title">Begin Your<br/><em>Journey</em></h2>
+    <p style="font-size:.9rem;color:rgba(245,240,235,.4);font-family:var(--font-display);letter-spacing:.08em;text-transform:uppercase;margin-top:.5rem">Hyderabad &bull; Mon–Sat &bull; 5:30 AM</p>
     <p style="margin-top:1.5rem;font-size:1.1rem;line-height:1.8;color:rgba(245,240,235,.65)">Ready to transform your life through the art of Budokan? We welcome students of all ages and experience levels.</p>
     <div class="contact-info">
       <div class="contact-item">
@@ -1322,20 +1636,30 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
         <div class="contact-detail"><div class="label">Training Hours</div><div class="val">5:30 AM – 8:00 AM<br/>Monday to Saturday</div></div>
       </div>
     </div>
+
+    <div class="quick-enquiry">
+      <div class="quick-enquiry-label">Quick Enquiry — Tap to open WhatsApp</div>
+      <button class="qe-btn" onclick="window.open('https://wa.me/919393095053?text=Hi%2C%20I%20want%20to%20enroll%20my%20child%20in%20Kids%20Karate','_blank')">Kids Karate</button>
+      <button class="qe-btn" onclick="window.open('https://wa.me/919393095053?text=Hi%2C%20I%20want%20to%20join%20Adults%20Karate','_blank')">Adults Karate</button>
+      <button class="qe-btn" onclick="window.open('https://wa.me/919393095053?text=Hi%2C%20I%20want%20info%20about%20Women%27s%20Self-Defence','_blank')">Self-Defence</button>
+      <button class="qe-btn" onclick="window.open('https://wa.me/919393095053?text=Hi%2C%20I%20want%20to%20know%20the%20class%20timings','_blank')">Class Timings</button>
+      <button class="qe-btn" onclick="window.open('https://wa.me/919393095053?text=Hi%2C%20I%20want%20to%20visit%20for%20a%20free%20trial%20class','_blank')">Free Trial</button>
+    </div>
     <a href="https://wa.me/919393095053" class="whatsapp-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chat on WhatsApp</a>
   </div>
 
   <div class="contact-form reveal-right">
     <div class="section-label">Enquire Now</div>
-    <div class="routing-badge">Smart Area Routing — Connected to Your Nearest Branch</div>
 
     <div class="form-field">
       <label>Your Name *</label>
-      <input type="text" id="eq-name" placeholder="Full name"/>
+      <input type="text" id="eq-name" placeholder="Full name" oninput="validateField(this,2)"/>
+      <span class="field-msg" id="msg-name"></span>
     </div>
     <div class="form-field">
       <label>Phone Number *</label>
-      <input type="tel" id="eq-phone" placeholder="+91 XXXXX XXXXX"/>
+      <input type="tel" id="eq-phone" placeholder="+91 XXXXX XXXXX" oninput="validateField(this,10)"/>
+      <span class="field-msg" id="msg-phone"></span>
     </div>
     <div class="form-field">
       <label>Email Address</label>
@@ -1388,7 +1712,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
     <button class="btn-primary eq-submit" onclick="submitEnquiry()">
       Send Enquiry →
     </button>
-    <p class="eq-hint">Your message will be routed to your nearest NBKA branch instructor and Head Instructor automatically.</p>
+    
   </div>
 </section>
 
@@ -1483,8 +1807,20 @@ window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>
 function toggleMobile(e){
   if(e){e.preventDefault();e.stopPropagation();}
   const m=document.getElementById('mobileMenu');
+  const btn=document.getElementById('hamburger');
   m.classList.toggle('open');
-  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+  const isOpen=m.classList.contains('open');
+  document.body.style.overflow=isOpen?'hidden':'';
+  if(btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  // Animate hamburger to X
+  const spans=btn ? btn.querySelectorAll('span') : [];
+  if(isOpen){
+    if(spans[0]) spans[0].style.transform='rotate(45deg) translate(5px,5px)';
+    if(spans[1]) spans[1].style.opacity='0';
+    if(spans[2]) spans[2].style.transform='rotate(-45deg) translate(5px,-5px)';
+  } else {
+    spans.forEach(s=>{s.style.transform='';s.style.opacity='';});
+  }
 }
 function closeMobile(){
   document.getElementById('mobileMenu').classList.remove('open');
@@ -1547,7 +1883,11 @@ function filterGallery(cat,btn){
   btn.classList.add('active');
   document.querySelectorAll('.gallery-item').forEach(item=>{
     const show=(cat==='all'||item.dataset.cat===cat);
-    item.style.display=show?'':'none';
+    item.classList.toggle('hidden',!show);
+    // Preserve span class when visible
+    if(show){
+      item.style.removeProperty('display');
+    }
   });
 }
 
@@ -1816,7 +2156,6 @@ function goToBranch(id){
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 14V4M4 9l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
-
 <script>
 // Loader auto-hides via CSS animation at 1.2s.
 // This JS adds .hidden at 1.8s as an extra safety net.
@@ -1824,6 +2163,173 @@ setTimeout(function(){
   var l=document.getElementById('pageLoader');
   if(l)l.classList.add('hidden');
 },1800);
+document.getElementById('ftYear').textContent = new Date().getFullYear();
+
+// ════════════════════════════════════════
+// SCROLL PROGRESS BAR
+// ════════════════════════════════════════
+const progressBar = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  if(!progressBar) return;
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+}, {passive:true});
+
+// ════════════════════════════════════════
+// HERO TYPEWRITER EFFECT
+// ════════════════════════════════════════
+(function(){
+  const el = document.getElementById('heroTyped');
+  if(!el) return;
+  // On touch devices — show static text, no cursor
+  if(window.matchMedia('(hover:none) and (pointer:coarse)').matches){
+    el.textContent = 'Discipline · Strength · Character';
+    return;
+  }
+  const phrases = [
+    'Discipline · Strength · Character',
+    'Authentic Budokan Karate-Do',
+    "Hyderabad's Premier Dojo",
+    'Train · Transform · Excel',
+  ];
+  let pi = 0, ci = phrases[0].length, deleting = false, wait = 0;
+  // Start cursor immediately since text is pre-filled
+  el.classList.add('typing');
+  function type(){
+    const phrase = phrases[pi];
+    if(deleting){
+      el.textContent = phrase.substring(0, --ci);
+      if(ci === 0){
+        deleting = false;
+        pi = (pi+1) % phrases.length;
+        wait = 500;
+      }
+    } else {
+      el.textContent = phrase.substring(0, ++ci);
+      if(ci === phrase.length){ deleting = true; wait = 2400; }
+    }
+    setTimeout(type, wait || (deleting ? 42 : 78));
+    wait = 0;
+  }
+  // Wait 3s on first phrase before starting to cycle
+  setTimeout(type, 3000);
+})();
+
+// ════════════════════════════════════════
+// 3D TILT ON PROGRAM CARDS
+// ════════════════════════════════════════
+document.querySelectorAll('.program-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width  - .5;
+    const y = (e.clientY - rect.top)  / rect.height - .5;
+    card.style.transform = `perspective(900px) rotateY(${x*8}deg) rotateX(${-y*6}deg) scale(1.02)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) scale(1)';
+  });
+});
+
+// ════════════════════════════════════════
+// MAGNETIC BUTTONS
+// ════════════════════════════════════════
+document.querySelectorAll('.btn-primary,.nav-cta').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r = btn.getBoundingClientRect();
+    const x = e.clientX - r.left - r.width/2;
+    const y = e.clientY - r.top  - r.height/2;
+    btn.style.transform = `translate(${x*.18}px,${y*.18}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'translate(0,0)';
+  });
+});
+
+// ════════════════════════════════════════
+// TOAST NOTIFICATION
+// ════════════════════════════════════════
+function showToast(msg, isOk){
+  const t = document.getElementById('toast');
+  const m = document.getElementById('toastMsg');
+  if(!t||!m) return;
+  t.querySelector('.toast-icon').textContent = isOk ? '✓' : '⚠';
+  t.querySelector('.toast-icon').style.color = isOk ? '#4ade80' : '#C41E3A';
+  m.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+// ════════════════════════════════════════
+// FORM FIELD VALIDATION
+// ════════════════════════════════════════
+function validateField(input, minLen){
+  const val = input.value.trim();
+  const msgId = 'msg-' + input.id.replace('eq-','');
+  const msg = document.getElementById(msgId);
+  if(val.length >= minLen){
+    input.classList.remove('invalid'); input.classList.add('valid');
+    if(msg){ msg.textContent='✓'; msg.className='field-msg ok'; }
+  } else if(val.length > 0){
+    input.classList.remove('valid'); input.classList.add('invalid');
+    if(msg){ msg.textContent='Too short'; msg.className='field-msg err'; }
+  } else {
+    input.classList.remove('valid','invalid');
+    if(msg){ msg.textContent=''; msg.className='field-msg'; }
+  }
+}
+
+// ════════════════════════════════════════
+// HERO PARALLAX (corrected placement)
+// ════════════════════════════════════════
+const _heroKanji = document.querySelector('.hero-kanji');
+if(_heroKanji){
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if(y < window.innerHeight)
+      _heroKanji.style.transform = 'translateY(calc(-50% + '+y*.15+'px))';
+  },{passive:true});
+}
+
+// ════════════════════════════════════════
+// PATCH submitEnquiry → show toast
+// ════════════════════════════════════════
+const _origSubmit = window.submitEnquiry;
+window.submitEnquiry = function(){
+  const name = document.getElementById('eq-name')?.value?.trim();
+  const phone = document.getElementById('eq-phone')?.value?.trim();
+  const area = document.getElementById('eq-area')?.value?.trim();
+  if(!name || name.length < 2){
+    showToast('Please enter your full name', false);
+    document.getElementById('eq-name')?.classList.add('invalid');
+    return;
+  }
+  if(!phone || phone.replace(/\D/g,'').length < 10){
+    showToast('Please enter a valid 10-digit phone number', false);
+    document.getElementById('eq-phone')?.classList.add('invalid');
+    return;
+  }
+  if(!area){
+    showToast('Please enter your area to route your enquiry', false);
+    return;
+  }
+  if(typeof _origSubmit === 'function') _origSubmit();
+};
+
+// ════════════════════════════════════════
+// REMEMBER LAST BRANCH (localStorage)
+// ════════════════════════════════════════
+const _origShowBranch = window.showBranch;
+window.showBranch = function(id){
+  if(typeof _origShowBranch === 'function') _origShowBranch(id);
+  try { localStorage.setItem('nbka_last_branch', id); } catch(e){}
+};
+// Restore on load
+try {
+  const lastBranch = localStorage.getItem('nbka_last_branch');
+  if(lastBranch) setTimeout(() => { if(document.getElementById('bp-'+lastBranch)) showBranch(lastBranch); }, 500);
+} catch(e){}
+
 </script>
 </body>
 </html>

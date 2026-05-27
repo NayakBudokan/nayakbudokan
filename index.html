@@ -106,6 +106,7 @@ nav.scrolled{background:rgba(5,5,5,.97);border-bottom:1px solid rgba(201,145,58,
 .scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--red),transparent);animation:scrollPulse 2s ease-in-out infinite}
 @keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
 .hero-geo{position:absolute;right:0;bottom:0;opacity:.07;pointer-events:none}
+.hero-accent{position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,transparent,var(--red),transparent);opacity:.6}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
 /* ── STATS ── */
@@ -114,7 +115,7 @@ nav.scrolled{background:rgba(5,5,5,.97);border-bottom:1px solid rgba(201,145,58,
 .stat-item:last-child{border-right:none}
 .stat-item.visible{opacity:1;transform:translateY(0)}
 .stat-num{font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--red);line-height:1}
-.stat-label{font-family:var(--font-display);font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gray);margin-top:.4rem}
+.stat-label{font-family:var(--font-display);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gray);margin-top:.25rem}
 
 /* ── COMMON ── */
 section{position:relative;z-index:2}
@@ -141,7 +142,7 @@ section{position:relative;z-index:2}
 .about-kanji-deco{position:absolute;bottom:-2rem;right:-1rem;font-family:var(--font-jp);font-size:8rem;color:rgba(201,145,58,.06);line-height:1;pointer-events:none}
 .about-text p{font-size:1.05rem;line-height:1.75;color:rgba(245,240,235,.75);margin-bottom:1rem}
 .about-text p strong{color:var(--gold-light);font-weight:500}
-.about-quote{margin-top:2.5rem;padding:1.5rem 2rem;border-left:2px solid var(--red);background:rgba(196,30,58,.05)}
+.about-quote{margin-top:1.5rem;padding:1rem 1.5rem;border-left:2px solid var(--red);background:rgba(196,30,58,.05)}
 .about-quote p{font-size:1.3rem;font-style:italic;color:var(--white);line-height:1.6;margin:0}
 .about-quote cite{display:block;margin-top:.8rem;font-family:var(--font-display);font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-style:normal}
 
@@ -158,13 +159,15 @@ section{position:relative;z-index:2}
 #classes{padding:5rem 8rem;border-top:1px solid rgba(201,145,58,.08)}
 .classes-header{margin-bottom:3rem}
 .programs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(201,145,58,.08);border:1px solid rgba(201,145,58,.08)}
-.program-card{background:var(--black);padding:2.5rem;position:relative;overflow:hidden;transition:background .4s}
+.program-card{background:var(--black);padding:2rem;position:relative;overflow:hidden;transition:background .4s}
 .program-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(196,30,58,.06) 0%,transparent 60%);opacity:0;transition:opacity .4s}
-.program-card:hover::before{opacity:1}
-.program-card:hover .program-num{color:var(--red)}
+.program-card:hover::before,.program-card:active::before{opacity:1}
+.program-card:hover .program-num,.program-card:active .program-num{color:var(--red)}
 .program-num{font-family:var(--font-display);font-size:5rem;font-weight:700;color:rgba(245,240,235,.04);line-height:1;position:absolute;top:1.5rem;right:2rem;transition:color .4s}
-.program-icon{font-size:1.8rem;margin-bottom:1.5rem;display:block}
-.program-title{font-family:var(--font-display);font-size:1.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem}
+.program-icon-block{display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem}
+.pi-line{display:block;width:24px;height:2px;background:var(--red)}
+.pi-label{font-family:var(--font-display);font-size:.55rem;letter-spacing:.3em;color:var(--red);font-weight:700}
+.program-title{font-family:var(--font-display);font-size:1.35rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.8rem}
 .program-line{width:30px;height:2px;background:var(--red);margin-bottom:1.2rem}
 .program-desc{font-size:1.05rem;line-height:1.8;color:rgba(245,240,235,.65)}
 .program-tag{display:inline-block;margin-top:1.5rem;font-family:var(--font-display);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,145,58,.25);padding:.3rem .8rem}
@@ -179,19 +182,18 @@ section{position:relative;z-index:2}
 .sensei-badge .name{font-size:1.1rem;font-weight:600;margin-top:.2rem}
 .sensei-content p{font-size:1rem;line-height:1.7;color:rgba(245,240,235,.7);margin-bottom:1rem}
 .sensei-content p strong{color:var(--gold-light);font-weight:500}
-.credential-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:.8rem}
+.credential-list{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:.6rem}
 .credential-list li{display:flex;align-items:flex-start;gap:1rem;font-family:var(--font-display);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,240,235,.65)}
 .credential-list li::before{content:'▸';color:var(--red);flex-shrink:0;margin-top:2px}
 
 /* ── PHILOSOPHY ── */
 #philosophy{padding:5rem 8rem;text-align:center;border-top:1px solid rgba(201,145,58,.08);background:linear-gradient(180deg,rgba(196,30,58,.04) 0%,transparent 100%)}
 .philosophy-quote{font-family:var(--font-body);font-size:clamp(1.5rem,3vw,2.2rem);font-style:italic;font-weight:300;line-height:1.5;max-width:800px;margin:2rem auto;color:var(--white);position:relative}
-.philosophy-quote::before,.philosophy-quote::after{content:'\201C';font-family:var(--font-display);font-size:8rem;color:var(--red);opacity:.2;position:absolute;line-height:1}
-.philosophy-quote::before{top:-2rem;left:-3rem}
-.philosophy-quote::after{content:'\201D';bottom:-4rem;right:-3rem}
+.philosophy-quote::before{content:'\201C';font-family:var(--font-display);font-size:5rem;color:var(--red);opacity:.18;position:absolute;line-height:1;top:-1rem;left:-1rem}
+.philosophy-quote::after{content:'\201D';font-family:var(--font-display);font-size:5rem;color:var(--red);opacity:.18;position:absolute;line-height:1;bottom:-2rem;right:-1rem}
 .values-row{display:flex;justify-content:center;gap:3rem;margin-top:3rem;flex-wrap:wrap}
 .value-item{text-align:center}
-.value-circle{width:90px;height:90px;border-radius:50%;border:1px solid rgba(196,30,58,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:var(--font-jp);font-size:1.8rem;color:var(--red);transition:background .3s,border-color .3s}
+.value-circle{width:80px;height:80px;border-radius:50%;border:1px solid rgba(196,30,58,.3);display:flex;align-items:center;justify-content:center;margin:0 auto .7rem;font-family:var(--font-jp);font-size:1.6rem;color:var(--red);transition:all .3s}
 .value-item:hover .value-circle{background:rgba(196,30,58,.1);border-color:var(--red)}
 .value-name{font-family:var(--font-display);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gray)}
 
@@ -362,6 +364,26 @@ section{position:relative;z-index:2}
   color:rgba(245,240,235,.4);margin-top:.8rem;text-align:center;line-height:1.6;
 }
 
+
+/* ── MID-PAGE CTA BANNER ── */
+.cta-banner{
+  padding:3.5rem 8rem;
+  background:linear-gradient(135deg,rgba(139,0,0,.25) 0%,rgba(196,30,58,.08) 50%,rgba(139,0,0,.15) 100%);
+  border-top:1px solid rgba(196,30,58,.2);border-bottom:1px solid rgba(196,30,58,.2);
+  display:flex;align-items:center;justify-content:space-between;gap:3rem;position:relative;overflow:hidden;
+}
+.cta-banner::before{content:'武道';position:absolute;right:5%;top:50%;transform:translateY(-50%);
+  font-family:var(--font-jp);font-size:12rem;color:rgba(196,30,58,.06);line-height:1;pointer-events:none}
+.cta-banner-text{position:relative;z-index:1}
+.cta-banner-label{font-family:var(--font-display);font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.cta-banner-heading{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;text-transform:uppercase;color:var(--white);line-height:1.1}
+.cta-banner-sub{font-size:1rem;color:rgba(245,240,235,.5);margin-top:.5rem;font-style:italic}
+.cta-banner-actions{display:flex;gap:1rem;flex-shrink:0;flex-wrap:wrap;position:relative;z-index:1}
+@media(max-width:900px){
+  .cta-banner{padding:2.5rem 1.5rem;flex-direction:column;text-align:center}
+  .cta-banner-actions{justify-content:center}
+  .cta-banner::before{font-size:8rem;opacity:.04}
+}
 /* ── ROUTING MODAL ── */
 .routing-overlay{
   position:fixed;inset:0;background:rgba(5,5,5,.97);z-index:700;
@@ -476,10 +498,22 @@ section{position:relative;z-index:2}
   animation:loadFill 1s ease forwards}
 @keyframes loadFill{from{width:0}to{width:100%}}
 
+
+/* ── ACHIEVEMENT TICKER ── */
+.ticker-wrap{overflow:hidden;background:rgba(196,30,58,.06);border-bottom:1px solid rgba(196,30,58,.15);padding:.65rem 0;position:relative}
+.ticker-wrap::before,.ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.ticker-wrap::before{left:0;background:linear-gradient(to right,rgba(5,5,5,1),transparent)}
+.ticker-wrap::after{right:0;background:linear-gradient(to left,rgba(5,5,5,1),transparent)}
+.ticker-track{display:flex;gap:0;animation:tickerScroll 30s linear infinite;width:max-content}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{display:flex;align-items:center;gap:1.5rem;padding:0 2.5rem;white-space:nowrap;font-family:var(--font-display);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.4)}
+.ticker-item .ti-dot{width:4px;height:4px;border-radius:50%;background:var(--red);flex-shrink:0}
+.ticker-item .ti-highlight{color:var(--gold);font-weight:600}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 /* ── CONTACT ── */
 #contact{padding:5rem 8rem;border-top:1px solid rgba(201,145,58,.08);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
-.contact-info{margin-top:3rem;display:flex;flex-direction:column;gap:2rem}
-.contact-item{display:flex;gap:1.5rem;align-items:flex-start}
+.contact-info{margin-top:1.2rem;display:flex;flex-direction:column;gap:1.2rem}
+.contact-item{display:flex;gap:1rem;align-items:flex-start}
 .contact-icon{width:48px;height:44px;border:1px solid rgba(196,30,58,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-display);font-size:.5rem;letter-spacing:.1em;color:var(--red);padding:0 .3rem}
 .contact-detail .label{font-family:var(--font-display);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
 .contact-detail .val{font-size:1rem;color:rgba(245,240,235,.8);line-height:1.6}
@@ -555,9 +589,8 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
 
   /* About */
   #about{grid-template-columns:1fr;gap:3rem;padding:4rem 1.5rem}
-  .about-ring{display:none}
-  .about-logo-wrap{width:180px;height:180px;border-radius:50%;background:rgba(196,30,58,.06);border:1px solid rgba(196,30,58,.15);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
-  .about-logo-wrap img{width:150px}
+  .about-logo-wrap{margin:0 auto}
+  .about-visual{justify-content:center}
   .about-kanji-deco{display:none}
 
   /* Sensei */
@@ -715,10 +748,6 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
   <div class="loader-name">Nayak Budokan Karate Academy</div>
   <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
-  <div class="loader-name">Nayak Budokan Karate Academy</div>
-  <div class="loader-bar"><div class="loader-fill"></div></div>
-</div>
-</div>
 
 <!-- CURSOR -->
 <div class="cursor" id="cursor"></div>
@@ -826,6 +855,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
+  <div class="hero-accent"></div>
   <div class="hero-kanji">武道</div>
   <svg class="hero-geo" width="400" height="400" viewBox="0 0 400 400" fill="none">
     <polygon points="200,20 380,380 20,380" stroke="rgba(196,30,58,0.12)" stroke-width="1" fill="none"/>
@@ -859,6 +889,29 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
   <div class="stat-item reveal" style="transition-delay:.3s"><div class="stat-num" data-target="4">0</div><div class="stat-label">Training Programs</div></div>
 </div>
 
+<!-- ACHIEVEMENT TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="tickerTrack">
+    <div class="ticker-item"><span class="ti-dot"></span><span class="ti-highlight">40+ Years</span> of Budokan Legacy</div>
+    <div class="ticker-item"><span class="ti-dot"></span><span class="ti-highlight">500+</span> Students Trained</div>
+    <div class="ticker-item"><span class="ti-dot"></span>Affiliated with <span class="ti-highlight">National Budokan Federation</span></div>
+    <div class="ticker-item"><span class="ti-dot"></span><span class="ti-highlight">State &amp; National</span> Tournament Champions</div>
+    <div class="ticker-item"><span class="ti-dot"></span>Authentic <span class="ti-highlight">Budokan Karate-Do</span> Lineage since 1966</div>
+    <div class="ticker-item"><span class="ti-dot"></span><span class="ti-highlight">4 Programs</span> — Kids · Adults · Women · Tournament</div>
+    <div class="ticker-item"><span class="ti-dot"></span>Training <span class="ti-highlight">Mon–Sat · 5:30 AM</span></div>
+    <div class="ticker-item"><span class="ti-dot"></span>Hyderabad's <span class="ti-highlight">Premier Martial Arts Academy</span></div>
+    <!-- duplicate for seamless loop -->
+    <div class="ticker-item"><span class="ti-dot"></span><span class="ti-highlight">40+ Years</span> of Budokan Legacy</div>
+    <div class="ticker-item"><span class="ti-dot"></span><span class="ti-highlight">500+</span> Students Trained</div>
+    <div class="ticker-item"><span class="ti-dot"></span>Affiliated with <span class="ti-highlight">National Budokan Federation</span></div>
+    <div class="ticker-item"><span class="ti-dot"></span><span class="ti-highlight">State &amp; National</span> Tournament Champions</div>
+    <div class="ticker-item"><span class="ti-dot"></span>Authentic <span class="ti-highlight">Budokan Karate-Do</span> Lineage since 1966</div>
+    <div class="ticker-item"><span class="ti-dot"></span><span class="ti-highlight">4 Programs</span> — Kids · Adults · Women · Tournament</div>
+    <div class="ticker-item"><span class="ti-dot"></span>Training <span class="ti-highlight">Mon–Sat · 5:30 AM</span></div>
+    <div class="ticker-item"><span class="ti-dot"></span>Hyderabad's <span class="ti-highlight">Premier Martial Arts Academy</span></div>
+  </div>
+</div>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="about-visual reveal-left">
@@ -872,7 +925,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
   <div class="about-text reveal-right">
     <div class="section-label">Our Story</div>
     <h2 class="section-title">More Than<br/><em>Martial Arts</em></h2>
-    <p style="margin-top:1.2rem">Nayak Budokan Karate Academy is dedicated to shaping strong individuals through <strong>authentic traditional karate training</strong>. We believe karate is not merely a physical practice — it is a way of life that builds character, focus, and inner strength.</p>
+    <p style="margin-top:1rem">Nayak Budokan Karate Academy is dedicated to shaping strong individuals through <strong>authentic traditional karate training</strong>. We believe karate is not merely a physical practice — it is a way of life that builds character, focus, and inner strength.</p>
     <p>Our mission is to instil discipline, confidence, self-respect, and moral values in students of all ages — children, youth, and adults alike — transforming lives one kata at a time.</p>
     <div class="about-quote">
       <p>Karate begins with respect and ends with character.</p>
@@ -920,7 +973,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
   <div class="programs-grid">
     <div class="program-card reveal" style="transition-delay:.1s">
       <div class="program-num">01</div>
-      <span class="program-icon">🥋</span>
+      <div class="program-icon-block"><span class="pi-line"></span><span class="pi-label">KID</span></div>
       <div class="program-title">Kids Karate</div>
       <div class="program-line"></div>
       <p class="program-desc">A structured program focusing on discipline, confidence, coordination, and respect — shaping character before technique.</p>
@@ -928,7 +981,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
     </div>
     <div class="program-card reveal" style="transition-delay:.2s">
       <div class="program-num">02</div>
-      <span class="program-icon">💪</span>
+      <div class="program-icon-block"><span class="pi-line"></span><span class="pi-label">ADL</span></div>
       <div class="program-title">Adults Karate</div>
       <div class="program-line"></div>
       <p class="program-desc">Physical fitness, stress relief, traditional techniques, and practical self-defence for all ages and fitness levels.</p>
@@ -936,7 +989,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
     </div>
     <div class="program-card reveal" style="transition-delay:.3s">
       <div class="program-num">03</div>
-      <span class="program-icon">🛡️</span>
+      <div class="program-icon-block"><span class="pi-line"></span><span class="pi-label">WSD</span></div>
       <div class="program-title">Women's Self-Defence</div>
       <div class="program-line"></div>
       <p class="program-desc">Specialized training empowering women with awareness, confidence, and effective techniques for real-life situations.</p>
@@ -944,7 +997,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
     </div>
     <div class="program-card reveal" style="transition-delay:.4s">
       <div class="program-num">04</div>
-      <span class="program-icon">🏆</span>
+      <div class="program-icon-block"><span class="pi-line"></span><span class="pi-label">ADV</span></div>
       <div class="program-title">Advanced &amp; Tournament</div>
       <div class="program-line"></div>
       <p class="program-desc">Intensive training for dedicated students targeting state, national &amp; international competition glory.</p>
@@ -974,6 +1027,19 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
     </ul>
   </div>
 </section>
+
+<!-- MID-PAGE CTA BANNER -->
+<div class="cta-banner reveal">
+  <div class="cta-banner-text">
+    <div class="cta-banner-label">Start Today</div>
+    <div class="cta-banner-heading">Ready to Begin<br/>Your Journey?</div>
+    <div class="cta-banner-sub">First trial class is free. Walk in any morning — Mon to Sat, 5:30 AM.</div>
+  </div>
+  <div class="cta-banner-actions">
+    <a href="https://wa.me/919393095053" class="btn-primary">WhatsApp Us</a>
+    <a href="#contact" class="btn-ghost">Enquire Now</a>
+  </div>
+</div>
 
 <div class="deco-divider"><div class="deco-line"></div><div class="deco-symbol">心</div><div class="deco-line"></div></div>
 
@@ -1256,7 +1322,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
         <div class="contact-detail"><div class="label">Training Hours</div><div class="val">5:30 AM – 8:00 AM<br/>Monday to Saturday</div></div>
       </div>
     </div>
-    <a href="https://wa.me/919393095053" class="whatsapp-btn">💬 Chat on WhatsApp</a>
+    <a href="https://wa.me/919393095053" class="whatsapp-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chat on WhatsApp</a>
   </div>
 
   <div class="contact-form reveal-right">

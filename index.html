@@ -1,107 +1,1763 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Nayak Budokan Karate Academy</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Nayak Budokan Karate Academy | Hyderabad</title>
+<meta name="description" content="Nayak Budokan Karate Academy — authentic Budokan Karate-Do training in Hyderabad. Kids, Adults, Women's Self-Defence & Tournament programs. Enrol today."/>
+<meta name="keywords" content="karate hyderabad, budokan karate, karate classes hyderabad, self defence hyderabad, kids karate, NBKA"/>
+<meta property="og:title" content="Nayak Budokan Karate Academy"/>
+<meta property="og:description" content="Authentic Budokan Karate-Do — Discipline, Strength, Character. Hyderabad's premier karate academy."/>
+<meta property="og:image" content="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png"/>
+<meta property="og:type" content="website"/>
+<meta name="theme-color" content="#050505"/>
+<link rel="icon" href="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#050505;--red:#C41E3A;--red-dark:#8B0000;
+  --gold:#C9913A;--gold-light:#E5BE7A;--white:#F5F0EB;--gray:#999;
+  --font-display:'Oswald',sans-serif;--font-body:'Cormorant Garamond',serif;
+  --font-jp:'Noto Serif JP',serif;
+}
+html{scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+body{background:var(--black);color:var(--white);font-family:var(--font-body);overflow-x:hidden;cursor:none;line-height:1.75}
+.cursor{position:fixed;width:10px;height:10px;background:var(--red);border-radius:50%;pointer-events:none;z-index:9999;transition:transform .15s ease}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(201,145,58,.5);border-radius:50%;pointer-events:none;z-index:9998}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:.4;pointer-events:none;z-index:1}
 
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="style.css">
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:linear-gradient(to bottom,rgba(5,5,5,.95),rgba(5,5,5,0));transition:background .4s}
+nav.scrolled{background:rgba(5,5,5,.97);border-bottom:1px solid rgba(201,145,58,.15)}
+.nav-logo{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.nav-logo-img{height:42px;filter:brightness(1.05);flex-shrink:0}
+.nav-logo img{height:42px;filter:brightness(1.1)}
+.nav-logo-text{font-family:var(--font-display);font-size:.95rem;letter-spacing:.15em;color:var(--gold-light);text-transform:uppercase;line-height:1.2}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
+.nav-links a{font-family:var(--font-display);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.65);text-decoration:none;position:relative;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-links a:hover::after{width:100%}
+.nav-links a.nav-active{color:var(--gold-light)}
+.nav-links a.nav-active::after{width:100%;background:var(--gold)}
 
-    <!-- CINZEL FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+/* BRANCHES DROPDOWN IN NAV */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{font-family:var(--font-display);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.65);background:none;border:none;cursor:none;display:flex;align-items:center;gap:.4rem;padding:0;transition:color .3s;position:relative}
+.nav-dropdown-trigger::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-dropdown-trigger:hover,.nav-dropdown:hover .nav-dropdown-trigger{color:var(--gold-light)}
+.nav-dropdown:hover .nav-dropdown-trigger::after{width:100%}
+.nav-dropdown-trigger .chevron{display:inline-block;transition:transform .3s;font-size:.6rem;margin-top:1px}
+.nav-dropdown:hover .chevron{transform:rotate(180deg)}
+.nav-dropdown-menu{
+  position:absolute;top:100%;left:50%;
+  background:rgba(10,10,10,.98);border:1px solid rgba(201,145,58,.2);
+  min-width:240px;padding:16px 0 .5rem;
+  opacity:0;visibility:hidden;
+  transform:translateX(-50%) translateY(-6px);
+  transition:opacity .25s,transform .25s,visibility .25s;
+  pointer-events:none;z-index:300;
+}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:all}
+.nav-dropdown-menu::before{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:10px;height:10px;background:rgba(201,145,58,.2);clip-path:polygon(50% 0%,100% 100%,0% 100%)}
+.branch-menu-item{
+  display:flex;align-items:center;gap:.8rem;padding:.75rem 1.4rem;
+  font-family:var(--font-display);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(245,240,235,.7);cursor:none;transition:background .2s,color .2s;border:none;background:none;width:100%;text-align:left;
+}
+.branch-menu-item:hover{background:rgba(196,30,58,.12);color:var(--gold-light)}
+.branch-menu-item .dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0}
+.branch-menu-item.coming-soon .dot{background:var(--gray)}
+.branch-menu-item.coming-soon{color:rgba(245,240,235,.35);cursor:default}
+.branch-menu-item .badge{margin-left:auto;font-size:.55rem;padding:.15rem .5rem;border:1px solid rgba(201,145,58,.2);color:var(--gold);letter-spacing:.1em}
+
+.nav-cta{font-family:var(--font-display);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.6rem 1.6rem;border:1px solid var(--red);color:var(--white);background:transparent;cursor:none;text-decoration:none;transition:background .3s}
+.nav-cta:hover{background:var(--red)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;-webkit-tap-highlight-color:transparent;touch-action:manipulation;z-index:201;position:relative}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:.3s}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(5,5,5,.98);z-index:500;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;padding:2rem;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.mobile-menu.open{display:flex}
+.mobile-menu a,.mobile-menu button.mob-link{font-family:var(--font-display);font-size:1.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white);text-decoration:none;transition:color .3s;background:none;border:none;cursor:none}
+.mobile-menu a:hover,.mobile-menu button.mob-link:hover{color:var(--gold-light)}
+
+/* ── HERO ── */
+#hero{height:100vh;height:100svh;min-height:600px;position:relative;display:flex;align-items:center;padding:0 8rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(139,0,0,.25) 0%,transparent 65%),radial-gradient(ellipse at 20% 80%,rgba(201,145,58,.08) 0%,transparent 50%),linear-gradient(135deg,#050505 0%,#0d0303 60%,#050505 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,145,58,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,145,58,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;mask-image:radial-gradient(ellipse at center,black 0%,transparent 70%)}
+.hero-kanji{position:absolute;right:6%;top:50%;transform:translateY(-50%);font-family:var(--font-jp);font-size:28vw;color:rgba(196,30,58,.04);line-height:1;pointer-events:none;user-select:none;animation:float 8s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(-50%)}50%{transform:translateY(-52%)}}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-eyebrow{font-family:var(--font-display);font-size:.7rem;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;opacity:0;animation:fadeUp .8s .3s ease forwards}
+.hero-eyebrow::before{content:'';display:block;width:40px;height:1px;background:var(--red)}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.8rem,7vw,7rem);font-weight:700;line-height:.95;text-transform:uppercase;letter-spacing:-.01em;opacity:0;animation:fadeUp .8s .5s ease forwards}
+.hero-title .line-red{color:var(--red)}
+.hero-title .line-thin{font-weight:300;font-size:clamp(2.5rem,5vw,5rem);letter-spacing:.05em}
+.hero-tagline{font-family:var(--font-body);font-size:1.2rem;font-style:italic;color:rgba(245,240,235,.55);margin-top:1.5rem;letter-spacing:.05em;opacity:0;animation:fadeUp .8s .7s ease forwards}
+.hero-actions{margin-top:3rem;display:flex;gap:1.5rem;align-items:center;opacity:0;animation:fadeUp .8s .9s ease forwards}
+.btn-primary{font-family:var(--font-display);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;padding:.9rem 2.5rem;background:var(--red);color:var(--white);text-decoration:none;border:1px solid var(--red);transition:background .3s,transform .3s;display:inline-block}
+.btn-primary:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-ghost{font-family:var(--font-display);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;padding:.9rem 2.5rem;background:transparent;color:var(--white);text-decoration:none;border:1px solid rgba(245,240,235,.25);transition:border-color .3s;display:inline-block}
+.btn-ghost:hover{border-color:var(--gold)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:8rem;display:flex;flex-direction:column;align-items:center;gap:.6rem;opacity:0;animation:fadeUp .8s 1.2s ease forwards}
+.hero-scroll span{font-family:var(--font-display);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gray)}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--red),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
+.hero-geo{position:absolute;right:0;bottom:0;opacity:.07;pointer-events:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── STATS ── */
+.stats-bar{background:rgba(196,30,58,.08);border-top:1px solid rgba(196,30,58,.2);border-bottom:1px solid rgba(196,30,58,.2);display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:1.4rem;text-align:center;border-right:1px solid rgba(196,30,58,.15);opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.stat-item:last-child{border-right:none}
+.stat-item.visible{opacity:1;transform:translateY(0)}
+.stat-num{font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--red);line-height:1}
+.stat-label{font-family:var(--font-display);font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gray);margin-top:.4rem}
+
+/* ── COMMON ── */
+section{position:relative;z-index:2}
+.section-label{font-family:var(--font-display);font-size:.65rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.section-label::before{content:'';display:block;width:30px;height:1px;background:var(--red)}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.8rem);font-weight:700;text-transform:uppercase;line-height:.95;letter-spacing:-.01em}
+.section-title em{color:var(--red);font-style:normal}
+.deco-divider{display:flex;align-items:center;gap:1rem;margin:0 8rem;padding:.8rem 0;border-top:1px solid rgba(201,145,58,.08)}
+.deco-line{flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(201,145,58,.15),transparent)}
+.deco-symbol{font-family:var(--font-jp);font-size:1.2rem;color:rgba(196,30,58,.4)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .8s,transform .8s}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .8s,transform .8s}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+
+/* ── ABOUT ── */
+#about{padding:5rem 8rem;display:grid;grid-template-columns:200px 1fr;gap:5rem;align-items:center}
+.about-visual{position:relative;display:flex;align-items:center;justify-content:center}
+
+.about-logo-wrap{width:180px;height:180px;border-radius:50%;background:rgba(196,30,58,.06);border:1px solid rgba(196,30,58,.15);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+.about-logo-img{width:145px;height:145px;object-fit:contain;filter:drop-shadow(0 0 20px rgba(196,30,58,.4))}
+.about-kanji-deco{position:absolute;bottom:-2rem;right:-1rem;font-family:var(--font-jp);font-size:8rem;color:rgba(201,145,58,.06);line-height:1;pointer-events:none}
+.about-text p{font-size:1.05rem;line-height:1.75;color:rgba(245,240,235,.75);margin-bottom:1rem}
+.about-text p strong{color:var(--gold-light);font-weight:500}
+.about-quote{margin-top:2.5rem;padding:1.5rem 2rem;border-left:2px solid var(--red);background:rgba(196,30,58,.05)}
+.about-quote p{font-size:1.3rem;font-style:italic;color:var(--white);line-height:1.6;margin:0}
+.about-quote cite{display:block;margin-top:.8rem;font-family:var(--font-display);font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-style:normal}
+
+/* ── LINEAGE ── */
+#lineage{padding:4.5rem 8rem;background:linear-gradient(135deg,rgba(139,0,0,.06) 0%,transparent 60%);text-align:center;border-top:1px solid rgba(201,145,58,.08)}
+.lineage-timeline{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;margin:3rem auto 0;gap:0;max-width:900px}
+.lineage-node{text-align:center;padding:1rem 1.5rem}
+.lineage-year{font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--red);line-height:1}
+.lineage-name{font-family:var(--font-display);font-size:.95rem;font-weight:600;letter-spacing:.08em;margin:.5rem 0 .3rem;text-transform:uppercase}
+.lineage-desc{font-size:.9rem;color:var(--gray);font-style:italic;line-height:1.5}
+.lineage-arrow{color:var(--red);font-size:1.5rem;opacity:.5}
+
+/* ── CLASSES ── */
+#classes{padding:5rem 8rem;border-top:1px solid rgba(201,145,58,.08)}
+.classes-header{margin-bottom:3rem}
+.programs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(201,145,58,.08);border:1px solid rgba(201,145,58,.08)}
+.program-card{background:var(--black);padding:2.5rem;position:relative;overflow:hidden;transition:background .4s}
+.program-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(196,30,58,.06) 0%,transparent 60%);opacity:0;transition:opacity .4s}
+.program-card:hover::before{opacity:1}
+.program-card:hover .program-num{color:var(--red)}
+.program-num{font-family:var(--font-display);font-size:5rem;font-weight:700;color:rgba(245,240,235,.04);line-height:1;position:absolute;top:1.5rem;right:2rem;transition:color .4s}
+.program-icon{font-size:1.8rem;margin-bottom:1.5rem;display:block}
+.program-title{font-family:var(--font-display);font-size:1.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem}
+.program-line{width:30px;height:2px;background:var(--red);margin-bottom:1.2rem}
+.program-desc{font-size:1.05rem;line-height:1.8;color:rgba(245,240,235,.65)}
+.program-tag{display:inline-block;margin-top:1.5rem;font-family:var(--font-display);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,145,58,.25);padding:.3rem .8rem}
+
+/* ── SENSEI ── */
+#sensei{padding:5rem 8rem;display:grid;grid-template-columns:380px 1fr;gap:5rem;align-items:start;border-top:1px solid rgba(201,145,58,.08);background:radial-gradient(ellipse at 80% 50%,rgba(139,0,0,.08) 0%,transparent 60%)}
+.sensei-img-wrap{position:relative;width:380px;padding-bottom:2rem}
+.sensei-img-frame{position:absolute;top:1rem;left:1rem;right:-1rem;bottom:-1rem;border:1px solid rgba(196,30,58,.3);pointer-events:none}
+.sensei-img{width:100%;max-height:440px;object-fit:cover;object-position:top center;display:block;filter:grayscale(15%) contrast(1.05);border:1px solid rgba(201,145,58,.1)}
+.sensei-badge{position:absolute;bottom:-1.5rem;right:-.5rem;background:var(--red);padding:1rem 1.5rem;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em}
+.sensei-badge .rank{font-size:.65rem;color:rgba(255,255,255,.7);letter-spacing:.2em}
+.sensei-badge .name{font-size:1.1rem;font-weight:600;margin-top:.2rem}
+.sensei-content p{font-size:1rem;line-height:1.7;color:rgba(245,240,235,.7);margin-bottom:1rem}
+.sensei-content p strong{color:var(--gold-light);font-weight:500}
+.credential-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:.8rem}
+.credential-list li{display:flex;align-items:flex-start;gap:1rem;font-family:var(--font-display);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,240,235,.65)}
+.credential-list li::before{content:'▸';color:var(--red);flex-shrink:0;margin-top:2px}
+
+/* ── PHILOSOPHY ── */
+#philosophy{padding:5rem 8rem;text-align:center;border-top:1px solid rgba(201,145,58,.08);background:linear-gradient(180deg,rgba(196,30,58,.04) 0%,transparent 100%)}
+.philosophy-quote{font-family:var(--font-body);font-size:clamp(1.5rem,3vw,2.2rem);font-style:italic;font-weight:300;line-height:1.5;max-width:800px;margin:2rem auto;color:var(--white);position:relative}
+.philosophy-quote::before,.philosophy-quote::after{content:'\201C';font-family:var(--font-display);font-size:8rem;color:var(--red);opacity:.2;position:absolute;line-height:1}
+.philosophy-quote::before{top:-2rem;left:-3rem}
+.philosophy-quote::after{content:'\201D';bottom:-4rem;right:-3rem}
+.values-row{display:flex;justify-content:center;gap:3rem;margin-top:3rem;flex-wrap:wrap}
+.value-item{text-align:center}
+.value-circle{width:90px;height:90px;border-radius:50%;border:1px solid rgba(196,30,58,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:var(--font-jp);font-size:1.8rem;color:var(--red);transition:background .3s,border-color .3s}
+.value-item:hover .value-circle{background:rgba(196,30,58,.1);border-color:var(--red)}
+.value-name{font-family:var(--font-display);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gray)}
+
+/* ── GALLERY ── */
+#gallery{padding:5rem 8rem;border-top:1px solid rgba(201,145,58,.08)}
+.gallery-header{margin-bottom:2rem}
+.gallery-filters{display:flex;gap:.8rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.gf-btn{font-family:var(--font-display);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;padding:.7rem 1.2rem;border:1px solid rgba(245,240,235,.15);background:transparent;color:rgba(245,240,235,.5);cursor:pointer;transition:all .3s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;min-height:44px}
+.gf-btn:hover,.gf-btn.active{border-color:var(--red);color:var(--white);background:rgba(196,30,58,.1)}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:3px;
+}
+.gallery-item{
+  position:relative;overflow:hidden;cursor:none;
+  aspect-ratio:4/3;background:#111;
+}
+.gallery-item.tall{aspect-ratio:3/4}
+.gallery-item img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%) contrast(1.05);transition:transform .6s ease,filter .4s ease;display:block}
+.gallery-item:hover img{transform:scale(1.07);filter:grayscale(0%) contrast(1.1)}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,5,.8) 0%,transparent 50%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-cat{font-family:var(--font-display);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.gallery-cap{font-family:var(--font-display);font-size:.9rem;color:var(--white);letter-spacing:.05em}
+.gallery-zoom{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border:1px solid rgba(245,240,235,.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;opacity:0;transition:opacity .3s;background:rgba(5,5,5,.5)}
+.gallery-item:hover .gallery-zoom{opacity:1}
+/* placeholder when no real image */
+.gallery-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.gallery-placeholder .ph-icon{font-size:3rem;opacity:.3}
+.gallery-placeholder .ph-text{font-family:var(--font-display);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.2)}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(5,5,5,.97);z-index:500;display:none;align-items:center;justify-content:center;flex-direction:column;padding:2rem}
+.lightbox.open{display:flex}
+.lightbox-img{max-width:90vw;max-height:80vh;object-fit:contain;border:1px solid rgba(201,145,58,.1)}
+.lightbox-cap{font-family:var(--font-display);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:1.5rem}
+.lightbox-close{position:absolute;top:2rem;right:2rem;font-size:2rem;color:rgba(245,240,235,.5);cursor:none;background:none;border:none;transition:color .3s;line-height:1}
+.lightbox-close:hover{color:var(--red)}
+.lightbox-nav{display:flex;gap:2rem;margin-top:1.5rem}
+.lb-nav-btn{font-family:var(--font-display);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;padding:.5rem 1.5rem;border:1px solid rgba(245,240,235,.2);background:none;color:rgba(245,240,235,.6);cursor:none;transition:all .3s}
+.lb-nav-btn:hover{border-color:var(--red);color:var(--white)}
+
+/* ── BRANCHES ── */
+#branches{padding:5rem 8rem;border-top:1px solid rgba(201,145,58,.08);background:radial-gradient(ellipse at 20% 50%,rgba(139,0,0,.07) 0%,transparent 60%)}
+.branches-layout{display:grid;grid-template-columns:300px 1fr;gap:3rem;margin-top:2.5rem;align-items:start}
+.branch-list{display:flex;flex-direction:column;gap:0;border:1px solid rgba(201,145,58,.12)}
+.branch-list-item{
+  padding:1.4rem 1.6rem;display:flex;align-items:center;gap:1rem;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  font-family:var(--font-display);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(245,240,235,.55);cursor:none;border:none;background:none;text-align:left;
+  border-bottom:1px solid rgba(201,145,58,.08);transition:background .3s,color .3s;position:relative;
+  width:100%;
+}
+.branch-list-item:last-child{border-bottom:none}
+.branch-list-item .bl-dot{width:7px;height:7px;border-radius:50%;background:rgba(153,153,153,.4);flex-shrink:0;transition:background .3s}
+.branch-list-item:hover,.branch-list-item.active{background:rgba(196,30,58,.08);color:var(--white)}
+.branch-list-item.active{border-left:2px solid var(--red)}
+.branch-list-item.active .bl-dot,.branch-list-item:hover .bl-dot{background:var(--red)}
+.branch-list-item.coming{color:rgba(245,240,235,.25);cursor:default}
+.branch-list-item.coming .bl-dot{background:rgba(153,153,153,.2)}
+.branch-list-item .bl-soon{margin-left:auto;font-size:.55rem;color:var(--gold);border:1px solid rgba(201,145,58,.2);padding:.15rem .5rem;letter-spacing:.1em}
+.branch-list-item .bl-arrow{margin-left:auto;opacity:0;color:var(--red);transition:opacity .3s,transform .3s}
+.branch-list-item.active .bl-arrow,.branch-list-item:hover:not(.coming) .bl-arrow{opacity:1;transform:translateX(3px)}
+
+/* BRANCH DETAIL PANEL */
+.branch-detail{position:relative;min-height:400px}
+.branch-panel{display:none;animation:panelIn .5s ease}
+.branch-panel.active{display:block}
+@keyframes panelIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.bp-header{display:grid;grid-template-columns:220px 1fr;gap:2.5rem;margin-bottom:2rem;align-items:start}
+.bp-photo-wrap{position:relative;width:220px}
+.bp-photo{width:220px;height:280px;object-fit:cover;object-position:top center;filter:grayscale(10%) contrast(1.05);border:1px solid rgba(201,145,58,.2);display:block}
+.bp-photo-frame{position:absolute;top:.7rem;left:.7rem;right:-.7rem;bottom:-.7rem;border:1px solid rgba(196,30,58,.3);pointer-events:none}
+.bp-photo-placeholder{width:220px;height:280px;display:flex;align-items:center;justify-content:center;background:rgba(196,30,58,.06);border:1px solid rgba(196,30,58,.12);font-size:4rem}
+.bp-meta{flex:1;min-width:200px}
+.bp-role{font-family:var(--font-display);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.bp-name{font-family:var(--font-display);font-size:2.2rem;font-weight:700;text-transform:uppercase;line-height:1;margin-bottom:1rem}
+.bp-branch-name{font-family:var(--font-display);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,235,.45);margin-bottom:1.5rem}
+.bp-divider{width:40px;height:2px;background:var(--red);margin-bottom:1.5rem}
+.bp-info-grid{display:flex;flex-direction:column;gap:1rem}
+.bp-info-row{display:flex;gap:1rem;align-items:flex-start}
+.bp-info-icon{min-width:48px;height:36px;border:1px solid rgba(196,30,58,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-display);font-size:.5rem;letter-spacing:.1em;color:var(--red);padding:0 .4rem}
+.bp-info-content .bp-info-label{font-family:var(--font-display);font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
+.bp-info-content .bp-info-val{font-size:1rem;color:rgba(245,240,235,.8);line-height:1.5}
+.bp-actions{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.bp-btn-wa{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.8rem;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.25);color:#25D366;font-family:var(--font-display);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.bp-btn-wa:hover{background:rgba(37,211,102,.15);transform:translateY(-1px)}
+.bp-btn-map{display:flex;align-items:center;gap:.6rem;padding:.8rem 1.8rem;background:rgba(196,30,58,.08);border:1px solid rgba(196,30,58,.25);color:var(--red);font-family:var(--font-display);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.bp-btn-map:hover{background:rgba(196,30,58,.12);transform:translateY(-1px)}
+.branch-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:400px;border:1px dashed rgba(201,145,58,.12);text-align:center;gap:1rem}
+.branch-empty p{font-family:var(--font-display);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.25)}
+
+/* ── BLACK BELTS SECTION ── */
+#blackbelts{
+  padding:4.5rem 8rem;border-top:1px solid rgba(201,145,58,.08);
+  text-align:center;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 100%,rgba(201,145,58,.07) 0%,transparent 65%),
+             radial-gradient(ellipse at 50% 0%,rgba(139,0,0,.08) 0%,transparent 60%);
+}
+.bb-kanji-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--font-jp);font-size:40vw;color:rgba(201,145,58,.025);line-height:1;pointer-events:none;user-select:none;white-space:nowrap}
+.bb-eyebrow{font-family:var(--font-display);font-size:.65rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-bottom:1.4rem}
+.bb-eyebrow::before,.bb-eyebrow::after{content:'';display:block;width:50px;height:1px;background:linear-gradient(to right,transparent,var(--gold))}
+.bb-eyebrow::after{background:linear-gradient(to left,transparent,var(--gold))}
+.bb-title{font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--white);line-height:1.1;margin-bottom:.8rem}
+.bb-sub{font-family:var(--font-body);font-size:1.1rem;font-style:italic;color:rgba(245,240,235,.5);max-width:480px;margin:0 auto 2.5rem;line-height:1.7}
+.bb-btn{
+  display:inline-flex;align-items:center;gap:1rem;
+  font-family:var(--font-display);font-size:1rem;letter-spacing:.25em;
+  text-transform:uppercase;text-decoration:none;padding:1.2rem 3.5rem;
+  color:#050505;background:linear-gradient(135deg,#f0c060 0%,#c9913a 40%,#e5be7a 60%,#a0700f 100%);
+  border:none;cursor:none;position:relative;
+  box-shadow:0 0 25px rgba(201,145,58,.6),0 0 60px rgba(201,145,58,.3),0 0 120px rgba(201,145,58,.15),inset 0 1px 0 rgba(255,255,255,.3);
+  animation:goldPulse 3s ease-in-out infinite;transition:transform .3s,box-shadow .3s;
+}
+.bb-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 0 40px rgba(201,145,58,.9),0 0 90px rgba(201,145,58,.5),0 0 160px rgba(201,145,58,.25),inset 0 1px 0 rgba(255,255,255,.4);animation:none}
+.bb-btn::before{content:'';position:absolute;inset:-2px;background:linear-gradient(135deg,#f0c060,#a0700f,#f0c060);z-index:-1;filter:blur(8px);opacity:.7;animation:goldPulse 3s ease-in-out infinite}
+@keyframes goldPulse{
+  0%,100%{box-shadow:0 0 25px rgba(201,145,58,.6),0 0 60px rgba(201,145,58,.3),0 0 120px rgba(201,145,58,.15),inset 0 1px 0 rgba(255,255,255,.3)}
+  50%{box-shadow:0 0 40px rgba(201,145,58,.9),0 0 90px rgba(201,145,58,.5),0 0 160px rgba(201,145,58,.25),inset 0 1px 0 rgba(255,255,255,.4)}
+}
+.bb-btn-icon{font-size:1.3rem;display:inline-block;animation:rotateBelt 4s ease-in-out infinite}
+@keyframes rotateBelt{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+.bb-stats-row{display:flex;justify-content:center;gap:4rem;margin-top:2.5rem;flex-wrap:wrap}
+.bb-stat{text-align:center}
+.bb-stat-num{font-family:var(--font-display);font-size:2.5rem;font-weight:700;color:var(--gold);line-height:1}
+.bb-stat-lbl{font-family:var(--font-display);font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(153,153,153,.7);margin-top:.3rem}
+
+/* BLACK BELTS MODAL */
+.bb-modal-overlay{position:fixed;inset:0;background:rgba(5,5,5,.96);z-index:600;display:none;align-items:center;justify-content:center;padding:2rem}
+.bb-modal-overlay.open{display:flex}
+.bb-modal{max-width:960px;width:100%;max-height:90vh;overflow-y:auto;border:1px solid rgba(201,145,58,.2);background:#0a0a0a;padding:3rem;position:relative;scrollbar-width:thin;scrollbar-color:rgba(201,145,58,.3) transparent}
+.bb-modal-close{position:absolute;top:1.5rem;right:1.5rem;font-size:1.8rem;color:rgba(245,240,235,.4);background:none;border:none;cursor:none;transition:color .3s;line-height:1}
+.bb-modal-close:hover{color:var(--red)}
+.bb-modal-title{font-family:var(--font-display);font-size:2rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:linear-gradient(135deg,#f0c060,#c9913a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem}
+.bb-modal-sub{font-family:var(--font-display);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(153,153,153,.5);margin-bottom:2.5rem}
+.bb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1.5rem}
+.bb-card{border:1px solid rgba(201,145,58,.1);padding:1.5rem 1rem;text-align:center;background:rgba(201,145,58,.03);transition:border-color .3s,background .3s;position:relative;overflow:hidden}
+.bb-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,145,58,.05) 0%,transparent 60%);opacity:0;transition:opacity .3s}
+.bb-card:hover{border-color:rgba(201,145,58,.3);background:rgba(201,145,58,.06)}
+.bb-card:hover::before{opacity:1}
+.bb-card-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(201,145,58,.3);margin:0 auto .8rem;display:block;filter:grayscale(20%)}
+.bb-card-avatar{width:80px;height:80px;border-radius:50%;background:rgba(201,145,58,.1);border:2px solid rgba(201,145,58,.2);display:flex;align-items:center;justify-content:center;margin:0 auto .8rem;font-family:var(--font-display);font-size:1.5rem;color:var(--gold);font-weight:700}
+.bb-card-name{font-family:var(--font-display);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--white);margin-bottom:.3rem}
+.bb-card-rank{font-family:var(--font-display);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
+.bb-card-year{font-size:.85rem;color:rgba(153,153,153,.6);font-style:italic}
+.bb-belt-icon{font-size:1.2rem;margin-bottom:.5rem;display:block}
+
+/* ── SMART ROUTING FORM ── */
+.routing-badge{
+  font-family:var(--font-display);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;
+  padding:.5rem 1rem;border:1px solid rgba(201,145,58,.25);color:var(--gold);
+  background:rgba(201,145,58,.05);margin-bottom:1.2rem;display:inline-block;
+}
+.area-input-wrap{position:relative}
+.area-routing-preview{
+  margin-top:.4rem;font-family:var(--font-display);font-size:.6rem;letter-spacing:.12em;
+  text-transform:uppercase;min-height:1.2rem;transition:color .3s;
+}
+.area-routing-preview.match{color:#4ade80}
+.area-routing-preview.nearest{color:var(--gold)}
+.eq-submit{
+  border:none;width:100%;padding:1.1rem;font-size:.85rem;cursor:none;
+  letter-spacing:.2em;margin-top:.4rem;
+}
+.eq-hint{
+  font-family:var(--font-display);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(245,240,235,.4);margin-top:.8rem;text-align:center;line-height:1.6;
+}
+
+/* ── ROUTING MODAL ── */
+.routing-overlay{
+  position:fixed;inset:0;background:rgba(5,5,5,.97);z-index:700;
+  display:none;align-items:center;justify-content:center;padding:2rem;
+}
+.routing-overlay.open{display:flex}
+.routing-modal{
+  max-width:520px;width:100%;border:1px solid rgba(201,145,58,.25);
+  background:#0c0c0c;padding:2.5rem 2.5rem 2rem;position:relative;text-align:center;
+}
+.routing-close{
+  position:absolute;top:1rem;right:1rem;font-size:1.5rem;
+  color:rgba(245,240,235,.3);background:none;border:none;cursor:none;
+  transition:color .3s;line-height:1;
+}
+.routing-close:hover{color:var(--red)}
+.routing-icon{font-size:2.5rem;margin-bottom:1rem;display:block;animation:iconBounce .6s ease}
+@keyframes iconBounce{0%{transform:scale(0.5);opacity:0}70%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+.routing-status{
+  font-family:var(--font-display);font-size:.65rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;
+}
+.routing-branch{
+  font-family:var(--font-display);font-size:1.3rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.05em;color:var(--white);margin-bottom:.5rem;
+}
+.routing-note{
+  font-size:.95rem;font-style:italic;color:rgba(245,240,235,.45);
+  margin-bottom:2rem;line-height:1.5;
+}
+.routing-cards{display:flex;flex-direction:column;gap:.8rem;margin-bottom:1.5rem}
+.routing-wa-btn{
+  display:flex;align-items:center;gap:1rem;padding:1rem 1.4rem;
+  text-decoration:none;border:1px solid;transition:background .3s;
+  cursor:none;background:none;width:100%;
+}
+.routing-wa-btn.instructor{
+  border-color:rgba(37,211,102,.4);color:#25D366;
+}
+.routing-wa-btn.instructor:hover{background:rgba(37,211,102,.1)}
+.routing-wa-btn.master{
+  border-color:rgba(196,30,58,.4);color:var(--red);
+}
+.routing-wa-btn.master:hover{background:rgba(196,30,58,.08)}
+.routing-wa-btn .wa-icon{font-size:1.4rem;flex-shrink:0}
+.routing-wa-btn .wa-info{text-align:left}
+.routing-wa-btn .wa-role{
+  font-family:var(--font-display);font-size:.55rem;letter-spacing:.2em;
+  text-transform:uppercase;opacity:.7;margin-bottom:.2rem;
+}
+.routing-wa-btn .wa-name{
+  font-family:var(--font-display);font-size:.85rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.05em;
+}
+.routing-wa-btn .wa-tap{
+  margin-left:auto;font-family:var(--font-display);font-size:.55rem;
+  letter-spacing:.15em;text-transform:uppercase;opacity:.5;flex-shrink:0;
+}
+.routing-tip{
+  font-family:var(--font-display);font-size:.55rem;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(245,240,235,.2);margin-bottom:1.5rem;line-height:1.6;
+}
+.routing-dismiss{
+  font-family:var(--font-display);font-size:.65rem;letter-spacing:.2em;
+  text-transform:uppercase;padding:.6rem 2rem;border:1px solid rgba(245,240,235,.15);
+  background:none;color:rgba(245,240,235,.4);cursor:none;transition:all .3s;
+}
+.routing-dismiss:hover{border-color:var(--gold);color:var(--gold)}
+
+
+/* ── FLOATING BUTTONS ── */
+.float-wa{touch-action:manipulation;
+  position:fixed;bottom:2rem;right:2rem;z-index:500;
+  width:56px;height:56px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;text-decoration:none;
+  box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 40px rgba(37,211,102,.15);
+  animation:waPulse 3s ease-in-out infinite;transition:transform .3s;
+}
+.float-wa:hover{transform:scale(1.1);animation:none;box-shadow:0 6px 30px rgba(37,211,102,.6)}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 40px rgba(37,211,102,.15)}50%{box-shadow:0 4px 30px rgba(37,211,102,.6),0 0 60px rgba(37,211,102,.25)}}
+.float-top{touch-action:manipulation;
+  position:fixed;bottom:6.5rem;right:2rem;z-index:500;
+  width:44px;height:44px;border-radius:50%;background:rgba(10,10,10,.9);
+  border:1px solid rgba(201,145,58,.3);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;cursor:none;
+  opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s,background .3s;
+}
+.float-top.show{opacity:1;transform:translateY(0)}
+.float-top:hover{background:rgba(201,145,58,.15)}
+
+/* ── PAGE LOADER ── */
+.page-loader{
+  position:fixed;inset:0;background:var(--black);z-index:10000;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+  /* CSS-only auto-hide: fades out at 1.2s, fully gone at 1.8s */
+  animation:loaderAutoHide .6s ease 1.2s forwards;
+  pointer-events:auto;
+}
+.page-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+@keyframes loaderAutoHide{
+  0%{opacity:1;visibility:visible;pointer-events:auto}
+  99%{opacity:0;visibility:visible;pointer-events:none}
+  100%{opacity:0;visibility:hidden;pointer-events:none}
+}
+.loader-logo-wrap{display:flex;align-items:center;justify-content:center}
+.loader-img{width:88px;height:88px;animation:logoPulse .9s ease-in-out infinite alternate;filter:drop-shadow(0 0 20px rgba(196,30,58,.5))}
+.loader-name{font-family:'Oswald',sans-serif;font-size:.55rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(245,240,235,.3);margin-top:.3rem}
+@keyframes logoPulse{from{opacity:.5;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+.loader-bar{width:180px;height:1px;background:rgba(201,145,58,.12);overflow:hidden;margin-top:.5rem}
+.loader-fill{height:100%;background:linear-gradient(to right,var(--red),var(--gold));
+  animation:loadFill 1s ease forwards}
+@keyframes loadFill{from{width:0}to{width:100%}}
+
+/* ── CONTACT ── */
+#contact{padding:5rem 8rem;border-top:1px solid rgba(201,145,58,.08);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.contact-info{margin-top:3rem;display:flex;flex-direction:column;gap:2rem}
+.contact-item{display:flex;gap:1.5rem;align-items:flex-start}
+.contact-icon{width:48px;height:44px;border:1px solid rgba(196,30,58,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-display);font-size:.5rem;letter-spacing:.1em;color:var(--red);padding:0 .3rem}
+.contact-detail .label{font-family:var(--font-display);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.contact-detail .val{font-size:1rem;color:rgba(245,240,235,.8);line-height:1.6}
+.contact-form{display:flex;flex-direction:column;gap:1.2rem}
+.form-field{display:flex;flex-direction:column;gap:.4rem}
+.form-field label{font-family:var(--font-display);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
+.form-field input,.form-field select,.form-field textarea{background:rgba(245,240,235,.04);border:1px solid rgba(245,240,235,.1);color:var(--white);padding:.9rem 1.1rem;font-family:var(--font-body);font-size:max(1rem,16px);outline:none;transition:border-color .3s;-webkit-appearance:none}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--red)}
+.form-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9913A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+.form-field select option{background:var(--black)}
+.form-field textarea{resize:vertical;min-height:120px}
+.whatsapp-btn{display:flex;align-items:center;gap:.8rem;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);color:#25D366;padding:1rem 1.5rem;text-decoration:none;font-family:var(--font-display);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;transition:background .3s;margin-top:.5rem}
+.whatsapp-btn:hover{background:rgba(37,211,102,.2)}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180deg,rgba(5,5,5,0) 0%,rgba(10,5,5,1) 100%)}
+.footer-inner{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.4fr;gap:3rem;padding:3.5rem 8rem 2.5rem}
+.footer-brand-col{}
+.footer-logo{display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem}
+.footer-logo img{height:44px;filter:brightness(1.1)}
+.footer-logo-text{font-family:var(--font-display);font-size:.85rem;letter-spacing:.12em;color:var(--gold-light);text-transform:uppercase;line-height:1.3}
+.footer-tagline{font-family:var(--font-display);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:1rem}
+.footer-lineage{font-size:.95rem;line-height:1.7;color:rgba(245,240,235,.35);margin-bottom:1.5rem;max-width:280px}
+.footer-wa-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;border:1px solid rgba(37,211,102,.25);background:rgba(37,211,102,.06);color:#25D366;font-family:var(--font-display);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;transition:background .3s}
+.footer-wa-btn:hover{background:rgba(37,211,102,.14)}
+.footer-col-title{font-family:var(--font-display);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;padding-bottom:.8rem;border-bottom:1px solid rgba(201,145,58,.12)}
+.footer-nav{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.footer-nav a{font-family:var(--font-display);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,235,.4);text-decoration:none;transition:color .3s;display:block}
+.footer-nav a:hover{color:var(--gold-light);padding-left:4px}
+.footer-nav a{transition:color .3s,padding-left .2s}
+.footer-contact-list{display:flex;flex-direction:column;gap:1.1rem}
+.footer-contact-item{display:flex;flex-direction:column;gap:.25rem}
+.fci-label{font-family:var(--font-display);font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);opacity:.7}
+.fci-val{font-size:.9rem;color:rgba(245,240,235,.5);line-height:1.5}
+.fci-link{color:rgba(196,30,58,.7);text-decoration:none;transition:color .3s}
+.fci-link:hover{color:var(--red)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 8rem;border-top:1px solid rgba(201,145,58,.06);flex-wrap:wrap;gap:1rem}
+.footer-bottom-brand{display:flex;align-items:center;gap:.8rem;font-family:var(--font-display);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(153,153,153,.4)}
+.footer-kanji{font-family:var(--font-jp);font-size:1.1rem;color:rgba(196,30,58,.25)}
+.footer-bottom-copy{font-family:var(--font-display);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(153,153,153,.3)}
+.footer-bottom-links a{font-family:var(--font-display);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(153,153,153,.3);text-decoration:none;transition:color .3s}
+.footer-bottom-links a:hover{color:var(--gold)}
+@media(max-width:1100px){.footer-inner{padding:4rem 4rem 3rem;gap:3rem;grid-template-columns:1fr 1fr}.footer-bottom{padding:1.5rem 4rem}}
+@media(max-width:700px){.footer-inner{grid-template-columns:1fr;padding:3rem 2rem 2rem;gap:2.5rem}.footer-bottom{padding:1.2rem 2rem;flex-direction:column;text-align:center}}
+
+/* ── RESPONSIVE ── */
+/* ══ TABLET (≤1100px) ══ */
+@media(max-width:1100px){
+  nav{padding:1.2rem 2rem}
+  #hero{padding:0 4rem}
+  .hero-scroll{left:4rem}
+  #about,#contact{padding:4rem 4rem;gap:3rem}
+  #sensei{padding:4rem 4rem;gap:3rem;grid-template-columns:280px 1fr}
+  .sensei-img-wrap{width:280px}
+  #classes,#lineage,#philosophy,#gallery,#branches,#blackbelts{padding:4rem 4rem}
+  .deco-divider{margin:0 4rem}
+  .branches-layout{grid-template-columns:240px 1fr;gap:2.5rem}
+  .bb-stats-row{gap:3rem}
+}
+
+/* ══ MOBILE LANDSCAPE / LARGE PHONE (≤900px) ══ */
+@media(max-width:900px){
+  /* Nav */
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+
+  /* Hero */
+  #hero{padding:0 1.5rem;justify-content:center;text-align:center;min-height:100svh}
+  .hero-eyebrow{justify-content:center}
+  .hero-actions{justify-content:center;flex-wrap:wrap;gap:1rem}
+  .hero-scroll{left:50%;transform:translateX(-50%)}
+  .hero-kanji{font-size:55vw;opacity:.03}
+
+  /* About */
+  #about{grid-template-columns:1fr;gap:3rem;padding:4rem 1.5rem}
+  .about-ring{display:none}
+  .about-logo-wrap{width:180px;height:180px;border-radius:50%;background:rgba(196,30,58,.06);border:1px solid rgba(196,30,58,.15);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+  .about-logo-wrap img{width:150px}
+  .about-kanji-deco{display:none}
+
+  /* Sensei */
+  #sensei{grid-template-columns:1fr;gap:2.5rem;padding:4rem 1.5rem}
+  .sensei-img-wrap{order:-1;width:100%;max-width:340px;margin:0 auto}
+  .sensei-img{width:100%;max-height:300px}
+  .sensei-badge{bottom:-1rem;right:0}
+
+  /* Classes */
+  #classes{padding:4rem 1.5rem}
+  .programs-grid{grid-template-columns:1fr}
+  .program-card{padding:2.5rem}
+
+  /* Lineage */
+  #lineage{padding:4rem 1.5rem}
+  .lineage-timeline{grid-template-columns:1fr;gap:1rem}
+  .lineage-arrow{transform:rotate(90deg);font-size:1.2rem}
+  .lineage-node{padding:1.2rem}
+  .lineage-year{font-size:2.2rem}
+
+  /* Philosophy */
+  #philosophy{padding:4rem 1.5rem}
+  .philosophy-quote{font-size:clamp(1.3rem,4vw,2rem)}
+  .philosophy-quote::before{left:-1rem;font-size:5rem;top:-1rem}
+  .philosophy-quote::after{right:-1rem;font-size:5rem;bottom:-2.5rem}
+  .values-row{gap:1.5rem}
+  .value-circle{width:70px;height:70px;font-size:1.4rem}
+
+  /* Black Belts */
+  #blackbelts{padding:4rem 1.5rem}
+  .bb-title{font-size:clamp(1.8rem,6vw,3rem)}
+  .bb-btn{padding:1rem 2rem;font-size:.8rem}
+  .bb-stats-row{gap:2rem;margin-top:3rem}
+  .bb-stat-num{font-size:2rem}
+
+  /* Gallery */
+  #gallery{padding:4rem 1.5rem}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:2px}
+
+  /* Branches */
+  #branches{padding:4rem 1.5rem}
+  .branches-layout{grid-template-columns:1fr;gap:2rem}
+  .bp-header{grid-template-columns:1fr}
+  .bp-photo-wrap{width:100%;max-width:280px}
+  .bp-photo{width:100%;height:240px}
+  .bp-name{font-size:1.6rem}
+
+  /* Contact */
+  #contact{grid-template-columns:1fr;padding:4rem 1.5rem;gap:3rem}
+
+  /* Stats */
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stat-num{font-size:2.2rem}
+
+  /* Dividers */
+  .deco-divider{margin:0 1.5rem}
+
+  /* Modals */
+  .bb-modal{padding:1.5rem}
+  .bb-grid{grid-template-columns:repeat(2,1fr)}
+  .routing-modal{padding:1.5rem 1.2rem}
+
+  /* Floating buttons */
+  .float-wa{touch-action:manipulation;width:48px;height:48px;bottom:1.5rem;right:1.2rem}
+  .float-top{touch-action:manipulation;width:38px;height:38px;bottom:5.5rem;right:1.2rem}
+}
+
+/* ══ SMALL PHONE (≤480px) ══ */
+@media(max-width:480px){
+  #hero{padding:0 1.2rem}
+  .hero-title{font-size:clamp(2.8rem,12vw,5rem)}
+  .btn-primary,.btn-ghost{padding:.8rem 1.6rem;font-size:.7rem;width:100%;text-align:center}
+  .hero-actions{flex-direction:column;width:100%;max-width:280px;margin-left:auto;margin-right:auto}
+
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stat-item{padding:1.2rem .8rem}
+  .stat-num{font-size:1.8rem}
+  .stat-label{font-size:.55rem}
+
+  #about,#sensei,#classes,#lineage,#philosophy,#blackbelts,#gallery,#branches,#contact{
+    padding:3rem 1.2rem
+  }
+  .section-title{font-size:clamp(2rem,8vw,3rem)}
+
+  .program-card{padding:2rem 1.5rem}
+  .program-num{font-size:3.5rem}
+
+  .gallery-grid{grid-template-columns:1fr}
+
+  .bb-stats-row{flex-direction:column;gap:1.5rem;align-items:center}
+  .bb-btn{padding:.9rem 1.5rem;font-size:.75rem;letter-spacing:.15em}
+
+  .lineage-year{font-size:1.8rem}
+  .lineage-name{font-size:.8rem}
+
+  .values-row{gap:1rem}
+  .value-circle{width:60px;height:60px;font-size:1.2rem}
+
+  .bp-name{font-size:1.3rem}
+  .bp-actions{flex-direction:column}
+  .bp-btn-wa,.bp-btn-map{justify-content:center}
+
+  .routing-modal{padding:1.2rem 1rem}
+  .routing-branch{font-size:1rem}
+  .routing-wa-btn{padding:.8rem 1rem}
+
+  .deco-divider{margin:0 1.2rem}
+
+  .float-wa{touch-action:manipulation;bottom:1rem;right:1rem}
+  .float-top{touch-action:manipulation;bottom:4.5rem;right:1rem}
+}
+
+/* ══ VERY SMALL (≤360px) ══ */
+@media(max-width:360px){
+  .hero-title{font-size:clamp(2.3rem,10vw,3.5rem)}
+  .hero-tagline{font-size:1rem}
+  .stats-bar{grid-template-columns:1fr 1fr}
+  .mobile-menu a{font-size:1.6rem}
+  .bb-grid{grid-template-columns:1fr}
+}
+
+/* ══ TOUCH DEVICE — optimised for mobile ══ */
+@media(hover:none) and (pointer:coarse){
+  body{cursor:auto}
+  .cursor,.cursor-ring{display:none}
+  *{cursor:auto}
+  button,a,.gf-btn,.nav-dropdown-trigger,.branch-list-item,
+  .bb-btn,.lb-nav-btn,.routing-dismiss,.routing-wa-btn{cursor:pointer}
+
+  /* Immediately show all reveal elements (JS also handles this, CSS is backup) */
+  .reveal,.reveal-left,.reveal-right{opacity:1 !important;transform:none !important}
+
+  /* Hero animations — skip delays, show immediately */
+  .hero-eyebrow,.hero-title,.hero-tagline,.hero-actions,.hero-scroll{
+    opacity:1 !important;animation:none !important;transform:none !important
+  }
+
+  /* Stat items always visible */
+  .stat-item{opacity:1 !important;transform:none !important}
+
+  /* Smooth scrolling for touch */
+  html{scroll-behavior:smooth}
+}
+</style>
 </head>
-
 <body>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank">
-    💬 Chat on WhatsApp
-</a>
-
-<!-- NAVBAR -->
-<nav class="navbar">
-    <a href="index.html" class="nav-logo">
-        <img src="images/nbka1-logo.png" alt="NBKA Logo">
-    </a>
-
-    <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="sensei.html">Sensei</a>
-        <a href="classes.html">Classes</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="branches.html">Branches</a>
-        <a href="contact.html">Contact</a>
-    </div>
-</nav>
-
-<!-- ======================
-     ACADEMY HERO (FIXED)
-====================== -->
-<section class="academy-hero">
-    <div class="academy-hero-content">
-
-        <img src="images/nbka1-logo.png" alt="NBKA Logo" class="academy-hero-logo">
-
-        <!-- ✅ SINGLE LINE, DO NOT SPLIT -->
-        <h1 class="academy-hero-title">
-            Nayak Budokan Karate Academy
-        </h1>
-
-        <p class="academy-hero-subtitle">
-            Discipline • Strength • Character
-        </p>
-
-        <a href="contact.html" class="pre-hero-btn">
-            Enquire Now
-        </a>
-
-    </div>
-</section>
-
-<!-- ======================
-     LINEAGE HERO (IMAGE + TYPING)
-====================== -->
-<section class="hero-lineage">
-    <div class="hero-lineage-content">
-
-        <h2 class="typing gold-text"
-            data-text="Our Lineage & Legacy"></h2>
-
-        <p class="typing gold-text"
-           data-text="Budokan Karate-Do India. Nayak Budokan Karate Academy proudly follows the Budokan Karate-Do system introduced in India by Grand Master C. Hanumanth Rao."></p>
-
-        <p class="typing gold-text"
-           data-text="A pioneer of Budokan Karate in India, Grand Master Hanumanth Rao dedicated his life to spreading traditional karate, discipline, and moral values. His teachings emphasize character before combat and humility before strength."></p>
-
-        <p class="typing gold-text"
-           data-text="Sensei P. Ganesh Nayak is a direct disciple of Grand Master C. Hanumanth Rao, carrying forward this sacred Guru–Shishya tradition with respect and responsibility."></p>
-
-    </div>
-</section>
-
-<!-- ======================
-     HOME CONTENT
-====================== -->
-<div class="section home-content">
-
-    <h2>Our Mission</h2>
-    <p>
-        To guide children, youth, and adults towards discipline, confidence,
-        self-respect, and physical strength through authentic karate training.
-    </p>
-
-    <h2>Our Philosophy</h2>
-    <p>
-        Karate begins with respect and ends with character.
-        We follow traditional values of humility, self-control, and discipline.
-    </p>
-
+<!-- PAGE LOADER -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-logo-wrap">
+    <img src="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png" alt="NBKA" class="loader-img"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="loader-logo-fallback" style="display:none;width:88px;height:88px;border-radius:50%;background:#C41020;border:3px solid rgba(201,145,58,.7);align-items:center;justify-content:center;font-family:Oswald,sans-serif;font-size:1.1rem;font-weight:700;color:rgba(229,190,122,.9);letter-spacing:.15em">NBKA</div>
+  </div>
+  <div class="loader-name">Nayak Budokan Karate Academy</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+  <div class="loader-name">Nayak Budokan Karate Academy</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
 </div>
 
-<!-- TYPING SCRIPT -->
-<script src="typing.js"></script>
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img class="lightbox-img" id="lbImg" src="" alt=""/>
+  <div class="lightbox-cap" id="lbCap"></div>
+  <div class="lightbox-nav">
+    <button class="lb-nav-btn" onclick="lbPrev()">← Prev</button>
+    <button class="lb-nav-btn" onclick="lbNext()">Next →</button>
+  </div>
+</div>
+
+<!-- BLACK BELTS MODAL -->
+<div class="bb-modal-overlay" id="bbModal">
+  <div class="bb-modal">
+    <button class="bb-modal-close" onclick="closeBBModal()">✕</button>
+    <div class="bb-modal-title">Our Black Belts</div>
+    <div class="bb-modal-sub">The Champions of Nayak Budokan Karate Academy</div>
+    <div class="bb-grid">
+
+      <!-- ═══════════════════════════════════════════════════════
+           TO ADD A BLACK BELT: Copy one bb-card block.
+           Swap avatar initials OR use <img class="bb-card-photo" src="photo.jpg"/>
+           Update name, rank (e.g. "1st Dan"), and year.
+      ═══════════════════════════════════════════════════════ -->
+
+      <div class="bb-card">
+        <span class="bb-belt-icon">🥋</span>
+        <div class="bb-card-avatar">GN</div>
+        <div class="bb-card-name">P. Ganesh Nayak</div>
+        <div class="bb-card-rank">Chief Instructor</div>
+        <div class="bb-card-year">Founder</div>
+      </div>
+
+      <!-- ADD YOUR BLACK BELT STUDENTS BELOW -->
+      <div class="bb-card">
+        <span class="bb-belt-icon">🥋</span>
+        <div class="bb-card-avatar">—</div>
+        <div class="bb-card-name">Student Name</div>
+        <div class="bb-card-rank">1st Dan Black Belt</div>
+        <div class="bb-card-year">Grading Year</div>
+      </div>
+      <!-- ADD MORE CARDS ABOVE THIS LINE -->
+
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero" onclick="closeMobile()">Home</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#classes" onclick="closeMobile()">Classes</a>
+  <a href="#sensei" onclick="closeMobile()">Sensei</a>
+  <a href="#blackbelts" onclick="closeMobile()">Black Belts</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#branches" onclick="closeMobile()">Branches</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <img src="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png" alt="NBKA" class="nav-logo-img"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="nav-logo-fallback" style="display:none;width:42px;height:42px;border-radius:50%;background:#C41020;border:2px solid rgba(201,145,58,.7);align-items:center;justify-content:center;font-family:Oswald,sans-serif;font-size:.55rem;font-weight:700;color:rgba(229,190,122,.9);letter-spacing:.1em;flex-shrink:0">NBKA</div>
+    <div class="nav-logo-text">Nayak Budokan<br/>Karate Academy</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#classes">Classes</a></li>
+    <li><a href="#sensei">Sensei</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li class="nav-dropdown">
+      <button class="nav-dropdown-trigger">
+        Branches <span class="chevron">▾</span>
+      </button>
+      <div class="nav-dropdown-menu" id="navBranchMenu">
+        <button class="branch-menu-item" onclick="goToBranch('main')">
+          <span class="dot"></span> Chatrinaka — Main Branch
+        </button>
+        <button class="branch-menu-item coming-soon">
+          <span class="dot"></span> Coming Soon — Branch 2
+          <span class="badge">Soon</span>
+        </button>
+        <button class="branch-menu-item coming-soon">
+          <span class="dot"></span> Coming Soon — Branch 3
+          <span class="badge">Soon</span>
+        </button>
+      </div>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/919393095053" class="nav-cta">Enroll Now</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-kanji">武道</div>
+  <svg class="hero-geo" width="400" height="400" viewBox="0 0 400 400" fill="none">
+    <polygon points="200,20 380,380 20,380" stroke="rgba(196,30,58,0.12)" stroke-width="1" fill="none"/>
+    <polygon points="200,60 340,340 60,340" stroke="rgba(201,145,58,0.07)" stroke-width="1" fill="none"/>
+    <polygon points="200,100 300,300 100,300" stroke="rgba(196,30,58,0.05)" stroke-width="1" fill="none"/>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Budokan Karate-Do — Hyderabad</div>
+    <h1 class="hero-title">
+      Nayak<br/>
+      <span class="line-red">Budokan</span><br/>
+      <span class="line-thin">Karate Academy</span>
+    </h1>
+    <p class="hero-tagline">Discipline &bull; Strength &bull; Character</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Begin Your Journey</a>
+      <a href="#about" class="btn-ghost">Discover NBKA</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item reveal"><div class="stat-num" data-target="40">0</div><div class="stat-label">Years of Legacy</div></div>
+  <div class="stat-item reveal" style="transition-delay:.1s"><div class="stat-num" data-target="500">0</div><div class="stat-label">Students Trained</div></div>
+  <div class="stat-item reveal" style="transition-delay:.2s"><div class="stat-num" data-target="5">0</div><div class="stat-label">Active Branches</div></div>
+  <div class="stat-item reveal" style="transition-delay:.3s"><div class="stat-num" data-target="4">0</div><div class="stat-label">Training Programs</div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual reveal-left">
+    <div class="about-logo-wrap">
+      <img src="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png" alt="NBKA Logo" class="about-logo-img"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div style="display:none;width:150px;height:150px;border-radius:50%;background:#C41020;border:3px solid rgba(201,145,58,.6);align-items:center;justify-content:center;font-family:Oswald,sans-serif;font-size:2rem;font-weight:700;color:rgba(229,190,122,.9);letter-spacing:.1em">NBKA</div>
+    </div>
+  </div>
+  </div>
+  <div class="about-text reveal-right">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title">More Than<br/><em>Martial Arts</em></h2>
+    <p style="margin-top:1.2rem">Nayak Budokan Karate Academy is dedicated to shaping strong individuals through <strong>authentic traditional karate training</strong>. We believe karate is not merely a physical practice — it is a way of life that builds character, focus, and inner strength.</p>
+    <p>Our mission is to instil discipline, confidence, self-respect, and moral values in students of all ages — children, youth, and adults alike — transforming lives one kata at a time.</p>
+    <div class="about-quote">
+      <p>Karate begins with respect and ends with character.</p>
+      <cite>— NBKA Founding Philosophy</cite>
+    </div>
+  </div>
+</section>
+
+<div class="deco-divider"><div class="deco-line"></div><div class="deco-symbol">武</div><div class="deco-line"></div></div>
+
+<!-- LINEAGE -->
+<section id="lineage">
+  <div class="reveal">
+    <div class="section-label" style="justify-content:center">Our Heritage</div>
+    <h2 class="section-title" style="text-align:center">A Living <em>Lineage</em></h2>
+  </div>
+  <div class="lineage-timeline reveal" style="transition-delay:.2s">
+    <div class="lineage-node">
+      <div class="lineage-year">1966</div>
+      <div class="lineage-name">Grand Master<br/>Chew Choo Soot</div>
+      <div class="lineage-desc">Founded the authentic Budokan Karate-Do system</div>
+    </div>
+    <div class="lineage-arrow">&#9658;</div>
+    <div class="lineage-node">
+      <div class="lineage-year">1978</div>
+      <div class="lineage-name">Grand Master<br/>C. Hanumanth Rao</div>
+      <div class="lineage-desc">Introduced Budokan to India, established the national legacy</div>
+    </div>
+    <div class="lineage-arrow">&#9658;</div>
+    <div class="lineage-node">
+      <div class="lineage-year">Today</div>
+      <div class="lineage-name">Sensei<br/>P. Ganesh Nayak</div>
+      <div class="lineage-desc">Carries the torch forward — NBKA, Hyderabad</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CLASSES -->
+<section id="classes">
+  <div class="classes-header reveal">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Training <em>Programs</em></h2>
+  </div>
+  <div class="programs-grid">
+    <div class="program-card reveal" style="transition-delay:.1s">
+      <div class="program-num">01</div>
+      <span class="program-icon">🥋</span>
+      <div class="program-title">Kids Karate</div>
+      <div class="program-line"></div>
+      <p class="program-desc">A structured program focusing on discipline, confidence, coordination, and respect — shaping character before technique.</p>
+      <span class="program-tag">Ages 5–15</span>
+    </div>
+    <div class="program-card reveal" style="transition-delay:.2s">
+      <div class="program-num">02</div>
+      <span class="program-icon">💪</span>
+      <div class="program-title">Adults Karate</div>
+      <div class="program-line"></div>
+      <p class="program-desc">Physical fitness, stress relief, traditional techniques, and practical self-defence for all ages and fitness levels.</p>
+      <span class="program-tag">16 &amp; Above</span>
+    </div>
+    <div class="program-card reveal" style="transition-delay:.3s">
+      <div class="program-num">03</div>
+      <span class="program-icon">🛡️</span>
+      <div class="program-title">Women's Self-Defence</div>
+      <div class="program-line"></div>
+      <p class="program-desc">Specialized training empowering women with awareness, confidence, and effective techniques for real-life situations.</p>
+      <span class="program-tag">All Ages</span>
+    </div>
+    <div class="program-card reveal" style="transition-delay:.4s">
+      <div class="program-num">04</div>
+      <span class="program-icon">🏆</span>
+      <div class="program-title">Advanced &amp; Tournament</div>
+      <div class="program-line"></div>
+      <p class="program-desc">Intensive training for dedicated students targeting state, national &amp; international competition glory.</p>
+      <span class="program-tag">Competition Track</span>
+    </div>
+  </div>
+</section>
+
+<!-- SENSEI -->
+<section id="sensei">
+  <div class="sensei-img-wrap reveal-left">
+    <div class="sensei-img-frame"></div>
+    <img class="sensei-img" src="https://nayakbudokan.github.io/nayakbudokan/images/sensai.jpeg" alt="Sensei P. Ganesh Nayak" onerror="this.style.cssText='background:rgba(196,30,58,.08);min-height:260px;width:100%';this.removeAttribute('src')"
+  onerror="this.outerHTML='<div class=&quot;sensei-img&quot; style=&quot;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(196,30,58,.06);border:1px solid rgba(201,145,58,.1);min-height:300px&quot;><div style=&quot;font-family:Oswald,sans-serif;font-size:4rem;color:rgba(196,30,58,.3)&quot;>GN</div><div style=&quot;font-family:Oswald,sans-serif;font-size:.6rem;letter-spacing:.3em;color:rgba(245,240,235,.2);margin-top:.5rem&quot;>SENSEI PHOTO</div></div>'"/>
+    <div class="sensei-badge"><div class="rank">Chief Instructor &amp; Founder</div><div class="name">P. Ganesh Nayak</div></div>
+  </div>
+  <div class="sensei-content reveal-right">
+    <div class="section-label">Meet the Sensei</div>
+    <h2 class="section-title">The <em>Master</em><br/>Behind NBKA</h2>
+    <p style="margin-top:1.2rem"><strong>Sensei P. Ganesh Nayak</strong> is the Founder and Chief Instructor of NBKA — a practitioner of profound discipline, technique, and spirit.</p>
+    <p>Trained directly under <strong>Grand Master C. Hanumanth Rao</strong>, he carries the authentic Budokan tradition forward with unwavering dedication.</p>
+    <ul class="credential-list">
+      <li>Direct lineage — trained under Grand Master C. Hanumanth Rao</li>
+      <li>Certified Budokan Karate-Do instructor</li>
+      <li>Decades of teaching experience in Hyderabad</li>
+      <li>Students competing at state &amp; national tournaments</li>
+    </ul>
+  </div>
+</section>
+
+<div class="deco-divider"><div class="deco-line"></div><div class="deco-symbol">心</div><div class="deco-line"></div></div>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="reveal">
+    <div class="section-label" style="justify-content:center">Our Ethos</div>
+    <h2 class="section-title" style="text-align:center">The <em>Way</em> of Budokan</h2>
+  </div>
+  <div class="philosophy-quote reveal" style="transition-delay:.2s">
+    Karate begins with respect and ends with character. We follow traditional values of humility, self-control, and discipline — because the greatest opponent is always the self.
+  </div>
+  <div class="values-row reveal" style="transition-delay:.4s">
+    <div class="value-item"><div class="value-circle">礼</div><div class="value-name">Respect</div></div>
+    <div class="value-item"><div class="value-circle">心</div><div class="value-name">Character</div></div>
+    <div class="value-item"><div class="value-circle">律</div><div class="value-name">Discipline</div></div>
+    <div class="value-item"><div class="value-circle">力</div><div class="value-name">Strength</div></div>
+    <div class="value-item"><div class="value-circle">謙</div><div class="value-name">Humility</div></div>
+  </div>
+</section>
+
+
+<!-- BLACK BELTS SECTION -->
+<section id="blackbelts">
+  <div class="bb-kanji-bg">黒帯</div>
+  <div class="reveal">
+    <div class="bb-eyebrow">Hall of Excellence</div>
+    <h2 class="bb-title">Our Black Belts</h2>
+    <p class="bb-sub">Warriors forged through discipline, dedication, and years of relentless pursuit of excellence under Sensei P. Ganesh Nayak.</p>
+    <button class="bb-btn" onclick="openBBModal()">
+      <span class="bb-btn-icon">🥋</span>
+      Meet Our Black Belts
+    </button>
+    <div class="bb-stats-row">
+      <div class="bb-stat"><div class="bb-stat-num">20+</div><div class="bb-stat-lbl">Black Belts Awarded</div></div>
+      <div class="bb-stat"><div class="bb-stat-num">5+</div><div class="bb-stat-lbl">Dan Levels Achieved</div></div>
+      <div class="bb-stat"><div class="bb-stat-num">40+</div><div class="bb-stat-lbl">Years of Tradition</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-header reveal">
+    <div class="section-label">Moments &amp; Memories</div>
+    <h2 class="section-title">Our <em>Gallery</em></h2>
+  </div>
+  <div class="gallery-filters reveal" style="transition-delay:.1s">
+    <button class="gf-btn active" onclick="filterGallery('all',this)">All</button>
+    <button class="gf-btn" onclick="filterGallery('training',this)">Training Sessions</button>
+    <button class="gf-btn" onclick="filterGallery('grading',this)">Belt Grading</button>
+    <button class="gf-btn" onclick="filterGallery('tournament',this)">Tournaments</button>
+  </div>
+  <div class="gallery-grid reveal" style="transition-delay:.2s" id="galleryGrid">
+
+    <!-- TRAINING -->
+    <div class="gallery-item" data-cat="training" data-cap="Morning Training Session" onclick="openLightbox(this)">
+      <img src="https://nayakbudokan.github.io/nayakbudokan/images/sensai.jpeg" alt="Training" onerror="this.style.display='none'" onerror="this.parentElement.style.background='#111'"/>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Training</div>
+        <div class="gallery-cap">Morning Training Session</div>
+      </div>
+      <div class="gallery-zoom">🔍</div>
+    </div>
+
+    <div class="gallery-item" data-cat="training" data-cap="Kata Practice — Advanced Students">
+      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
+        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><circle cx="50" cy="50" r="30" stroke="rgba(196,30,58,.15)" stroke-width="1" fill="none"/><circle cx="50" cy="50" r="20" stroke="rgba(201,145,58,.1)" stroke-width="1" fill="none"/><line x1="50" y1="20" x2="50" y2="80" stroke="rgba(196,30,58,.1)" stroke-width="1"/><line x1="20" y1="50" x2="80" y2="50" stroke="rgba(196,30,58,.1)" stroke-width="1"/></svg>
+        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">KATA · PRACTICE</div>
+      </div>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Training</div>
+        <div class="gallery-cap">Kata Practice — Advanced</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="grading" data-cap="Belt Promotion Ceremony" onclick="openLightbox(this)">
+      <img src="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png" alt="Grading" onerror="this.style.display='none'" onerror="this.parentElement.style.background='#111'" style="object-fit:contain;padding:2rem;background:#0a0a0a"/>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Belt Grading</div>
+        <div class="gallery-cap">Belt Promotion Ceremony</div>
+      </div>
+      <div class="gallery-zoom">🔍</div>
+    </div>
+
+    <div class="gallery-item" data-cat="tournament" data-cap="State Championship — Gold Medal">
+      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
+        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><polygon points="50,15 61,40 88,40 67,57 75,83 50,67 25,83 33,57 12,40 39,40" stroke="rgba(201,145,58,.2)" stroke-width="1" fill="none"/></svg>
+        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">VICTORY</div>
+      </div>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Tournament</div>
+        <div class="gallery-cap">State Championship — Gold</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="training" data-cap="Kids Batch — Fundamentals">
+      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
+        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><rect x="25" y="25" width="50" height="50" rx="4" stroke="rgba(196,30,58,.15)" stroke-width="1" fill="none"/><rect x="35" y="35" width="30" height="30" rx="2" stroke="rgba(201,145,58,.1)" stroke-width="1" fill="none"/></svg>
+        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">KIDS · BATCH</div>
+      </div>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Training</div>
+        <div class="gallery-cap">Kids Batch — Fundamentals</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="grading" data-cap="Black Belt Examination">
+      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
+        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><circle cx="50" cy="50" r="35" stroke="rgba(245,240,235,.08)" stroke-width="1" fill="none"/><circle cx="50" cy="50" r="5" fill="rgba(196,30,58,.3)"/><line x1="50" y1="15" x2="50" y2="30" stroke="rgba(196,30,58,.2)" stroke-width="1.5"/><line x1="50" y1="70" x2="50" y2="85" stroke="rgba(196,30,58,.2)" stroke-width="1.5"/><line x1="15" y1="50" x2="30" y2="50" stroke="rgba(196,30,58,.2)" stroke-width="1.5"/><line x1="70" y1="50" x2="85" y2="50" stroke="rgba(196,30,58,.2)" stroke-width="1.5"/></svg>
+        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">BLACK · BELT</div>
+      </div>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Belt Grading</div>
+        <div class="gallery-cap">Black Belt Examination</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="tournament" data-cap="National Level Competition">
+      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
+        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><polygon points="50,10 90,90 10,90" stroke="rgba(201,145,58,.2)" stroke-width="1" fill="none"/><polygon points="50,30 75,75 25,75" stroke="rgba(196,30,58,.12)" stroke-width="1" fill="none"/></svg>
+        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">NATIONALS</div>
+      </div>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Tournament</div>
+        <div class="gallery-cap">National Level Competition</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="training" data-cap="Women's Self-Defence Workshop">
+      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
+        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><circle cx="50" cy="50" r="35" stroke="rgba(196,30,58,.12)" stroke-width="1" fill="none"/><path d="M30,50 Q50,25 70,50 Q50,75 30,50Z" stroke="rgba(201,145,58,.15)" stroke-width="1" fill="none"/></svg>
+        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">WOMEN'S · DEFENCE</div>
+      </div>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Training</div>
+        <div class="gallery-cap">Women's Self-Defence Workshop</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="grading" data-cap="Sensei Presenting Certificates">
+      <div class="gallery-placeholder" style="background:#0a0a0a;position:relative">
+        <svg viewBox="0 0 100 100" style="width:100px;height:100px;opacity:.6"><rect x="20" y="30" width="60" height="40" rx="2" stroke="rgba(201,145,58,.18)" stroke-width="1" fill="none"/><line x1="30" y1="45" x2="70" y2="45" stroke="rgba(201,145,58,.1)" stroke-width="1"/><line x1="30" y1="52" x2="60" y2="52" stroke="rgba(201,145,58,.07)" stroke-width="1"/><circle cx="50" cy="75" r="6" stroke="rgba(196,30,58,.2)" stroke-width="1" fill="none"/></svg>
+        <div class="ph-text" style="margin-top:.8rem;font-size:.6rem;letter-spacing:.25em;color:rgba(201,145,58,.4)">CERTIFICATE · DAY</div>
+      </div>
+      <div class="gallery-overlay">
+        <div class="gallery-cat">Belt Grading</div>
+        <div class="gallery-cap">Sensei Presenting Certificates</div>
+      </div>
+    </div>
+
+  </div>
+  <p style="font-family:var(--font-display);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.2);text-align:center;margin-top:2rem">Replace placeholder cards with your actual photos — all slots ready</p>
+</section>
+
+
+<!-- BRANCHES -->
+<section id="branches">
+  <div class="reveal">
+    <div class="section-label">Our Locations</div>
+    <h2 class="section-title">NBKA <em>Branches</em></h2>
+    <p style="margin-top:1rem;font-size:1.1rem;color:rgba(245,240,235,.55);line-height:1.8;max-width:550px">Select a branch to view the instructor details, contact information, and directions.</p>
+  </div>
+
+  <div class="branches-layout reveal" style="transition-delay:.15s">
+    <!-- ═══════════════════════════════════════════════════════════
+         BRANCH LIST — ADD A NEW BRANCH:
+         1. Copy a <button class="branch-list-item"> block below.
+         2. Change id="bl-YOURKEY" and onclick="showBranch('YOURKEY')"
+         3. Update the label text (e.g. "Secunderabad — Branch 2")
+         4. Remove the "coming" class once the branch is live.
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="branch-list">
+      <button class="branch-list-item active" id="bl-main" onclick="showBranch('main')">
+        <span class="bl-dot"></span>
+        Chatrinaka — Main
+        <span class="bl-arrow">→</span>
+      </button>
+      <!-- ADD NEW BRANCH BUTTONS ABOVE THIS LINE -->
+      <button class="branch-list-item coming" id="bl-b2">
+        <span class="bl-dot"></span>
+        Branch 2
+        <span class="bl-soon">Soon</span>
+      </button>
+      <button class="branch-list-item coming" id="bl-b3">
+        <span class="bl-dot"></span>
+        Branch 3
+        <span class="bl-soon">Soon</span>
+      </button>
+    </div>
+
+    <!-- TO ADD A NEW BRANCH PANEL: copy the branch-panel block below,
+         change its id to bp-YOURKEY, update photo/name/address/mobile/timings/maps link. -->
+    <div class="branch-detail">
+
+      <!-- MAIN BRANCH -->
+      <div class="branch-panel active" id="bp-main">
+        <div class="bp-header">
+          <div class="bp-photo-wrap">
+            <img class="bp-photo"
+              src="https://nayakbudokan.github.io/nayakbudokan/images/sensai.jpeg"
+              alt="Sensei P. Ganesh Nayak" onerror="this.style.background='rgba(196,30,58,.06)'"/>
+            <div class="bp-photo-frame"></div>
+          </div>
+          <div class="bp-meta">
+            <div class="bp-role">Branch Head &amp; Founder</div>
+            <div class="bp-name">P. Ganesh Nayak</div>
+            <div class="bp-branch-name">NBKA — Chatrinaka Main Branch</div>
+            <div class="bp-divider"></div>
+            <div class="bp-info-grid">
+              <div class="bp-info-row">
+                <div class="bp-info-icon">LOC</div>
+                <div class="bp-info-content">
+                  <div class="bp-info-label">Address</div>
+                  <div class="bp-info-val">Shivaganga Nagar, Chatrinaka,<br/>Hyderabad, Telangana – 500053<br/><span style="color:var(--gray);font-size:.9rem">Near Sri Lakshmaneshwar Swamy Devalayam</span></div>
+                </div>
+              </div>
+              <div class="bp-info-row">
+                <div class="bp-info-icon">TEL</div>
+                <div class="bp-info-content">
+                  <div class="bp-info-label">Mobile / WhatsApp</div>
+                  <div class="bp-info-val">+91 93930 95053</div>
+                </div>
+              </div>
+              <div class="bp-info-row">
+                <div class="bp-info-icon">TIME</div>
+                <div class="bp-info-content">
+                  <div class="bp-info-label">Training Timings</div>
+                  <div class="bp-info-val">5:30 AM – 8:00 AM<br/><span style="color:var(--gray);font-size:.9rem">Monday to Saturday</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="bp-actions">
+              <a href="https://wa.me/919393095053" class="bp-btn-wa">WhatsApp</a>
+              <a href="https://maps.app.goo.gl/jkdBpKmBquPstGVy7" target="_blank" class="bp-btn-map">Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /branch-detail -->
+  </div>
+</section>
+
+<!-- ENQUIRY ROUTING CONFIRMATION MODAL -->
+<div class="routing-overlay" id="routingModal">
+  <div class="routing-modal">
+    <button class="routing-close" onclick="closeRoutingModal()">✕</button>
+
+    <div class="routing-icon">📨</div>
+    <div class="routing-status" id="routingStatus">Routing your enquiry…</div>
+    <div class="routing-branch" id="routingBranch"></div>
+    <div class="routing-note" id="routingNote"></div>
+
+    <div class="routing-cards" id="routingCards"></div>
+
+    <p class="routing-tip">Tap each button to open WhatsApp — your message is pre-filled and ready to send.</p>
+    <button class="routing-dismiss" onclick="closeRoutingModal()">Done</button>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal-left">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Begin Your<br/><em>Journey</em></h2>
+    <p style="margin-top:1.5rem;font-size:1.1rem;line-height:1.8;color:rgba(245,240,235,.65)">Ready to transform your life through the art of Budokan? We welcome students of all ages and experience levels.</p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">LOC</div>
+        <div class="contact-detail"><div class="label">Location</div><div class="val">Shivaganga Nagar, Chatrinaka,<br/>Hyderabad, Telangana – 500053</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">TEL</div>
+        <div class="contact-detail"><div class="label">Phone / WhatsApp</div><div class="val">+91 93930 95053</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">HRS</div>
+        <div class="contact-detail"><div class="label">Training Hours</div><div class="val">5:30 AM – 8:00 AM<br/>Monday to Saturday</div></div>
+      </div>
+    </div>
+    <a href="https://wa.me/919393095053" class="whatsapp-btn">💬 Chat on WhatsApp</a>
+  </div>
+
+  <div class="contact-form reveal-right">
+    <div class="section-label">Enquire Now</div>
+    <div class="routing-badge">Smart Area Routing — Connected to Your Nearest Branch</div>
+
+    <div class="form-field">
+      <label>Your Name *</label>
+      <input type="text" id="eq-name" placeholder="Full name"/>
+    </div>
+    <div class="form-field">
+      <label>Phone Number *</label>
+      <input type="tel" id="eq-phone" placeholder="+91 XXXXX XXXXX"/>
+    </div>
+    <div class="form-field">
+      <label>Email Address</label>
+      <input type="email" id="eq-email" placeholder="your@email.com"/>
+    </div>
+
+    <!-- AREA FIELD with Hyderabad suggestions -->
+    <div class="form-field">
+      <label>Your Area / Locality *</label>
+      <div class="area-input-wrap">
+        <input type="text" id="eq-area" list="hydareas"
+          placeholder="e.g. Ameerpet, Dilsukhnagar…"
+          autocomplete="off" oninput="previewRouting()"/>
+        <div class="area-routing-preview" id="areaPreview"></div>
+      </div>
+      <datalist id="hydareas">
+        <option value="Ameerpet"/><option value="SR Nagar"/><option value="Begumpet"/>
+        <option value="Somajiguda"/><option value="Punjagutta"/><option value="Banjara Hills"/>
+        <option value="Jubilee Hills"/><option value="Madhapur"/><option value="Hitech City"/>
+        <option value="Gachibowli"/><option value="Kondapur"/><option value="Miyapur"/>
+        <option value="Kukatpally"/><option value="KPHB"/><option value="Balanagar"/>
+        <option value="Secunderabad"/><option value="Malkajgiri"/><option value="Marredpally"/>
+        <option value="Bowenpally"/><option value="Alwal"/><option value="Kompally"/>
+        <option value="Dilsukhnagar"/><option value="LB Nagar"/><option value="Kothapet"/>
+        <option value="Malakpet"/><option value="Chatrinaka"/><option value="Saidabad"/>
+        <option value="Chanchalguda"/><option value="Santoshnagar"/><option value="Amberpet"/>
+        <option value="Uppal"/><option value="Nacharam"/><option value="Hayathnagar"/>
+        <option value="Trimulgherry"/><option value="Lalaguda"/><option value="Yapral"/>
+        <option value="Mehdipatnam"/><option value="Tolichowki"/><option value="Attapur"/>
+        <option value="Shamshabad"/><option value="Rajendra Nagar"/>
+        <option value="Vanasthalipuram"/><option value="Nagole"/><option value="Boduppal"/>
+      </datalist>
+    </div>
+
+    <div class="form-field">
+      <label>Program Interest</label>
+      <select id="eq-program">
+        <option value="">Select a program</option>
+        <option>Kids Karate</option>
+        <option>Adults Karate</option>
+        <option>Women's Self-Defence</option>
+        <option>Advanced &amp; Tournament</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label>Message</label>
+      <textarea id="eq-message" placeholder="Tell us about yourself or any questions…"></textarea>
+    </div>
+
+    <button class="btn-primary eq-submit" onclick="submitEnquiry()">
+      Send Enquiry →
+    </button>
+    <p class="eq-hint">Your message will be routed to your nearest NBKA branch instructor and Head Instructor automatically.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-col footer-brand-col">
+      <div class="footer-logo">
+        <img src="https://nayakbudokan.github.io/nayakbudokan/images/nbka1-logo.png" alt="NBKA" style="height:44px;filter:brightness(1.05)" onerror="this.style.display='none'"/>
+        <div class="footer-logo-text">Nayak Budokan<br/>Karate Academy</div>
+      </div>
+      <p class="footer-tagline">Discipline &bull; Strength &bull; Character</p>
+      <p class="footer-lineage">Following the authentic Budokan Karate-Do tradition since 1966 — established in Hyderabad under Grand Master C. Hanumanth Rao.</p>
+      <a href="https://wa.me/919393095053" class="footer-wa-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-nav">
+        <li><a href="#about">About NBKA</a></li>
+        <li><a href="#lineage">Our Lineage</a></li>
+        <li><a href="#classes">Programs</a></li>
+        <li><a href="#sensei">The Sensei</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#branches">Branches</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Programs</div>
+      <ul class="footer-nav">
+        <li><a href="#classes">Kids Karate (5–15)</a></li>
+        <li><a href="#classes">Adults Karate</a></li>
+        <li><a href="#classes">Women's Self-Defence</a></li>
+        <li><a href="#classes">Advanced &amp; Tournament</a></li>
+        <li><a href="#blackbelts">Black Belt Track</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-contact-list">
+        <div class="footer-contact-item">
+          <span class="fci-label">Address</span>
+          <span class="fci-val">Shivaganga Nagar, Chatrinaka,<br/>Hyderabad, Telangana – 500053</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fci-label">Phone</span>
+          <span class="fci-val">+91 93930 95053</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fci-label">Timings</span>
+          <span class="fci-val">5:30 AM – 8:00 AM<br/>Mon – Sat</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="fci-label">Map</span>
+          <a href="https://maps.app.goo.gl/jkdBpKmBquPstGVy7" target="_blank" class="fci-val fci-link">View on Google Maps →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-brand">
+      <span class="footer-kanji">武道館</span>
+      Nayak Budokan Karate Academy
+    </div>
+    <div class="footer-bottom-copy">
+      &copy; <span id="ftYear"></span> NBKA Hyderabad. All rights reserved.
+    </div>
+    <div class="footer-bottom-links">
+      <a href="#hero">Back to Top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── CURSOR ──
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.transform=`translate(${mx-5}px,${my-5}px)`;});
+(function animRing(){rx+=(mx-rx-18)*.12;ry+=(my-ry-18)*.12;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(animRing);})();
+
+// ── NAV ──
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',scrollY>80));
+function toggleMobile(e){
+  if(e){e.preventDefault();e.stopPropagation();}
+  const m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+function closeMobile(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.body.style.overflow='';
+}
+// iOS-safe hamburger: bind both click AND touchstart
+(function(){
+  const btn=document.getElementById('hamburger');
+  if(!btn)return;
+  btn.addEventListener('touchstart',function(e){e.preventDefault();toggleMobile();},{passive:false});
+  btn.addEventListener('click',toggleMobile);
+  // Close menu when tapping overlay area
+  document.getElementById('mobileMenu').addEventListener('touchstart',function(e){
+    if(e.target===this)closeMobile();
+  },{passive:true});
+})();
+
+// ── SCROLL REVEAL ──
+const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+
+// On touch/mobile: skip animations entirely — show everything immediately
+const isTouch = window.matchMedia('(hover:none) and (pointer:coarse)').matches;
+if(isTouch){
+  revealEls.forEach(el=>el.classList.add('visible'));
+} else {
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
+  }),{threshold:0.05,rootMargin:'0px 0px -30px 0px'});
+  revealEls.forEach(el=>obs.observe(el));
+}
+// Absolute fallback: force all visible after 2.5s regardless
+setTimeout(()=>revealEls.forEach(el=>el.classList.add('visible')), 2500);
+
+// ── COUNTERS ──
+function animCounter(el,target){
+  const dur=2000,s=performance.now();
+  (function tick(now){
+    const t=Math.min((now-s)/dur,1),ease=1-Math.pow(1-t,3);
+    el.textContent=Math.round(ease*target)+'+';
+    if(t<1)requestAnimationFrame(tick);
+  })(performance.now());
+}
+if(isTouch){
+  // On mobile: set numbers directly, no animation (avoids RAF timing issues)
+  document.querySelectorAll('.stat-item').forEach(el=>{
+    el.classList.add('visible');
+    const n=el.querySelector('.stat-num');
+    if(n){const t=+n.dataset.target;n.textContent=t+'+';}
+  });
+} else {
+  const cObs=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting){const n=e.target.querySelector('.stat-num');if(n)animCounter(n,+n.dataset.target);cObs.unobserve(e.target);}
+  }),{threshold:.3});
+  document.querySelectorAll('.stat-item').forEach(el=>cObs.observe(el));
+}
+
+// ── GALLERY FILTER ──
+function filterGallery(cat,btn){
+  document.querySelectorAll('.gf-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.gallery-item').forEach(item=>{
+    const show=(cat==='all'||item.dataset.cat===cat);
+    item.style.display=show?'':'none';
+  });
+}
+
+// ── LIGHTBOX ──
+let lbItems=[],lbIdx=0;
+function openLightbox(el){
+  const img=el.querySelector('img');if(!img)return;
+  lbItems=Array.from(document.querySelectorAll('.gallery-item[onclick]'));
+  lbIdx=lbItems.indexOf(el);
+  showLbItem(lbIdx);
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function showLbItem(i){
+  const el=lbItems[i];if(!el)return;
+  const img=el.querySelector('img');
+  document.getElementById('lbImg').src=img?img.src:'';
+  document.getElementById('lbCap').textContent=el.dataset.cap||'';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+function lbPrev(){lbIdx=(lbIdx-1+lbItems.length)%lbItems.length;showLbItem(lbIdx);}
+function lbNext(){lbIdx=(lbIdx+1)%lbItems.length;showLbItem(lbIdx);}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeLightbox();
+  if(e.key==='ArrowLeft')lbPrev();
+  if(e.key==='ArrowRight')lbNext();
+});
+
+// ── BLACK BELTS MODAL ──
+function openBBModal(){document.getElementById('bbModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeBBModal(){document.getElementById('bbModal').classList.remove('open');document.body.style.overflow='';}
+
+// ══════════════════════════════════════════════════════════════
+// NBKA SMART WHATSAPP ROUTING ENGINE
+// ══════════════════════════════════════════════════════════════
+//
+// HOW TO ADD A NEW BRANCH:
+//   1. Copy one branch object below and paste it into the branches array.
+//   2. Fill in: name, instructor, phone (country code + number, no + or spaces).
+//   3. Add all areas this branch covers to its areas array (lowercase).
+//   4. That's it — routing is automatic!
+//
+// HOW TO ADD AREAS TO AN EXISTING BRANCH:
+//   Just add more strings to that branch's areas[] array.
+//
+// ══════════════════════════════════════════════════════════════
+
+const NBKA_ROUTING = {
+
+  // ── HEAD INSTRUCTOR (always notified) ──────────────────────
+  master: {
+    name: 'Sensei P. Ganesh Nayak',
+    role: 'Head Instructor & Founder',
+    phone: '919393095053'   // ← MASTER WhatsApp number
+  },
+
+  // ── BRANCHES ───────────────────────────────────────────────
+  // Add / edit branches here. Each branch needs:
+  //   name      : display name shown in the routing confirmation
+  //   instructor: instructor's full name
+  //   phone     : WhatsApp number with country code (91XXXXXXXXXX), no spaces/+
+  //   areas     : lowercase area names this branch serves
+  branches: [
+
+    {
+      id: 'main',
+      name: 'Chatrinaka Main Branch',
+      instructor: 'P. Ganesh Nayak',
+      phone: '919393095053',   // ← replace with actual number if different
+      areas: [
+        'chatrinaka','shivaganga nagar','malakpet','dilsukhnagar','lb nagar',
+        'chanchalguda','saidabad','santoshnagar','kothapet','amberpet',
+        'nacharam','hayathnagar','uppal','nagole','boduppal','vanasthalipuram',
+        'mehdipatnam','rajendra nagar','attapur','shamshabad'
+      ]
+    },
+
+    // ── PLACEHOLDER BRANCH 2 ── fill in when ready ──────────
+    {
+      id: 'b2',
+      name: 'Branch 2',                    // ← update branch name
+      instructor: 'INSTRUCTOR_2_NAME',      // ← update instructor name
+      phone: 'INSTRUCTOR_2_PHONE',         // ← e.g. '919876543210'
+      areas: [
+        'ameerpet','sr nagar','begumpet','somajiguda','punjagutta',
+        'banjara hills','jubilee hills','madhapur','hitech city','gachibowli',
+        'kondapur','tolichowki'
+      ]
+    },
+
+    // ── PLACEHOLDER BRANCH 3 ── fill in when ready ──────────
+    {
+      id: 'b3',
+      name: 'Branch 3',                    // ← update branch name
+      instructor: 'INSTRUCTOR_3_NAME',      // ← update instructor name
+      phone: 'INSTRUCTOR_3_PHONE',         // ← e.g. '919876543210'
+      areas: [
+        'secunderabad','malkajgiri','marredpally','trimulgherry','lalaguda',
+        'bowenpally','alwal','kompally','miyapur','kukatpally','kphb',
+        'balanagar','yapral','medchal'
+      ]
+    }
+
+    // ── ADD MORE BRANCHES ABOVE THIS LINE ───────────────────
+    // Copy this block:
+    // ,{
+    //   id: 'b4',
+    //   name: 'Branch 4 Name',
+    //   instructor: 'Instructor Name',
+    //   phone: '91XXXXXXXXXX',
+    //   areas: ['area1','area2','area3']
+    // }
+
+  ]
+};
+
+// ── ROUTING LOGIC ──────────────────────────────────────────────
+function findBranch(areaInput) {
+  const q = areaInput.trim().toLowerCase();
+  if (!q) return null;
+  // Exact / contains match
+  for (const b of NBKA_ROUTING.branches) {
+    if (b.areas.some(a => q.includes(a) || a.includes(q))) return { branch: b, type: 'match' };
+  }
+  // No match → nearest = first branch (main)
+  return { branch: NBKA_ROUTING.branches[0], type: 'nearest' };
+}
+
+// Live routing preview below area input
+function previewRouting() {
+  const area = document.getElementById('eq-area').value;
+  const preview = document.getElementById('areaPreview');
+  if (!area.trim()) { preview.textContent = ''; preview.className = 'area-routing-preview'; return; }
+  const result = findBranch(area);
+  if (!result) { preview.textContent = ''; return; }
+  if (result.type === 'match') {
+    preview.textContent = '✓ Routing to ' + result.branch.name;
+    preview.className = 'area-routing-preview match';
+  } else {
+    preview.textContent = '⚡ No branch yet — routing to nearest: ' + result.branch.name;
+    preview.className = 'area-routing-preview nearest';
+  }
+}
+
+// Build WhatsApp URL with pre-filled message
+function buildWAUrl(phone, name, userPhone, email, area, program, message, branchName, routingType) {
+  const routingLine = routingType === 'nearest'
+    ? `⚡ _No branch in ${area} yet — routed to nearest branch_`
+    : `✅ _Matched to: ${branchName}_`;
+
+  const text =
+`🥋 *New Enquiry — NBKA*
+
+👤 *Name:* ${name}
+📞 *Phone:* ${userPhone}
+📧 *Email:* ${email || 'Not provided'}
+📍 *Area:* ${area}
+🎯 *Program:* ${program || 'Not specified'}
+💬 *Message:* ${message || 'No message'}
+
+${routingLine}
+🌐 _Via NBKA Website_`;
+
+  return 'https://wa.me/' + phone + '?text=' + encodeURIComponent(text);
+}
+
+// Form validation & submit
+function submitEnquiry() {
+  const name    = document.getElementById('eq-name').value.trim();
+  const phone   = document.getElementById('eq-phone').value.trim();
+  const email   = document.getElementById('eq-email').value.trim();
+  const area    = document.getElementById('eq-area').value.trim();
+  const program = document.getElementById('eq-program').value;
+  const message = document.getElementById('eq-message').value.trim();
+
+  // Basic validation
+  if (!name)  { alert('Please enter your name.'); return; }
+  if (!phone) { alert('Please enter your phone number.'); return; }
+  if (!area)  { alert('Please enter your area / locality so we can route you correctly.'); return; }
+
+  const result = findBranch(area);
+  const branch = result.branch;
+  const routingType = result.type;
+  const master = NBKA_ROUTING.master;
+
+  // Check if branch phone is still placeholder
+  const instructorIsPlaceholder = branch.phone.includes('INSTRUCTOR') || branch.phone.length < 8;
+  const instructorPhone = instructorIsPlaceholder ? master.phone : branch.phone;
+  const instructorName  = instructorIsPlaceholder ? master.name : branch.instructor;
+
+  // Build WhatsApp URLs
+  const instrUrl  = buildWAUrl(instructorPhone, name, phone, email, area, program, message, branch.name, routingType);
+  const masterUrl = buildWAUrl(master.phone, name, phone, email, area, program, message, branch.name, routingType);
+
+  // Show confirmation modal
+  const isSamePerson = instructorPhone === master.phone;
+
+  document.getElementById('routingStatus').textContent =
+    routingType === 'match' ? '✅ Branch Found — Enquiry Routed' : '⚡ Nearest Branch — No Gap in Your Lead';
+
+  document.getElementById('routingBranch').textContent = branch.name;
+
+  document.getElementById('routingNote').textContent = routingType === 'nearest'
+    ? 'No branch in ' + area + ' yet. Your enquiry is going to the nearest branch — zero lead lost!'
+    : 'Your enquiry is being sent to the ' + branch.name + ' instructor.';
+
+  // Build action cards
+  const cards = document.getElementById('routingCards');
+  cards.innerHTML = '';
+
+  if (!isSamePerson) {
+    cards.innerHTML += `
+      <a href="${instrUrl}" target="_blank" class="routing-wa-btn instructor">
+        <span class="wa-icon">💬</span>
+        <span class="wa-info">
+          <div class="wa-role">Branch Instructor</div>
+          <div class="wa-name">${instructorName}</div>
+        </span>
+        <span class="wa-tap">Tap to Open →</span>
+      </a>`;
+  }
+
+  cards.innerHTML += `
+    <a href="${masterUrl}" target="_blank" class="routing-wa-btn master">
+      <span class="wa-icon">🥋</span>
+      <span class="wa-info">
+        <div class="wa-role">Head Instructor & Founder</div>
+        <div class="wa-name">${master.name}</div>
+      </span>
+      <span class="wa-tap">Tap to Open →</span>
+    </a>`;
+
+  document.getElementById('routingModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRoutingModal() {
+  document.getElementById('routingModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── BRANCHES ──
+function showBranch(id){
+  // list items
+  document.querySelectorAll('.branch-list-item').forEach(b=>b.classList.remove('active'));
+  const li=document.getElementById('bl-'+id);if(li)li.classList.add('active');
+  // panels
+  document.querySelectorAll('.branch-panel').forEach(p=>p.classList.remove('active'));
+  const panel=document.getElementById('bp-'+id);if(panel)panel.classList.add('active');
+}
+// Nav dropdown → scroll to branches + select
+function goToBranch(id){
+  document.getElementById('branches').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>showBranch(id),400);
+}
+</script>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/919393095053" class="float-wa" target="_blank" title="Chat on WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<button class="float-top" id="floatTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 14V4M4 9l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+
+<script>
+// Loader auto-hides via CSS animation at 1.2s.
+// This JS adds .hidden at 1.8s as an extra safety net.
+setTimeout(function(){
+  var l=document.getElementById('pageLoader');
+  if(l)l.classList.add('hidden');
+},1800);
+</script>
 </body>
 </html>

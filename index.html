@@ -682,7 +682,7 @@ footer{border-top:1px solid rgba(201,145,58,.1);background:linear-gradient(180de
   .stat-num{font-size:1.8rem}
   .stat-label{font-size:.55rem}
 
-  #about,#sensei,#classes,#lineage,#philosophy,#blackbelts,#gallery,#branches,#contact{
+  #about,#sensei,#classes,#lineage,#philosophy,#blackbelts,#gallery,#branches,#contact,#calculator{
     padding:3rem 1.2rem
   }
   .section-title{font-size:clamp(2rem,8vw,3rem)}
@@ -1034,6 +1034,212 @@ nav.scrolled{
   .slash-reveal{display:none !important}
 }
 
+
+/* ════ LIGHT MODE ════ */
+body.light-mode{
+  --black:#F5F0EB;--white:#0d0d0d;--gray:#555;
+  background:#F5F0EB;color:#0d0d0d;
+}
+body.light-mode .hero-bg{
+  background:radial-gradient(ellipse at 70% 50%,rgba(139,0,0,.12) 0%,transparent 65%),
+             linear-gradient(135deg,#F0EAE0 0%,#E8DDD0 60%,#F0EAE0 100%);
+}
+body.light-mode .hero-grid{
+  background-image:linear-gradient(rgba(201,145,58,.06) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(201,145,58,.06) 1px,transparent 1px);
+}
+body.light-mode nav{background:rgba(245,240,235,.95) !important;border-bottom:1px solid rgba(201,145,58,.2)}
+body.light-mode nav.scrolled{background:rgba(245,240,235,.97) !important;backdrop-filter:blur(20px)}
+body.light-mode .nav-logo-text{color:var(--red-dark)}
+body.light-mode .nav-links a{color:rgba(13,13,13,.65)}
+body.light-mode .nav-links a:hover{color:var(--red)}
+body.light-mode .nav-dropdown-trigger{color:rgba(13,13,13,.65)}
+body.light-mode .nav-dropdown-menu{background:rgba(245,240,235,.98);border-color:rgba(196,30,58,.2)}
+body.light-mode .branch-menu-item{color:rgba(13,13,13,.7)}
+body.light-mode .stats-bar{background:rgba(196,30,58,.06);border-color:rgba(196,30,58,.15)}
+body.light-mode .stat-item{border-color:rgba(196,30,58,.1)}
+body.light-mode .stat-label{color:#666}
+body.light-mode section{background:transparent}
+body.light-mode #about,body.light-mode #lineage,body.light-mode #classes,
+body.light-mode #sensei,body.light-mode #gallery,body.light-mode #branches,
+body.light-mode #contact,body.light-mode #blackbelts,body.light-mode #philosophy{
+  background:transparent
+}
+body.light-mode .about-logo-wrap{background:rgba(196,30,58,.06);border-color:rgba(196,30,58,.15)}
+body.light-mode .about-text p{color:rgba(13,13,13,.75)}
+body.light-mode .about-quote{background:rgba(196,30,58,.05);border-color:var(--red)}
+body.light-mode .about-quote p{color:var(--red-dark)}
+body.light-mode .program-card{background:#EDE8E0;border-color:rgba(201,145,58,.15)}
+body.light-mode .program-desc{color:rgba(13,13,13,.65)}
+body.light-mode .program-num{color:rgba(13,13,13,.06)}
+body.light-mode .sensei-img{filter:none}
+body.light-mode .credential-list li{color:rgba(13,13,13,.65)}
+body.light-mode .value-circle{border-color:rgba(196,30,58,.25)}
+body.light-mode .gallery-item{background:#ddd}
+body.light-mode .branch-list{border-color:rgba(201,145,58,.2)}
+body.light-mode .branch-list-item{color:rgba(13,13,13,.55)}
+body.light-mode .branch-list-item:hover,.branch-list-item.active{background:rgba(196,30,58,.06)}
+body.light-mode .bp-info-val{color:rgba(13,13,13,.8)}
+body.light-mode .form-field input,body.light-mode .form-field select,
+body.light-mode .form-field textarea{background:rgba(13,13,13,.04);border-color:rgba(13,13,13,.15);color:#0d0d0d}
+body.light-mode footer{background:linear-gradient(180deg,transparent,rgba(220,210,200,1))}
+body.light-mode .footer-nav a{color:rgba(13,13,13,.45)}
+body.light-mode .fci-val{color:rgba(13,13,13,.55)}
+body.light-mode .mobile-menu{background:rgba(245,240,235,.98)}
+body.light-mode .mobile-menu a{color:#0d0d0d}
+body.light-mode .ticker-wrap{background:rgba(196,30,58,.05)}
+body.light-mode .deco-divider{border-color:rgba(201,145,58,.12)}
+body.light-mode ::-webkit-scrollbar-track{background:#F5F0EB}
+body.light-mode .hero-title{color:#0d0d0d}
+body.light-mode .hero-title .line-red{color:var(--red)}
+body.light-mode .hero-tagline{color:rgba(13,13,13,.55)}
+body.light-mode .section-title{color:#0d0d0d}
+body.light-mode .lineage-name{color:#0d0d0d}
+body.light-mode .lineage-year{color:var(--red)}
+body.light-mode .sensei-content p{color:rgba(13,13,13,.7)}
+body.light-mode .bb-sub{color:rgba(13,13,13,.5)}
+body.light-mode .bb-modal{background:#F5F0EB}
+body.light-mode .bb-card{background:rgba(201,145,58,.05);border-color:rgba(201,145,58,.15)}
+body.light-mode .bb-card-name{color:#0d0d0d}
+
+/* THEME TOGGLE BUTTON */
+.theme-toggle{
+  width:36px;height:36px;border-radius:50%;border:1px solid rgba(201,145,58,.3);
+  background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:var(--gold);font-size:1rem;transition:all .3s;margin-right:.5rem;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  flex-shrink:0;
+}
+.theme-toggle:hover{background:rgba(201,145,58,.1);border-color:var(--gold)}
+body.light-mode .theme-toggle{border-color:rgba(196,30,58,.3);color:var(--red)}
+
+
+/* ════ CURSOR TRAIL ════ */
+.cursor-trail{
+  position:fixed;border-radius:50%;pointer-events:none;z-index:9997;
+  transform:translate(-50%,-50%);
+  animation:trailFade .6s ease forwards;
+}
+@keyframes trailFade{
+  0%{opacity:.8;transform:translate(-50%,-50%) scale(1)}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(0)}
+}
+@media(hover:none) and (pointer:coarse){.cursor-trail{display:none}}
+
+
+/* ════ KANJI RAIN ════ */
+#kanjiCanvas{
+  position:absolute;inset:0;z-index:0;opacity:.06;pointer-events:none;
+}
+body.light-mode #kanjiCanvas{opacity:.04}
+
+
+/* ════ BELT RANK STRIP ════ */
+.belt-strip-section{
+  padding:3rem 8rem;border-top:1px solid rgba(201,145,58,.08);
+  background:var(--black);
+}
+.belt-strip-label{
+  font-family:var(--font-display);font-size:.6rem;letter-spacing:.35em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.belt-strip-label::before{content:'';display:block;width:25px;height:1px;background:var(--red)}
+.belt-track{display:flex;gap:0;width:100%;border:1px solid rgba(245,240,235,.08);overflow:hidden}
+.belt-rank{
+  flex:1;padding:.7rem .3rem;text-align:center;cursor:pointer;
+  transition:transform .25s,filter .25s;position:relative;
+}
+.belt-rank:hover{transform:scaleY(1.15);z-index:2;filter:brightness(1.3)}
+.belt-rank-name{
+  font-family:var(--font-display);font-size:.5rem;letter-spacing:.12em;
+  text-transform:uppercase;margin-top:.35rem;display:block;font-weight:600;
+}
+.belt-rank-time{font-family:var(--font-display);font-size:.42rem;letter-spacing:.08em;opacity:.7;display:block;margin-top:.15rem}
+.belt-tooltip{
+  position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#0d0d0d;border:1px solid rgba(201,145,58,.25);
+  padding:.4rem .7rem;white-space:nowrap;font-family:var(--font-display);
+  font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);
+  opacity:0;pointer-events:none;transition:opacity .2s;z-index:10;
+}
+.belt-rank:hover .belt-tooltip{opacity:1}
+@media(max-width:900px){
+  .belt-strip-section{padding:2.5rem 1.5rem}
+  .belt-rank-name{font-size:.42rem}
+  .belt-rank-time{display:none}
+}
+@media(max-width:600px){
+  .belt-track{flex-wrap:nowrap;overflow-x:auto}
+  .belt-rank{min-width:52px}
+}
+
+
+/* ════ ACHIEVEMENT WALL ════ */
+.achievement-section{padding:4rem 8rem;border-top:1px solid rgba(201,145,58,.08)}
+.achievement-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:1px;background:rgba(201,145,58,.08);
+  margin-top:2.5rem;
+}
+.achievement-card{
+  background:var(--black);padding:2rem 1.5rem;
+  display:flex;flex-direction:column;gap:.6rem;
+  transition:background .3s;position:relative;overflow:hidden;
+}
+.achievement-card:hover{background:rgba(196,30,58,.05)}
+.achievement-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(to right,transparent,var(--red),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.achievement-card:hover::before{opacity:1}
+.ach-medal{font-size:1.8rem;line-height:1}
+.ach-title{font-family:var(--font-display);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--white)}
+.ach-student{font-family:var(--font-display);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+.ach-event{font-size:.85rem;color:rgba(245,240,235,.45);font-style:italic}
+.ach-year{font-family:var(--font-display);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.25)}
+.ach-photo{width:60px;height:60px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(196,30,58,.3);margin-bottom:.3rem}
+.ach-photo-placeholder{width:60px;height:60px;border-radius:50%;background:rgba(196,30,58,.1);border:2px solid rgba(196,30,58,.2);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.8rem;font-weight:700;color:var(--red)}
+@media(max-width:900px){.achievement-section{padding:3rem 1.5rem} #calculator .reveal{grid-template-columns:1fr}}
+@media(max-width:600px){.achievement-grid{grid-template-columns:1fr 1fr}}
+
+
+/* ════ INK SPLATTER TRANSITIONS ════ */
+.ink-splatter{
+  position:relative;overflow:hidden;
+}
+.ink-splatter::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at var(--ink-x,50%) var(--ink-y,50%),
+    rgba(196,30,58,.18) 0%,
+    rgba(196,30,58,.06) 40%,
+    transparent 70%
+  );
+  pointer-events:none;opacity:0;
+  transition:opacity .8s ease;
+  z-index:0;
+}
+.ink-splatter.inked::after{opacity:1}
+.ink-splatter.inked-out::after{opacity:0}
+
+/* Ink blob SVG filter */
+.ink-blob{
+  position:fixed;pointer-events:none;z-index:9490;
+  transform:translate(-50%,-50%) scale(0);
+  transition:transform .5s cubic-bezier(.34,1.56,.64,1),opacity .5s ease;
+  opacity:0;
+}
+.ink-blob.show{transform:translate(-50%,-50%) scale(1);opacity:1}
+.ink-blob.hide{transform:translate(-50%,-50%) scale(0);opacity:0}
+
+
+@media(max-width:900px){
+  #calculator .reveal{grid-template-columns:1fr}
+  #calculator{padding:3.5rem 1.5rem}
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -1066,6 +1272,19 @@ nav.scrolled{
 </head>
 <body>
 <a href="#hero" class="skip-link">Skip to main content</a>
+
+<!-- INK SPLATTER BLOB -->
+<svg class="ink-blob" id="inkBlob" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="inkFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" seed="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="25" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <ellipse cx="150" cy="150" rx="120" ry="90" fill="rgba(196,30,58,0.12)" filter="url(#inkFilter)"/>
+  <ellipse cx="150" cy="150" rx="80" ry="60" fill="rgba(196,30,58,0.08)" filter="url(#inkFilter)"/>
+</svg>
+
 <div class="scroll-progress" id="scrollProgress"></div>
 <!-- DIAGONAL SLASH REVEAL -->
 <div class="slash-reveal" id="slashReveal">
@@ -1147,6 +1366,7 @@ nav.scrolled{
   <a href="#sensei" onclick="closeMobile()">Sensei</a>
   <a href="#blackbelts" onclick="closeMobile()">Black Belts</a>
   <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#calculator" onclick="closeMobile()">Belt Calculator</a>
   <a href="#branches" onclick="closeMobile()">Branches</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
@@ -1164,6 +1384,7 @@ nav.scrolled{
     <li><a href="#classes">Classes</a></li>
     <li><a href="#sensei">Sensei</a></li>
     <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#calculator">Belt Calc</a></li>
     <li class="nav-dropdown">
       <button class="nav-dropdown-trigger">
         Branches <span class="chevron">▾</span>
@@ -1184,6 +1405,7 @@ nav.scrolled{
     </li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode" title="Toggle theme">☀</button>
   <a href="https://wa.me/919393095053" class="nav-cta" aria-label="Enroll in Karate class via WhatsApp"><span class="nav-cta-dot"></span>Enroll Now</a>
   <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
@@ -1192,6 +1414,7 @@ nav.scrolled{
 
 <!-- HERO -->
 <section id="hero">
+  <canvas id="kanjiCanvas"></canvas>
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-accent"></div>
@@ -1275,6 +1498,117 @@ nav.scrolled{
   </div>
 </section>
 
+
+<!-- BELT RANK STRIP -->
+<div class="belt-strip-section reveal">
+  <div class="belt-strip-label">The Journey — Belt Progression</div>
+    <div class="belt-track">
+    <div class="belt-rank" style="background:#f8f5f0;color:#1a1a1a">
+      <span style="display:block;font-size:1rem">🥋</span>
+      <span class="belt-rank-name" style="color:#333">White</span>
+      <span class="belt-rank-time">Start</span>
+      <div class="belt-tooltip">White Belt — Beginner</div>
+    </div>
+    <div class="belt-rank" style="background:#f5c518;color:#1a1a1a">
+      <span style="display:block;font-size:1rem">🥋</span>
+      <span class="belt-rank-name" style="color:#000">Yellow</span>
+      <span class="belt-rank-time">~6 months</span>
+      <div class="belt-tooltip">Yellow Belt — 9th Kyu</div>
+    </div>
+    <div class="belt-rank" style="background:#f97316;color:#fff">
+      <span style="display:block;font-size:1rem">🥋</span>
+      <span class="belt-rank-name">Orange</span>
+      <span class="belt-rank-time">~12 months</span>
+      <div class="belt-tooltip">Orange Belt — 8th Kyu</div>
+    </div>
+    <div class="belt-rank" style="background:#4ade80;color:#14532d">
+      <span style="display:block;font-size:1rem">🥋</span>
+      <span class="belt-rank-name" style="color:#14532d">Green II</span>
+      <span class="belt-rank-time">~18 months</span>
+      <div class="belt-tooltip">Green Belt II — 7th Kyu</div>
+    </div>
+    <div class="belt-rank" style="background:#16a34a;color:#fff">
+      <span style="display:block;font-size:1rem">🥋</span>
+      <span class="belt-rank-name">Green I</span>
+      <span class="belt-rank-time">~24 months</span>
+      <div class="belt-tooltip">Green Belt I — 6th Kyu</div>
+    </div>
+    <div class="belt-rank" style="background:#b45309;color:#fff">
+      <span style="display:block;font-size:1rem">🥋</span>
+      <span class="belt-rank-name">Brown IV</span>
+      <span class="belt-rank-time">~30 months</span>
+      <div class="belt-tooltip">Brown Belt IV — 5th Kyu</div>
+    </div>
+    <div class="belt-rank" style="background:#92400e;color:#fff">
+      <span style="display:block;font-size:1rem">🥋</span>
+      <span class="belt-rank-name">Brown III</span>
+      <span class="belt-rank-time">~36 months</span>
+      <div class="belt-tooltip">Brown Belt III — 4th Kyu</div>
+    </div>
+    <div class="belt-rank" style="background:#78350f;color:#fef3c7">
+      <span style="display:block;font-size:1rem">🥋</span>
+      <span class="belt-rank-name">Brown II</span>
+      <span class="belt-rank-time">~42 months</span>
+      <div class="belt-tooltip">Brown Belt II — 3rd Kyu</div>
+    </div>
+    <div class="belt-rank" style="background:#5c2d0a;color:#fed7aa">
+      <span style="display:block;font-size:1rem">🥋</span>
+      <span class="belt-rank-name">Brown I</span>
+      <span class="belt-rank-time">~48 months</span>
+      <div class="belt-tooltip">Brown Belt I — 2nd Kyu</div>
+    </div>
+    <div class="belt-rank" style="background:#0d0d0d;color:#c9913a;border:1px solid rgba(201,145,58,.5);flex:1.4">
+      <span style="display:block;font-size:1rem">🥋</span>
+      <span class="belt-rank-name" style="color:var(--gold);font-size:.55rem">Black Belt</span>
+      <span class="belt-rank-time" style="color:rgba(201,145,58,.6)">54–60 months</span>
+      <div class="belt-tooltip" style="color:#c9913a">Black Belt — 1st Dan · The Real Journey Begins</div>
+    </div>
+  </div>
+  </div>
+  <p style="margin-top:1.2rem;font-family:var(--font-display);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.25);text-align:center">Black Belt is not the end — it is where the actual Karate journey truly begins</p>
+
+<!-- BELT JOURNEY CALCULATOR -->
+<section id="calculator" class="reveal" style="padding:4rem 8rem;border-top:1px solid rgba(201,145,58,.08);background:radial-gradient(ellipse at 30% 50%,rgba(139,0,0,.06) 0%,transparent 60%)">
+  <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start">
+    <div>
+      <div class="section-label">Your Path</div>
+      <h2 class="section-title">Belt <em>Journey</em><br/>Calculator</h2>
+      <p style="margin-top:1rem;font-size:1rem;line-height:1.7;color:rgba(245,240,235,.55)">Enter your age and current level — see your personal roadmap to Black Belt.</p>
+      <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem">
+        <div class="form-field">
+          <label>Your Age</label>
+          <input type="number" id="calc-age" min="5" max="60" placeholder="e.g. 10" oninput="calcJourney()"/>
+        </div>
+        <div class="form-field">
+          <label>Current Belt</label>
+          <select id="calc-belt" onchange="calcJourney()">
+            <option value="0">White Belt (Beginner)</option>
+            <option value="6">Yellow Belt</option>
+            <option value="12">Orange Belt</option>
+            <option value="18">Green Belt II</option>
+            <option value="24">Green Belt I</option>
+            <option value="30">Brown Belt IV</option>
+            <option value="36">Brown Belt III</option>
+            <option value="42">Brown Belt II</option>
+            <option value="48">Brown Belt I</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div id="calcResult" style="display:none">
+      <div style="font-family:var(--font-display);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem">Your Roadmap</div>
+      <div id="calcCards" style="display:flex;flex-direction:column;gap:.6rem"></div>
+      <div id="calcBlackBelt" style="margin-top:1.5rem;padding:1.2rem;border:1px solid rgba(201,145,58,.3);background:rgba(201,145,58,.05)">
+        <div style="font-family:var(--font-display);font-size:.55rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase">Black Belt Achievement</div>
+        <div id="calcBBDate" style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--white);margin-top:.3rem"></div>
+        <div id="calcBBAge" style="font-size:.85rem;color:rgba(245,240,235,.45);margin-top:.2rem;font-style:italic"></div>
+      </div>
+      <a id="calcWA" href="#" target="_blank" class="btn-primary" style="display:inline-block;margin-top:1.5rem;border:none">Start My Journey → WhatsApp</a>
+    </div>
+    <div id="calcPlaceholder" style="display:flex;align-items:center;justify-content:center;height:200px;border:1px dashed rgba(201,145,58,.12);font-family:var(--font-display);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.2)">Enter your age to see your roadmap</div>
+  </div>
+</section>
+
 <div class="deco-divider"><div class="deco-line"></div><div class="deco-symbol">武</div><div class="deco-line"></div></div>
 
 <!-- LINEAGE -->
@@ -1305,7 +1639,7 @@ nav.scrolled{
 </section>
 
 <!-- CLASSES -->
-<section id="classes">
+<section id="classes" class="ink-splatter">
   <div class="classes-header reveal">
     <div class="section-label">What We Offer</div>
     <h2 class="section-title">Training <em>Programs</em></h2>
@@ -1351,7 +1685,7 @@ nav.scrolled{
 </section>
 
 <!-- SENSEI -->
-<section id="sensei">
+<section id="sensei" class="ink-splatter">
   <div class="sensei-img-wrap reveal-left">
     <div class="sensei-img-frame"></div>
     <img class="sensei-img" src="https://nayakbudokan.github.io/nayakbudokan/images/sensai.jpeg" alt="Sensei P. Ganesh Nayak" loading="lazy" onload="this.style.opacity='1'" style="opacity:0" onerror="this.style.opacity='1';this.style.background='rgba(196,30,58,.08)';this.style.minHeight='260px'"
@@ -1407,7 +1741,7 @@ nav.scrolled{
 </section>
 
 <!-- BLACK BELTS SECTION -->
-<section id="blackbelts">
+<section id="blackbelts" class="ink-splatter">
   <div class="bb-kanji-bg">黒帯</div>
   <div class="reveal">
     <div class="bb-eyebrow">Hall of Excellence</div>
@@ -1426,7 +1760,7 @@ nav.scrolled{
 </section>
 
 <!-- GALLERY -->
-<section id="gallery">
+<section id="gallery" class="ink-splatter">
   <div class="gallery-header reveal">
     <div class="section-label">Moments &amp; Memories</div>
     <h2 class="section-title">Our <em>Gallery</em></h2>
@@ -1560,12 +1894,83 @@ nav.scrolled{
   </div><!-- /gallery-grid -->
 </section>
 
+
+<!-- STUDENT ACHIEVEMENT WALL -->
+<section class="achievement-section">
+  <div class="reveal">
+    <div class="section-label">Hall of Fame</div>
+    <h2 class="section-title">Student <em>Achievements</em></h2>
+    <p style="margin-top:.8rem;font-size:1rem;color:rgba(245,240,235,.45);font-style:italic">Champions forged at NBKA — tournament victories, belt achievements and proud moments</p>
+  </div>
+  <div class="achievement-grid reveal" style="transition-delay:.1s">
+
+    <div class="achievement-card">
+      <div class="ach-photo-placeholder">GN</div>
+      <div class="ach-medal">🥇</div>
+      <div class="ach-title">Gold Medal</div>
+      <div class="ach-student">Student Name</div>
+      <div class="ach-event">State Karate Championship</div>
+      <div class="ach-year">2024</div>
+    </div>
+
+    <div class="achievement-card">
+      <div class="ach-photo-placeholder">—</div>
+      <div class="ach-medal">🥈</div>
+      <div class="ach-title">Silver Medal</div>
+      <div class="ach-student">Student Name</div>
+      <div class="ach-event">District Level Tournament</div>
+      <div class="ach-year">2024</div>
+    </div>
+
+    <div class="achievement-card">
+      <div class="ach-photo-placeholder">—</div>
+      <div class="ach-medal">🥋</div>
+      <div class="ach-title">Black Belt — 1st Dan</div>
+      <div class="ach-student">Student Name</div>
+      <div class="ach-event">NBKA Grading Ceremony</div>
+      <div class="ach-year">2024</div>
+    </div>
+
+    <div class="achievement-card">
+      <div class="ach-photo-placeholder">—</div>
+      <div class="ach-medal">🏆</div>
+      <div class="ach-title">Best Kata Award</div>
+      <div class="ach-student">Student Name</div>
+      <div class="ach-event">CM KCR Cup Championship</div>
+      <div class="ach-year">2023</div>
+    </div>
+
+    <div class="achievement-card">
+      <div class="ach-photo-placeholder">—</div>
+      <div class="ach-medal">🥉</div>
+      <div class="ach-title">Bronze Medal</div>
+      <div class="ach-student">Student Name</div>
+      <div class="ach-event">National Level — LB Indoor Stadium</div>
+      <div class="ach-year">2023</div>
+    </div>
+
+    <div class="achievement-card">
+      <div class="ach-photo-placeholder">—</div>
+      <div class="ach-medal">⭐</div>
+      <div class="ach-title">Best Student Award</div>
+      <div class="ach-student">Student Name</div>
+      <div class="ach-event">Annual NBKA Ceremony</div>
+      <div class="ach-year">2023</div>
+    </div>
+
+  </div>
+  <p style="text-align:center;margin-top:1.5rem;font-family:var(--font-display);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,235,.2)">Add student names, photos & achievements — replace placeholder cards</p>
+</section>
+
 <!-- BRANCHES -->
 <section id="branches">
   <div class="reveal">
     <div class="section-label">Our Locations</div>
     <h2 class="section-title">NBKA <em>Branches</em></h2>
     <p style="margin-top:1rem;font-size:1.1rem;color:rgba(245,240,235,.55);line-height:1.8;max-width:550px">Select a branch to view the instructor details, contact information, and directions.</p>
+    <button onclick="detectNearestBranch()" style="margin-top:1.2rem;font-family:var(--font-display);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;padding:.65rem 1.5rem;border:1px solid rgba(201,145,58,.3);background:rgba(201,145,58,.06);color:var(--gold);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:all .3s" onmouseover="this.style.background='rgba(201,145,58,.12)'" onmouseout="this.style.background='rgba(201,145,58,.06)'">
+      📍 Detect My Nearest Branch
+    </button>
   </div>
 
   <div class="branches-layout reveal" style="transition-delay:.15s">
@@ -1799,6 +2204,7 @@ nav.scrolled{
         <li><a href="#classes">Programs</a></li>
         <li><a href="#sensei">The Sensei</a></li>
         <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#calculator">Belt Calc</a></li>
         <li><a href="#branches">Branches</a></li>
       </ul>
     </div>
@@ -2221,6 +2627,209 @@ setTimeout(function(){
   var l=document.getElementById('pageLoader');
   if(l)l.classList.add('hidden');
 },1800);
+
+// ════════════════════════════════════════
+// DARK / LIGHT MODE TOGGLE
+// ════════════════════════════════════════
+function toggleTheme(){
+  const body = document.body;
+  const btn = document.getElementById('themeToggle');
+  body.classList.toggle('light-mode');
+  const isLight = body.classList.contains('light-mode');
+  if(btn) btn.textContent = isLight ? '🌙' : '☀';
+  try{ localStorage.setItem('nbka_theme', isLight ? 'light' : 'dark'); }catch(e){}
+}
+// Restore saved theme
+try{
+  if(localStorage.getItem('nbka_theme') === 'light'){
+    document.body.classList.add('light-mode');
+    const btn = document.getElementById('themeToggle');
+    if(btn) btn.textContent = '🌙';
+  }
+}catch(e){}
+
+// ════════════════════════════════════════
+// CURSOR TRAIL EFFECT
+// ════════════════════════════════════════
+(function(){
+  if(window.matchMedia('(hover:none)').matches) return;
+  const colors = ['rgba(196,30,58,.7)','rgba(201,145,58,.6)','rgba(196,30,58,.4)','rgba(201,145,58,.3)'];
+  let last = 0;
+  document.addEventListener('mousemove', e => {
+    const now = Date.now();
+    if(now - last < 30) return;
+    last = now;
+    const t = document.createElement('div');
+    t.className = 'cursor-trail';
+    const size = Math.random()*6 + 3;
+    t.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX}px;top:${e.clientY}px;background:${colors[Math.floor(Math.random()*colors.length)]}`;
+    document.body.appendChild(t);
+    setTimeout(()=>t.remove(), 650);
+  });
+})();
+
+// ════════════════════════════════════════
+// ANIMATED KANJI RAIN
+// ════════════════════════════════════════
+(function(){
+  const canvas = document.getElementById('kanjiCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const hero = document.getElementById('hero');
+  const kanji = '武道館空手力心礼律謙勝技技気剣';
+  let drops = [];
+  let W, H;
+
+  function resize(){
+    W = canvas.width = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+    drops = [];
+    const cols = Math.floor(W / 28);
+    for(let i=0; i<cols; i++){
+      drops.push({x: i*28 + 14, y: Math.random()*H, speed: Math.random()*.6+.2, char: kanji[Math.floor(Math.random()*kanji.length)], opacity: Math.random()*.5+.2, size: Math.floor(Math.random()*8)+14});
+    }
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    drops.forEach(d => {
+      ctx.font = `${d.size}px 'Noto Serif JP', serif`;
+      ctx.fillStyle = `rgba(196,30,58,${d.opacity})`;
+      ctx.fillText(d.char, d.x, d.y);
+      d.y += d.speed;
+      if(d.y > H + 20){
+        d.y = -20;
+        d.char = kanji[Math.floor(Math.random()*kanji.length)];
+        d.opacity = Math.random()*.5+.15;
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ════════════════════════════════════════
+// GEO-DETECT NEAREST BRANCH
+// ════════════════════════════════════════
+const BRANCH_LOCATIONS = [
+  {id:'main', name:'Chatrinaka Main Branch', lat:17.3717, lng:78.5167},
+  {id:'b2',   name:'Ameerpet Branch',        lat:17.4350, lng:78.4482},
+  {id:'b3',   name:'Falaknuma Branch',       lat:17.3160, lng:78.4700},
+];
+function haversine(lat1,lng1,lat2,lng2){
+  const R=6371, dLat=(lat2-lat1)*Math.PI/180, dLng=(lng2-lng1)*Math.PI/180;
+  const a=Math.sin(dLat/2)**2+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)**2;
+  return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+}
+function detectNearestBranch(){
+  if(!navigator.geolocation){ showToast('Location not supported on this device',false); return; }
+  showToast('Detecting your location…',true);
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const {latitude:lat,longitude:lng} = pos.coords;
+    let nearest = null, minDist = Infinity;
+    BRANCH_LOCATIONS.forEach(b=>{
+      const d = haversine(lat,lng,b.lat,b.lng);
+      if(d<minDist){ minDist=d; nearest=b; }
+    });
+    if(nearest){
+      const km = minDist.toFixed(1);
+      showToast(`Nearest: ${nearest.name} — ${km}km away`,true);
+      document.getElementById('branches').scrollIntoView({behavior:'smooth'});
+      setTimeout(()=>showBranch(nearest.id), 600);
+    }
+  }, ()=>showToast('Could not detect location. Please allow access.',false));
+}
+
+// ════════════════════════════════════════
+// BELT JOURNEY CALCULATOR
+// ════════════════════════════════════════
+const BELT_STAGES = [
+  {name:'Yellow Belt',  months:6,  color:'#f5c518', text:'#000'},
+  {name:'Orange Belt',  months:12, color:'#f97316', text:'#fff'},
+  {name:'Green Belt II',months:18, color:'#4ade80', text:'#14532d'},
+  {name:'Green Belt I', months:24, color:'#16a34a', text:'#fff'},
+  {name:'Brown Belt IV',months:30, color:'#b45309', text:'#fff'},
+  {name:'Brown Belt III',months:36,color:'#92400e', text:'#fff'},
+  {name:'Brown Belt II',months:42, color:'#78350f', text:'#fef3c7'},
+  {name:'Brown Belt I', months:48, color:'#5c2d0a', text:'#fed7aa'},
+  {name:'Black Belt ★', months:54, color:'#0d0d0d', text:'#c9913a'},
+];
+function calcJourney(){
+  const age = parseInt(document.getElementById('calc-age').value);
+  const current = parseInt(document.getElementById('calc-belt').value) || 0;
+  const result = document.getElementById('calcResult');
+  const ph = document.getElementById('calcPlaceholder');
+  const cards = document.getElementById('calcCards');
+  if(!age || age < 5){ result.style.display='none'; ph.style.display='flex'; return; }
+  result.style.display='block';
+  ph.style.display='none';
+  cards.innerHTML='';
+  const today = new Date();
+  let html='';
+  BELT_STAGES.forEach(b=>{
+    if(b.months <= current) return;
+    const monthsLeft = b.months - current;
+    const date = new Date(today.getFullYear(), today.getMonth()+monthsLeft, today.getDate());
+    const ageAtBelt = age + Math.floor(monthsLeft/12);
+    const mon = date.toLocaleString('default',{month:'short',year:'numeric'});
+    html+=`<div style="display:flex;align-items:center;gap:.8rem;padding:.5rem .8rem;background:rgba(245,240,235,.03);border:1px solid rgba(245,240,235,.06)">
+      <div style="width:14px;height:14px;border-radius:50%;background:${b.color};flex-shrink:0"></div>
+      <div style="flex:1;font-family:Oswald,sans-serif;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,240,235,.8)">${b.name}</div>
+      <div style="font-family:Oswald,sans-serif;font-size:.6rem;color:rgba(245,240,235,.4);text-align:right">${mon} · Age ${ageAtBelt}</div>
+    </div>`;
+  });
+  cards.innerHTML=html;
+  const bbMonths = 54 - current;
+  const bbDate = new Date(today.getFullYear(), today.getMonth()+bbMonths, today.getDate());
+  const bbAge = age + Math.floor(bbMonths/12);
+  document.getElementById('calcBBDate').textContent = bbDate.toLocaleString('default',{month:'long',year:'numeric'});
+  document.getElementById('calcBBAge').textContent = `You will be ${bbAge} years old — Black Belt is where the real journey begins`;
+  document.getElementById('calcWA').href = `https://wa.me/919393095053?text=Hi%2C%20I%20want%20to%20start%20my%20karate%20journey.%20Age%3A%20${age}`;
+}
+
+// ════════════════════════════════════════
+// INK SPLATTER ON SECTION ENTER
+// ════════════════════════════════════════
+(function(){
+  const blob = document.getElementById('inkBlob');
+  if(!blob) return;
+  const inkSections = ['#classes','#sensei','#blackbelts','#gallery'];
+  const inkObs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const rect = e.target.getBoundingClientRect();
+        const cx = rect.left + rect.width*0.5;
+        const cy = rect.top + rect.height*0.15;
+        blob.style.left = cx+'px';
+        blob.style.top  = cy+'px';
+        blob.classList.add('show');
+        blob.classList.remove('hide');
+        setTimeout(()=>{ blob.classList.remove('show'); blob.classList.add('hide'); },900);
+      }
+    });
+  },{threshold:0.2});
+  inkSections.forEach(s=>{ const el=document.querySelector(s); if(el) inkObs.observe(el); });
+})();
+
+// ════════════════════════════════════════
+// INK SPLATTER on SECTIONS HOVER
+// ════════════════════════════════════════
+document.querySelectorAll('.ink-splatter').forEach(el=>{
+  el.addEventListener('mouseenter',function(e){
+    const r=this.getBoundingClientRect();
+    const x=((e.clientX-r.left)/r.width*100).toFixed(1)+'%';
+    const y=((e.clientY-r.top)/r.height*100).toFixed(1)+'%';
+    this.style.setProperty('--ink-x',x);
+    this.style.setProperty('--ink-y',y);
+    this.classList.add('inked');
+  });
+  el.addEventListener('mouseleave',function(){
+    this.classList.remove('inked');
+  });
+});
+
 document.getElementById('ftYear').textContent = new Date().getFullYear();
 
 
